@@ -5,12 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server  --colors --config webpack.config.js",
-    "build": "webpack --color --config webpack.prod.config.js",
-    "watch": "webpack --progress --watch --color --display-reasons ",
-    "dev": "webpack-dev-server --progress --colors --config ./webpack.dev.config.js",
-    "dll": "webpack --progress --colors --config ./webpack.dll.config.js",
-    "maxnet": "webpack-dev-server --progress --colors --config ./webpack.maxnet.config.dev.js"
+    "build": "webpack --color --config ./webpack.maxnet.config.prod.js",
+    "dev": "webpack-dev-server --progress --colors --config ./webpack.maxnet.config.dev.js"
   },
   "author": "HHHjiro",
   "license": "ISC",
