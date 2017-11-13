@@ -6,8 +6,6 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
-    pubgState: './src/pages/heybox/pubg/server_state/index.js',
-    excellen_time: './src/pages/heybox/pubg/excellent_time/index.js',
     record_compare: './src/pages/heybox/pubg/record_compare/index.js',
     vender: './src/vender/zepto.min.js'
   },

@@ -11,7 +11,7 @@ var pxtoviewportConf = {
 module.exports = {
   plugins: [
     require('autoprefixer'),
-    // require('postcss-write-svg'),
-    // pxtoviewport(pxtoviewportConf)
+    require('postcss-write-svg'),
+    pxtoviewport(pxtoviewportConf)
   ]
 }
