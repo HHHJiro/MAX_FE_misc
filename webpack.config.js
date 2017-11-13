@@ -7,9 +7,6 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports = {
   entry: {
     pubgState: './src/pages/heybox/pubg/server_state/index.js',
-    rankPlayer: './src/pages/maxplus/dota2/rank_official_list_player/index.js',
-    rankTeam: './src/pages/maxplus/dota2/rank_official_list_team/index.js',
-    rankGroup: './src/pages/heybox/pubg/rank_group/index.js',
     excellen_time: './src/pages/heybox/pubg/excellent_time/index.js',
     record_compare: './src/pages/heybox/pubg/record_compare/index.js',
     vender: './src/vender/zepto.min.js'
@@ -36,10 +33,6 @@ module.exports = {
       },
       '/game/*': {
         target: 'http://heybox.test.maxjia.com:58888',
-        changeOrigin: true
-      },
-      '/api/*': {
-        target: 'http://apidota.test.maxjia.com:58888',
         changeOrigin: true
       }
     },
@@ -142,7 +135,7 @@ module.exports = {
       filename: 'rank_team.html',
       template: 'src/pages/maxplus/dota2/rank_official_list_team/index.art',
       xhtml: true, // 需要符合xhtml的标准
-      chunks: ['rankTeam', 'vender', 'heybox/pubg/server_state'],
+      chunks: ['rankTeam', 'vender'],
       minify: {
         removeComments: true,
         collapseWhitespace: true
