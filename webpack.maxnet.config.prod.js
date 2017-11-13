@@ -9,7 +9,6 @@ module.exports = {
     match: './src/pages/matches/dota/match_tml/index.js',
     vender: './src/vender/zepto.min.js'
   },
-  devtool: '#inline-source-map',
   output: {
     filename: '[name].[hash].js',
     chunkFilename: '[name].[chunkhash].js',
