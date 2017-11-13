@@ -1,0 +1,3 @@
+{{extend '../../layout.art'}}
+
+{{block 'title'}} 绝地求生服务器状态 {{title}}{{/block}}

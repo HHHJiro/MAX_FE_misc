@@ -1,0 +1,94 @@
+$cBlockSpace: rgb(241, 242, 243);
+
+@mixin scaleFont($fontSize, $center: 0){
+  font-size: 12px;
+  transform: scale($fontSize / 12px);
+  transform-origin: $center 50%;
+}
+
+@mixin divide($color: #222){
+  .divide {
+    width: 100%;
+    height: 1px;
+    background: $color;
+    transform: scaleY(.5);
+  }
+}
+
+@mixin blockSpace($color: $cBlockSpace, $width: 4px){
+  .block-space {
+    width: 100%;
+    height: $width;
+    background: $color;
+  }
+}
+
+
+@mixin loading() {
+  .loading {
+    position: fixed;
+    background: #e1e6eb;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    .loading-circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 30px;
+      height: 30px;
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      border-top-color: rgba(0, 0, 0, 0.6);
+      border-radius: 100%;
+      margin: auto;
+    }
+  }
+  
+  .lazy-loading .loading-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-top-color: rgba(0, 0, 0, 0.6);
+    border-radius: 100%;
+    margin: auto;
+  }
+  
+  .fa-spin-round {
+    -webkit-animation: fa-spin-round 0.9s infinite linear;
+    animation: fa-spin-round 0.9s infinite linear;
+  }
+  
+  @-webkit-keyframes fa-spin-round {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+  
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  @keyframes fa-spin-round {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+  
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+}

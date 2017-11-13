@@ -1,0 +1,26 @@
+$fsHeader: 21px;
+article {
+  overflow: hidden;
+  header h1 {
+    font-size: $fsHeader;
+    color: #28323c;
+    font-weight: bold;
+    line-height: 1.5;
+    padding: 0 15px;
+  }
+  
+  section {
+    padding: 0 40px;
+    color: rgb(40, 50, 60);
+    text-align: justify;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    word-wrap: break-word;
+    overflow: hidden;
+    padding-bottom: 20px;
+    @include max-screen($width-s) {
+      padding: 0 15px;
+    }
+  }
+}
+

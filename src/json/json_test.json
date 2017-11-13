@@ -1,0 +1,392 @@
+{
+  "curSeason": 1,
+  "curWeek": 1,
+  "curGame": 1,
+  "season": [{
+      "title": "Gary",
+      "weeks": [{
+          "week": 1617,
+          "games": [{
+              "time": "12-17 16:58",
+              "status": 1,
+              "red": "JC",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+              "blue": "WF",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/as.png",
+              "redPoint": 1,
+              "bluePoint": 2,
+              "gamePage": "http://www.dotamax.com/live",
+              "gameVideo": ""
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 2,
+              "red": "AS仙阁",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+              "blue": "QGHappy",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+              "redPoint": 1,
+              "bluePoint": 2,
+              "gamePage": "",
+              "gameVideo": ""
+            }
+          ]
+        },
+        {
+          "week": 1618,
+          "games": [{
+              "time": "12-17 16:58",
+              "status": 1,
+              "red": "AG超会玩",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+              "blue": "JC",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/jc.png",
+              "redPoint": 3,
+              "bluePoint": 3,
+              "gamePage": "http://www.dotamax.com/live",
+              "gameVideo": ""
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 0,
+              "red": "JC",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/as.png",
+              "blue": "QGHappy",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/jc.png",
+              "redPoint": 3,
+              "bluePoint": 1,
+              "gamePage": "http://www.dotamax.com/live",
+              "gameVideo": "http://www.dotamax.com/live"
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 1,
+              "red": "QGHappy",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+              "blue": "WF",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/jc.png",
+              "redPoint": 0,
+              "bluePoint": 4,
+              "gamePage": "",
+              "gameVideo": ""
+            }
+          ]
+        },
+        {
+          "week": 1619,
+          "games": [{
+              "time": "12-17 16:58",
+              "status": 1,
+              "red": "WF",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/jc.png",
+              "blue": "WF",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/as.png",
+              "redPoint": 4,
+              "bluePoint": 0,
+              "gamePage": "http://www.dotamax.com/live",
+              "gameVideo": "http://www.dotamax.com/live"
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 0,
+              "red": "JC",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/as.png",
+              "blue": "WF",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/ag.png",
+              "redPoint": 1,
+              "bluePoint": 2,
+              "gamePage": "http://www.dotamax.com/live",
+              "gameVideo": "http://www.dotamax.com/live"
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 0,
+              "red": "JC",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+              "blue": "QGHappy",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+              "redPoint": 3,
+              "bluePoint": 4,
+              "gamePage": "",
+              "gameVideo": "http://www.dotamax.com/live"
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 0,
+              "red": "AG超会玩",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/jc.png",
+              "blue": "WF",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/wf.png",
+              "redPoint": 3,
+              "bluePoint": 2,
+              "gamePage": "http://www.dotamax.com/live",
+              "gameVideo": ""
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 1,
+              "red": "AS仙阁",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/wf.png",
+              "blue": "AS仙阁",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/ag.png",
+              "redPoint": 0,
+              "bluePoint": 1,
+              "gamePage": "http://www.dotamax.com/live",
+              "gameVideo": ""
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 0,
+              "red": "QGHappy",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+              "blue": "AS仙阁",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/as.png",
+              "redPoint": 3,
+              "bluePoint": 1,
+              "gamePage": "",
+              "gameVideo": "http://www.dotamax.com/live"
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 2,
+              "red": "WF",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/jc.png",
+              "blue": "QGHappy",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+              "redPoint": 3,
+              "bluePoint": 2,
+              "gamePage": "http://www.dotamax.com/live",
+              "gameVideo": "http://www.dotamax.com/live"
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 1,
+              "red": "QGHappy",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+              "blue": "QGHappy",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/ag.png",
+              "redPoint": 1,
+              "bluePoint": 4,
+              "gamePage": "http://www.dotamax.com/live",
+              "gameVideo": ""
+            }
+          ]
+        },
+        {
+          "week": 1620,
+          "games": [{
+              "time": "12-17 16:58",
+              "status": 1,
+              "red": "JC",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/as.png",
+              "blue": "QGHappy",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/jc.png",
+              "redPoint": 3,
+              "bluePoint": 3,
+              "gamePage": "http://www.dotamax.com/live",
+              "gameVideo": "http://www.dotamax.com/live"
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 1,
+              "red": "JC",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/wf.png",
+              "blue": "WF",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/jc.png",
+              "redPoint": 1,
+              "bluePoint": 1,
+              "gamePage": "http://www.dotamax.com/live",
+              "gameVideo": ""
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 1,
+              "red": "WF",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/jc.png",
+              "blue": "AG超会玩",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/as.png",
+              "redPoint": 1,
+              "bluePoint": 4,
+              "gamePage": "http://www.dotamax.com/live",
+              "gameVideo": ""
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 1,
+              "red": "QGHappy",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/ag.png",
+              "blue": "JC",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/as.png",
+              "redPoint": 0,
+              "bluePoint": 2,
+              "gamePage": "",
+              "gameVideo": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sharon",
+      "weeks": [{
+          "week": 1621,
+          "games": [{
+              "time": "12-17 16:58",
+              "status": 2,
+              "red": "AG超会玩",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/wf.png",
+              "blue": "AS仙阁",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/ag.png",
+              "redPoint": 1,
+              "bluePoint": 0,
+              "gamePage": "",
+              "gameVideo": "http://www.dotamax.com/live"
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 1,
+              "red": "WF",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+              "blue": "QGHappy",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/jc.png",
+              "redPoint": 1,
+              "bluePoint": 3,
+              "gamePage": "http://www.dotamax.com/live",
+              "gameVideo": ""
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 2,
+              "red": "JC",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/as.png",
+              "blue": "AG超会玩",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+              "redPoint": 3,
+              "bluePoint": 0,
+              "gamePage": "http://www.dotamax.com/live",
+              "gameVideo": "http://www.dotamax.com/live"
+            }
+          ]
+        },
+        {
+          "week": 1622,
+          "games": [{
+            "time": "12-17 16:58",
+            "status": 1,
+            "red": "AG超会玩",
+            "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/jc.png",
+            "blue": "WF",
+            "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+            "redPoint": 2,
+            "bluePoint": 2,
+            "gamePage": "",
+            "gameVideo": ""
+          }]
+        },
+        {
+          "week": 1623,
+          "games": [{
+              "time": "12-17 16:58",
+              "status": 2,
+              "red": "AS仙阁",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+              "blue": "AG超会玩",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/ag.png",
+              "redPoint": 3,
+              "bluePoint": 4,
+              "gamePage": "http://www.dotamax.com/live",
+              "gameVideo": "http://www.dotamax.com/live"
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 2,
+              "red": "QGHappy",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/jc.png",
+              "blue": "JC",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+              "redPoint": 0,
+              "bluePoint": 2,
+              "gamePage": "http://www.dotamax.com/live",
+              "gameVideo": ""
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 1,
+              "red": "WF",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/wf.png",
+              "blue": "WF",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/ag.png",
+              "redPoint": 4,
+              "bluePoint": 1,
+              "gamePage": "",
+              "gameVideo": "http://www.dotamax.com/live"
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 0,
+              "red": "WF",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+              "blue": "WF",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+              "redPoint": 0,
+              "bluePoint": 2,
+              "gamePage": "",
+              "gameVideo": "http://www.dotamax.com/live"
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 1,
+              "red": "QGHappy",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/jc.png",
+              "blue": "QGHappy",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/jc.png",
+              "redPoint": 3,
+              "bluePoint": 1,
+              "gamePage": "",
+              "gameVideo": ""
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 0,
+              "red": "AS仙阁",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+              "blue": "QGHappy",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/as.png",
+              "redPoint": 1,
+              "bluePoint": 3,
+              "gamePage": "",
+              "gameVideo": ""
+            },
+            {
+              "time": "12-17 16:58",
+              "status": 2,
+              "red": "AG超会玩",
+              "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/as.png",
+              "blue": "AG超会玩",
+              "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/ag.png",
+              "redPoint": 1,
+              "bluePoint": 1,
+              "gamePage": "http://www.dotamax.com/live",
+              "gameVideo": ""
+            }
+          ]
+        },
+        {
+          "week": 1624,
+          "games": [{
+            "time": "12-17 16:58",
+            "status": 1,
+            "red": "WF",
+            "redImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/xq.png",
+            "blue": "QGHappy",
+            "blueImgSrc": "http://cdn.maxjia.com/image/2017KPL/team/as.png",
+            "redPoint": 1,
+            "bluePoint": 2,
+            "gamePage": "http://www.dotamax.com/live",
+            "gameVideo": ""
+          }]
+        }
+      ]
+    }
+  ]
+}

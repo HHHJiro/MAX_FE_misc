@@ -1,0 +1,2 @@
+{{extend '../../layout.art'}}
+{{block 'title'}} 绝地求生战绩对比 {{title}}{{/block}}

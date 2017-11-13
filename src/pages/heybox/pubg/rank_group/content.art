@@ -1,0 +1,47 @@
+<header>
+  <div class="topbox">
+    {{ each three_most topPlayer}}
+    <div class="top-player">
+      <img class="avatar" src="{{ topPlayer.avartar }}" onerror="imgHandler(this)" alt="">
+      <p class="nickname">{{ topPlayer.username }}</p>
+      <div class="text-wrap">
+        <h2 class="top-name">{{ topPlayer.desc }}</h2>
+        <p class="desc">{{ topPlayer.desc_1 }}{{ topPlayer.value | tmlFormatValue }}{{ topPlayer.desc_2 }}</p>
+      </div>
+    </div>
+    {{ /each }}
+  </div>
+</header>
+<div class="content-wrap">
+  <ul class="rank-select">
+    {{ each filter[1].values type index}}
+    <li {{ if index == 0 }} class="active" {{ /if }} data-type="{{ type.key }}" data-desc="{{ type.value }}">{{ type.value }}</li>
+    {{ /each }}
+    <li class="under-line"></li>
+  </ul>
+  <div class="divide"></div>
+  <ul class="tab-title">
+    <li class="rank">
+      <p>排名</p>
+    </li>
+    <li class="avatar"></li>
+    <li class="player">
+      <p>玩家</p>
+    </li>
+    <li class="rating fliter-type">
+      <p>Rating</p>
+    </li>
+    <li class="server">
+      <p>服务器</p>
+    </li>
+    <li class="steam">
+      <p>Steam账号</p>
+    </li>
+  </ul>
+  <div class="divide"></div>
+  <div class="filter-box">
+      <div class="loading">
+          <div class="loading-circle fa-spin-round"></div>
+        </div>
+  </div>
+</div>

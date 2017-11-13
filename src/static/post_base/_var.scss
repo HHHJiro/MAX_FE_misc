@@ -1,0 +1,35 @@
+// color
+$htmlBg: #f1f2f3;
+$white: #fff;
+$black: #000;
+$lightBlack: #14191e;
+$gray: #8c96a0;
+$primary: #3388ff;
+$hightClolr: rgba(0, 0, 0, 0.01);
+$upZhu: rgb(0, 142, 232);
+// fontsize
+
+// other value
+$userH: 34px;
+$bodyMaxW: 600px;
+$bodyMinW: 300px;
+
+// media width
+$width-s: 480px;
+
+// options img width
+$optionsH: 26px;
+$optionTextColorDefault: rgb(100, 105, 110);
+
+@mixin max-screen($res){
+  @media only screen and ( max-width: $res )
+  {
+    @content;
+  }
+}
+@mixin scaleFont($fontSize){
+  font-size: 12px;
+  // line-height: $fontSize * 2;
+  transform: scale($fontSize / 12px);
+  transform-origin: 0;
+}

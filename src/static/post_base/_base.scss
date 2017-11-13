@@ -1,0 +1,20 @@
+body {
+  position: relative;
+  margin: 0;
+  color: #14191e;
+  background: $htmlBg;
+  font-family: PingFang-SC-Regular, -apple-system-font, sans-serif;
+  -webkit-tap-highlight-color: $black;
+  user-select: text;
+  @include max-screen($width-s) {
+    user-select: none;
+    -webkit-tap-highlight-color: $hightClolr;
+  }
+}
+
+.post-box {
+  max-width: $bodyMaxW;
+  min-width: $bodyMinW;
+  margin: 0 auto;
+  background: $white;
+}

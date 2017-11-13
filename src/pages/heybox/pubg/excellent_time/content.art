@@ -1,0 +1,46 @@
+<header>
+  <div class="heybox-logo-wrap">
+    <div class="logo-box"><img src="//cdn.max-c.com/heybox/logo/app_251.png" alt="logo"></div>
+    <div class="desc-box">
+      <h2 class="app-name">小黑盒</h2>
+      <p class="desc">三亿Steam玩家的必备应用</p>
+    </div>
+  </div>
+  <div class="open-app">
+    <a href="">打开看看</a>
+  </div>
+</header>
+<video class="video" src="http://otxqgl7p3.bkt.clouddn.com/heybox/bbs/imgs/2017/10/27/41325f5070220c3c5a5e17b689e2358c" poster="http://otxqgl7p3.bkt.clouddn.com/heybox/bbs/imgs/2017/10/27/41325f5070220c3c5a5e17b689e2358c/thumb" preload="load" x-webkit-airplay="true" webkit-playsinline="true" controls="controls" playsinline></video>
+<div class="author-wrap">
+    <div class="avatar-wrap"><img src="http://heybox.test.maxjia.com:58888/static/avatar/md5/7b8805b5d925db7211bec99d90e4fe57" alt="avatar"></div>
+    <div class="user-wrap">
+      <p class="user-name">
+        <span class="user-info">7911upup</span>
+      </p>
+      <p class="time">2小时前·绝地求生</p>
+    </div>
+</div>
+<div class="block-space"></div>
+<div class="tab-btns">
+  <div class="btn btn-video active">TA的视频</div>
+  <div class="btn btn-suggest">竞猜推荐</div>
+</div>
+<div class="tab-content">
+  <ul class="videos">
+   <li><a href="#" class="poster"><img src="" alt=""></a><p class="video-duration">00:42</p></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+  </ul>
+  <ul class="suggests hide">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+
+
+

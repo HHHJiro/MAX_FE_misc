@@ -1,0 +1,50 @@
+<div class="filter-type" data-fliterType="{{ filterType }}">
+    {{set filterType = filterType }}
+    {{ if myself }}
+    <ul class="tab-body myself">
+        <li class="rank">
+            <p style="color: {{ myself.start_color }}">{{ myself.rank }}</p>
+          </li>
+          <li class="avatar"><img src="{{ myself.heybox_info.avartar }}" onerror="imgHandler(this)" alt=""></li>
+          <li class="player">
+            <p>{{ myself.heybox_info.username }}</p>
+            <p class="line-percent"></p>
+            <p class="percent" style="{{ myself.start_color | tmlFormatColor myself.end_color }}; {{ myself.score | tmlFormatScore }}"></p>
+          </li>
+          <li class="rating fliter-type">
+            <p>{{ myself[filterType] | tmlFormatValue filterType }}</p>
+          </li>
+          <li class="server">
+            <p>{{ if filterType == 'Rating'}}{{ myself.Region_desc }} {{ else }} 全部 {{ /if }}</p>
+          </li>
+          <li class="steam">
+            <img src="{{ myself.steam_info.avatar }}" onerror="imgHandler(this)" alt="">
+            <p>{{ myself.steam_info.nickname }}</p>
+          </li>
+    </ul>
+    {{ /if }}
+    {{ each all friend index}}
+    <div class="divide"></div>
+    <ul class="tab-body">
+        <li class="rank">
+            <p style="color: {{ friend.start_color }}">{{ friend.rank }}</p>
+          </li>
+          <li class="avatar"><img src="{{ friend.heybox_info.avartar }}" onerror="imgHandler(this)" alt=""></li>
+          <li class="player">
+            <p>{{ friend.heybox_info.username }}</p>
+            <p class="line-percent"></p>
+            <p class="percent" style="{{ friend.start_color | tmlFormatColor friend.end_color }}; {{ friend.score | tmlFormatScore }}"></p>
+          </li>
+          <li class="rating fliter-type">
+            <p>{{ friend[filterType] | tmlFormatValue filterType }}</p>
+          </li>
+          <li class="server">
+            <p>{{ if filterType == 'Rating'}}{{ friend.Region_desc }} {{ else }} 全部 {{ /if }}</p>
+          </li>
+          <li class="steam">
+            <img src="{{ friend.steam_info.avatar }}" onerror="imgHandler(this)" alt="">
+            <p>{{ friend.steam_info.nickname }}</p>
+          </li>
+    </ul>
+    {{/each}}
+</div>

@@ -1,0 +1,33 @@
+<div class="bg-block"></div>
+<header>
+    <ul class="tab-title">
+      <li class="team-rank"><p>排名</p></li>
+      <li class="team-avatar"></li>
+      <li class="team-name"><p>战队</p></li>
+      <li class="team-money"><p>收入</p></li>
+      <li class="team-point"><p>积分</p></li>
+      <li class="arrow-wrap"><p>阵容</p></li>
+    </ul>
+  </header>
+  {{each team_list}}
+    <div class="divide"></div>
+    <ul class="tal-body" data-temid="{{ $value.team_id }}" data-teamname="{{ $value.team_name }}" data-logourl="{{ $value.teamlogo }}">
+      <li class="team-rank"><p>{{ $value.rank}}</p></li>
+      <li class="team-avatar"><img src="{{ $value.teamlogo }}" alt=""></li>
+      <li class="team-name"><p>{{ $value.team_name }}</p></li>
+      <li class="team-money"><p>{{ $value.earnings }}</p></li>
+      <li class="team-point"><p>{{ $value.points }}</p></li>
+      <li class="arrow-wrap"><i class="arrow"></i></li>
+    </ul>
+    <div class="players-wrap" data-length="{{ $value.players.length }}">
+      {{each $value.players player key }}
+        <ul class="player-box">
+          <li class="block-one"></li>
+          <li class="player-from block-one"></li>
+          <li class="player-name block-four">{{ player.player_name }}</li>
+          <li class="player-point block-one">{{ player.points }}</li>
+          <li class="block-one"></li>
+        </ul>
+      {{/each}}
+    </div>
+  {{/each}}

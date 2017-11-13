@@ -1,0 +1,5 @@
+{{extend '../../layout.art'}}
+{{ block 'head' }}
+<script src="//cdn.max-c.com/js/vconsole.min.js"></script>
+{{ /block }}
+{{block 'title'}}群排行{{/block}}

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="keywords" content="MAX+ APP 下载 |Dota 2|CS:GO|守望先锋|英雄联盟"/>
+  <meta name="description" content="MAX+ APP 下载 |Dota 2|CS:GO|守望先锋|英雄联盟">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-touch-fullscreen" content="no"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <title>{{block 'title'}}Max+{{/block}}</title>
+  {{block 'head'}}{{/block}}
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>

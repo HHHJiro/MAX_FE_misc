@@ -1,0 +1,20 @@
+<div class="bg-block"></div>
+<header>
+    <ul class="tab-title">
+      <li class="rank"><p>排名</p></li>
+      <li class="avatar"></li>
+      <li class="name"><p>名字</p></li>
+      <li class="team"><p>战队</p></li>
+      <li class="point"><p>积分</p></li>
+    </ul>
+  </header>
+  {{each player_list}}
+    <div class="divide"></div>
+    <ul class="tal-body" data-steamid="{{ $value.steam_id }}">
+      <li class="rank"><p>{{ $value.rank }}</p></li>
+      <li class="avatar"><img src="{{ $value.avatar }}" alt=""></li>
+      <li class="name"><p>{{ $value.player_name }}</p></li>
+      <li class="team"><p>{{ $value.team_name }}</p></li>
+      <li class="point"><p>{{ $value.points }}</p></li>
+    </ul>
+  {{/each}}

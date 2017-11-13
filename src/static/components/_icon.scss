@@ -1,0 +1,16 @@
+@mixin arrow($color: #222, $width: 4px, $borderH: 1px) {
+  i.arrow {
+    width: $width;
+    height: $width;
+    border: solid $borderH $color;
+    transform: rotate(45deg);
+    margin-top: -$width;
+    border-radius: 1px;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    &.open {
+      transform: rotate(225deg);
+      margin-top: $width;
+    }
+  }
+}

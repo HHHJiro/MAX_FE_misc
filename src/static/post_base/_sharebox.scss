@@ -1,0 +1,72 @@
+
+.option-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px 20px;
+  .like-box, .share-box, .collect-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    span {
+      color: $optionTextColorDefault;
+      @include scaleFont(11px);
+    }
+    .up-num {
+      position: absolute;
+      left: 46px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .collect {
+      position: relative;
+      background-position-x: 50%;
+      &::after {
+        font-size: 22px;
+        content: '收藏';
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 36px;
+        width: 100px;
+        color: $optionTextColorDefault;
+        transform: translateY(-50%) scale(.5);
+        transform-origin: 0;
+      }
+    }
+    .share {
+      background-position-x: 100%; 
+    }
+    .islike {
+      & + span {
+        color: $upZhu;
+      }
+      background-position-x: 25%;
+    }
+    .iscollect {
+      position: relative;
+      @extend .islike;
+      background-position-x: 75%;
+      &::after {
+        content: '已收藏';
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 36px;
+        width: 100px;
+        color: $upZhu;
+        font-size: 22px;
+        transform: translateY(-50%) scale(.5);
+        transform-origin: 0;
+      }
+    }
+  }
+  .bg-img {
+    width: $optionsH;
+    height: $optionsH;
+    background: url(/static/bbs/post/group_ops.png);
+    background-size: 500%;
+    margin-right: 10px;
+  }
+}

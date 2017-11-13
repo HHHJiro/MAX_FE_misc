@@ -1,0 +1,3 @@
+{{extend '../../layout.art'}}
+
+{{block 'title'}} 官方榜单 {{title}}{{/block}}

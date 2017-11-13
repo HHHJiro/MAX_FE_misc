@@ -1,0 +1,49 @@
+<div class="block-top"></div>
+<header>
+  <ul class="tab-title">
+    <li class="sever">服务器名称</li>
+    <li class="state">状态</li>
+    <li class="ping">PING</li>
+    <li class="data">数据查询</li>
+    <li class="arrow-box"></li>
+  </ul>
+</header>
+{{ each servers}}
+  
+<div class="divide"></div>
+
+<ul class="tab-body {{ mainState | classFormat}}" data-ip="{{ $value.ip }}">
+  <li class="sever">{{ $value.name }}</li>
+  <li class="state">{{ mainState | stateFormat}}</li>
+  <li class="ping">{{ms}}</li>
+  <li class="data {{ dataState | stateDataClassFormat }}">{{ dataState | stateDataFormat }}</li>
+  <li class="arrow-box"><i class="arrow"></i></li>
+</ul>
+<div class="state-time-box">
+  <p class="title">今日服务器状态</p>
+  <ul class="time-line">
+    {{ each stateHour val key}}
+      <li class="{{ val.mainState | classFormat }}"></li>
+    {{ /each }}
+    {{ each restLen }}
+      <li></li>
+    {{ /each}}
+  </ul>
+  <ul class="time-text">
+    <li>0时</li>
+    <li>2时</li>
+    <li>4时</li>
+    <li>6时</li>
+    <li>8时</li>
+    <li>10时</li>
+    <li>12时</li>
+    <li>14时</li>
+    <li>16时</li>
+    <li>18时</li>
+    <li>20时</li>
+    <li>22时</li>
+    <li>24时</li>
+  </ul>
+</div>
+{{ /each }}
+

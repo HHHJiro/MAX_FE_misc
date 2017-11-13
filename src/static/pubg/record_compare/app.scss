@@ -1,0 +1,16 @@
+@import '../../normalize';
+@import '../../reset';
+@import '../../helper';
+
+@svg 1px-border {
+  height: 100%;
+  @rect {
+    fill: var(--color, black);
+    width: 50%;
+    height: 100%;
+  }
+}
+
+@import './var';
+@import './layout';
+
