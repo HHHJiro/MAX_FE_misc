@@ -19,7 +19,7 @@ module.exports = {
   devServer: {
     hot: true, // 告诉 dev-server 我们在使用 HMR
     port: 3888,
-    host: '192.168.0.159',
+    host: '192.168.1.153',
     proxy: {
       '/live_stats/*': {
         target: 'http://192.168.0.159:18080/',
