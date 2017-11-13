@@ -1,0 +1,228 @@
+@include divide($divideC);
+@include arrow($arrowC, 6px, 2px);
+$titlePad: 0;
+$avatarH: 34px;
+
+html, body {
+  background: #fff;
+  min-height: 100vh;
+  transform: translate3d(0,0,0);
+  font-family: Arial, Verdana, Sans-serif;
+}
+.bg-block {
+  height: 10px;
+  background: #e1e6eb;
+}
+#app {
+  padding-bottom: 20px; 
+}
+.tab-title, .tal-body {
+  -webkit-tap-highlight-color: transparent;
+  height: $titleH;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $titlePad;
+  color: $grey;
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    line-height: $titleH;
+    text-align: center;
+    p {
+      @include scaleFont(11px);
+    }
+    &.rank {
+      flex-grow: 1;
+      flex-basis: 0%;
+    }
+    &.avatar {
+      flex-grow: 1;
+      flex-basis: 0%;
+      img {
+        width: $avatarH;
+        border-radius: 50%;
+      }
+    }
+    &.name {
+      flex-grow: 2;
+      flex-basis: 0%;
+      justify-content: flex-start;
+      p {
+        text-indent: 20px;
+        white-space: nowrap;
+        max-width: 25vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    &.team {
+      flex-grow: 2;
+      flex-basis: 0%;
+    }
+    &.point {
+      flex-grow: 2;
+      flex-basis: 0%;
+    }
+    &.team-rank {
+      flex-grow: 1;
+      flex-basis: 0%;
+    }
+    &.team-avatar {
+      flex-grow: 1;
+      flex-basis: 0%;
+      img {
+        width: $avatarH;
+        border-radius: 50%;
+      }
+    }
+    &.team-name {
+      flex-grow: 2;
+      flex-basis: 0%;
+      justify-content: flex-start;
+      overflow: hidden;
+      p {
+        white-space: nowrap;
+        text-indent: 23px;
+      }
+    }
+    &.team-money {
+      flex-grow: 2;
+      flex-basis: 0%;
+    }
+    &.team-point {
+      flex-grow: 1;
+      flex-basis: 0%;
+    }
+    &.arrow-wrap {
+      flex-grow: 1;
+      flex-basis: 0%;
+      justify-content: center;
+    }
+  }
+}
+.tal-body {
+  padding: ($bodyH - $titleH)/2 0;
+  color: $dark;
+  li {
+    p {
+      @include scaleFont(12px);
+    }
+  }
+  .team {
+    color: $lightGrey;
+  }
+}
+.players-wrap {
+  transition: all .3s ease-in-out;
+  background: $bgPlayerList;
+  display: none;
+  overflow: hidden;
+  color: $dark;
+  .player-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12px;
+    margin: 10px 0;
+    li {
+      font-size: 12px;
+      &.block-one {
+        flex-grow: 1;
+        flex-basis: 0%;
+      }
+      &.block-two {
+        flex-grow: 2;
+        flex-basis: 0%;
+      }
+      &.block-four {
+        flex-grow: 4;
+        flex-basis: 0%;
+      }
+      &.player-from {
+        img {
+          width: 13px;
+          margin: 0 auto;
+        }
+      }
+      &.player-name {
+        text-indent: 23px;
+      }
+      &.player-point {
+        text-align: center;
+      }
+    }
+  }
+}
+.hide {
+  height: 0;
+}
+
+.loading {
+  position: fixed;
+  background: #e1e6eb;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  .loading-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-top-color: rgba(0, 0, 0, 0.6);
+    border-radius: 100%;
+    margin: auto;
+  }
+}
+
+.lazy-loading .loading-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-top-color: rgba(0, 0, 0, 0.6);
+  border-radius: 100%;
+  margin: auto;
+}
+
+.fa-spin-round {
+  -webkit-animation: fa-spin-round 0.9s infinite linear;
+  animation: fa-spin-round 0.9s infinite linear;
+}
+
+@-webkit-keyframes fa-spin-round {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes fa-spin-round {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

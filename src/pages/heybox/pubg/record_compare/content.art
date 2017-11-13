@@ -1,0 +1,36 @@
+{{ each data val index }}
+<div class="content">
+  <div class="record-wrap">
+    <div class="server-wrap">
+      <span class="sever-name" >{{ val.player_info.best_rating_region_desc }}</span> <i class="triangle"></i>
+      <select name="server" class="server" data-index="{{ index }}" data-user="{{ val.player_info.nickname }}">
+        {{ each val.regions val  }}
+        <option value="{{ val.key }}">{{ val.value }}</option>
+        {{ /each }}
+      </select>
+    </div>
+    <div class="user-wrap">
+      <div class="avatar-wrap">
+        <img data-src="{{ val.player_info.avatar }}" src="{{ val.player_info.avatar }}" >
+      </div>
+      <p class="nickname">{{ val.player_info.nickname }}</p>
+    </div>
+
+    <ul class="compare-info">
+        <li><p class="desc">综合评分</p><p class="score {{ data[0].compat_score | tmlFormatCompare data[1].compat_score index }}">{{ val.compat_score | tmlFormatNumber }}</p></li>
+        <li><p class="desc">最高Rating</p><p class="score {{ data[0].max_rating | tmlFormatCompare data[1].max_rating index }}">{{ val.max_rating | tmlFormatNumber }}</p></li>
+        <li><p class="desc">吃鸡率(次数)</p><p class="score {{ data[0].win_rate | tmlFormatCompare data[1].win_rate index }}">{{ val.win_rate | tmlFormatNumber }}%<span class="time"> ({{ val.win_count| tmlFormatNumber }})</span></p></li>
+        <li><p class="desc">前十率(次数)</p><p class="score {{ data[0].top10_ratio | tmlFormatCompare data[1].top10_ratio index }}">{{ val.top10_ratio | tmlFormatNumber }}%<span class="time"> ({{ val.top10_count | tmlFormatNumber }})</span></p></li>
+        <li><p class="desc">K/D</p><p class="score {{ data[0].kd | tmlFormatCompare data[1].kd index }}">{{ val.kd | tmlFormatFloat }}</p></li>
+        <li><p class="desc">场均击杀</p><p class="score {{ data[0].k_per_rounds | tmlFormatCompare data[1].k_per_rounds index }}">{{ val.k_per_rounds | tmlFormatFloat }}</p></li>
+        <li><p class="desc">爆头率</p><p class="score {{ data[0].head_shot_ratio | tmlFormatCompare data[1].head_shot_ratio index }}">{{ val.head_shot_ratio | tmlFormatNumber }}</p></li>
+        <li><p class="desc">场均生存时间</p><p class="score {{ data[0].avg_survival_time | tmlFormatCompare data[1].avg_survival_time index }}">{{ val.avg_survival_time | tmlFormatNumber }}min</p></li>
+    </ul>
+
+  </div>
+</div>
+{{ if index == 0 }}
+  <div class="divide"></div>
+{{ /if }}
+{{ /each }}
+<div id="radar"></div>

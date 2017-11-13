@@ -1,0 +1,4 @@
+{{extend './bese.art'}}
+
+{{block 'title'}} 对阵信息 {{/block}}
+{{block 'desc'}} 对阵表 {{/block}}

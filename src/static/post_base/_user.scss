@@ -1,0 +1,86 @@
+$fsName: 13px;
+$fsTime: 10px;
+$fsUpZhu: 9px;
+$upZhuH: 12px;
+$topocPad: 0 10px;
+$topicText: 12px;
+$topicImgH: 16px;
+$topicImgPad: 0 8px 0 2px;
+$iconRighH: 6px;
+.author-wrap {
+  height: $userH;
+  display: flex;
+  padding: 10px 0;
+  .avatar-wrap {
+    width: $userH;
+    height: $userH;
+    padding: 0 10px;
+    img {
+      max-width: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+  .user-wrap {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    p {
+      margin: 0;
+      &.user-name {
+        display: flex;
+        align-items: center;
+        font-size: $fsName;
+        font-weight: 600;
+      }
+      &.time {
+        @include scaleFont($fsTime);
+        color: $gray;
+      }
+    }
+    span.up-zhu {
+      display: inline-block;
+      font-weight: 400;
+      padding: 2px 4px;
+      border-radius: 2px;
+      background: $upZhu;
+      color: $white;
+      margin-left: 4px;
+      @include scaleFont($fsUpZhu);
+    }
+    img {
+      height: $topicImgH;
+      margin-right: 4px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .topic {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: $topocPad;
+    background: #f7f8f9;
+    img {
+      height: $topicImgH;
+      display: inline-block;
+      padding: $topicImgPad;
+    }
+    .topic-text {
+      font-size: $topicText;
+      margin-right: 12px;
+      color: $upZhu;
+    }
+    .right {
+      height: $iconRighH;
+      width: $iconRighH;
+      transform: rotate(45deg);
+      display: inline-block;
+      border-right: 2px solid $upZhu;
+      border-top: 2px solid $upZhu;
+    }
+  }
+}

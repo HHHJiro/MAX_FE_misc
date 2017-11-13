@@ -1,0 +1,2 @@
+{{extend '../../layout.art'}}
+{{block 'title'}}我的精彩时刻{{/block}}

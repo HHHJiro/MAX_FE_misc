@@ -1,0 +1,26 @@
+html, body {
+  font-family: PingFang-SC, Arial,Verdana,Sans-serif;
+  background: #fff;
+}
+select,input{
+  -webkit-appearance:none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);   
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,a,p,textarea{
+  margin: 0;
+  padding: 0;
+}
+
+ul,ol,li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  display: block; 
+}
+
+img{
+  border: none;
+  display: block;
+}

@@ -1,0 +1,175 @@
+
+$arrowH: 6px;
+$headerH: 30px;
+
+@mixin stateColor($color){
+  li {
+    &.state {
+      background: $color;
+    }
+  }
+}
+.block-top {
+  height: 5px;
+  background: #f1f2f3;
+}
+header {
+  width: 100%;
+  height: $headerH;
+}
+.tab-title, .tab-body{
+  display: flex;
+  margin: 0 10px;
+  justify-content: space-between;
+  height: $headerH;
+  li {
+    @include scaleFont(11px);
+    height: $headerH;
+    line-height: $headerH;
+    text-align: center;
+    color: $grey;
+    &.sever {
+      width: 60px;
+    }
+    &.state {
+      width: 48px;
+    }
+    &.ping {
+      width: 30px;
+    }
+    &.data {
+      width: 50px;
+    }
+    &.arrow-box {
+      width: 12px;
+    }
+  }
+}
+
+.divide {
+  width: 100%;
+  height: 1px;
+  background: $lightGrey;
+  transform: scaleY(.5);
+}
+.tab-body {
+  height: 20px;
+  align-items: center;
+  padding: 12px 0;
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 12px;
+    &.sever {
+     font-size: 12px;
+     color: $lightBlack;
+    }
+    &.state {
+      @include scaleFont(10px);
+      color: $white;
+      background: $cNormal;
+      border-radius: 2px;
+    }
+    &.ping {
+      color: $lightBlack;
+      &.normal {
+        color: $cNormal;
+      }
+      &.delay {
+        color: $cDelay;
+      }
+      &.unusual {
+        color: $cUnusual;
+      }
+      &.wrong {
+        color: $cWrong;
+      }
+    }
+    &.data {
+      color: $lightBlack;
+      &.stop {
+        color: $silver;
+      }
+    }
+  }
+}
+
+
+ul {
+  &.normal {
+    @include stateColor($cNormal);
+  }
+  &.delay {
+    @include stateColor($cDelay);
+  }
+  &.unusual {
+    @include stateColor($cUnusual);
+  }
+  &.wrong {
+    @include stateColor($cWrong);
+  }
+  &.stop {
+    li.data {
+      color: $silver;
+    }
+  }
+}
+
+i.arrow {
+  width: $arrowH;
+  height: $arrowH;
+  border: solid 2px $silver;
+  transform: rotate(45deg);
+  margin-top: -$arrowH;
+  border-radius: 1px;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  &.open {
+    transform: rotate(225deg);
+    margin-top: $arrowH;
+  }
+}
+
+.state-time-box {
+  display: none;
+  height: 82px;
+  background: $bgTimeBox;
+  p.title {
+    @include scaleFont(10px, 50%);
+    text-align: center;
+    padding: 10px 0 8px;
+    color: $lightSilver;
+  }
+  ul.time-line {
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-between;
+    height: 28px;
+    li {
+      width: 8px;
+      background: $lightGrey;
+      &.normal {
+        background: $cNormal;
+      }
+      &.delay {
+        background: $cDelay;
+      }
+      &.unusual {
+        background: $cUnusual;
+      }
+      &.wrong {
+        background: $cWrong;
+      }
+    }
+  }
+  ul.time-text {
+    padding: 6px 12px 10px;
+    display: flex;
+    justify-content: space-between;
+    li {
+      @include scaleFont(10px);
+    }
+  }
+}

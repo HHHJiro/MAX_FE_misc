@@ -1,0 +1,90 @@
+$userH: 22px;
+$fsName: 12px;
+$fsTime: 10px;
+$fsUpZhu: 9px;
+$upZhuH: 12px;
+$topocPad: 0 10px 0 4px;
+$topicText: 12px;
+$topicImgH: 16px;
+$topicImgPad: 0 4px 0 2px;
+$iconRighH: 4px;
+$topicTextColor: rgb(0, 129, 255);
+$cUserName: rgb(20, 25, 30);
+.author-wrap {
+  height: $userH;
+  display: flex;
+  padding: 10px;
+  .avatar-wrap {
+    width: $userH;
+    height: $userH;
+    padding-right: 6px;
+    img {
+      max-width: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+  .user-wrap {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p {
+      margin: 0;
+      &.user-name {
+        display: flex;
+        align-items: center;
+        font-size: $fsName;
+        font-weight: 600;
+        color: $cUserName;
+      }
+      &.time {
+        @include scaleFont($fsTime, 100%);
+        color: $grey;
+      }
+    }
+    span.up-zhu {
+      display: inline-block;
+      font-weight: 400;
+      padding: 1px 5px;
+      border-radius: 1px;
+      background: #51b0eb;
+      color: $white;
+      margin-left: 4px;
+      @include scaleFont($fsUpZhu);
+    }
+    img {
+      height: $topicImgH;
+      margin-right: 4px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .medales-wrap {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    transform: translateX(-2px);
+    img {
+      height: 13px;
+      width: 13px;
+      position: absolute;
+      top: 1px;
+      &:first-child {
+        left: 0px;
+        z-index: 1000;
+      }
+      &:not(:first-child) {
+        position: absolute;
+        left: 2px;
+        z-index: 100;
+      }
+      &:last-child {
+        position: absolute;
+        left: 4px;
+        z-index: 1;
+      }
+    }
+  }
+}

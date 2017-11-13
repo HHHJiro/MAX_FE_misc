@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="keywords" content="小黑盒——3亿Steam玩家的必备应用，全面支持绝地求生战绩查询"/>
+  <meta name="description" content="小黑盒——3亿Steam玩家的必备应用，全面支持绝地求生战绩查询"/>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-touch-fullscreen" content="no"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <title>{{block 'title'}}小黑盒{{/block}}</title>
+  {{block 'head'}}{{/block}}
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>

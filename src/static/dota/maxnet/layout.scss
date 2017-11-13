@@ -1,0 +1,110 @@
+.select-bar {
+  height: 74px;
+  display: flex;
+  background: $silver;
+  li {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $dark;
+    font-size: 24px;
+    &.active {
+      background: #fff;
+    }
+  }
+  & + .tab-title {
+    border-top: solid 4px $gray;
+  }
+}
+
+.title {
+  background: $lightGray;
+  p {
+    display: flex;
+    align-items: flex-end;
+    font-size: 24px;
+    color: $dark;
+    padding: 28px 20px 12px;
+    span {
+      display: inline-block;
+      line-height: 40px;
+      transform: translateY(4px)
+    }
+    img {
+      display: inline-block;
+      width: $logoH;
+      height:  $logoH;
+    }
+  }
+}
+
+.group {
+  .tab-title, .tab-body {
+    display: flex;
+    padding: 0 20px;
+    background: #fff;
+    color: $lightGray;
+    font-family: Helvetica;
+    li {
+        font-size: 22px;
+        height: 56px;
+        line-height: 56px;
+        text-align: center;
+        &.rank, &.score {
+          flex-basis: 50px;
+        }
+        &.score {
+          margin-left: 100px;
+        }
+        &.desc {
+          flex-basis: 215px;
+        }
+        &.team {
+          flex-basis: 315px;
+          text-align: left;
+          text-indent: 150px;
+        }
+    }
+  }
+  .tab-body {
+    li {
+      padding: (46px - 28px) 0;
+      &:not(.desc) {
+        color: $dark;
+      }
+      &.team {
+        display: flex;
+        justify-content: flex-start;
+        .img-box {
+          width: 52px;
+          height: 52px;
+          margin-left: 150px - 52px - 18px;
+          margin-right: 18px;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+        p {
+          text-indent: 0;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+.block-4 {
+  height: 4px;
+  background: $gray;
+}
+
+.divide {
+  border: 1px solid transparent;
+  border-image: svg(1px-border param(--color $gray)) 1 1 stretch;
+}
+
+.hide {
+  display: none!important;
+}

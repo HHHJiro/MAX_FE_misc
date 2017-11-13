@@ -1,0 +1,120 @@
+@include blockSpace();
+$btnH: 32px;
+header {
+  height: $headerH;
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  .heybox-logo-wrap {
+    display: flex;
+    flex-grow: 1;
+    .logo-box {
+      margin-right: 8px;
+      img {
+        width: $headerH;
+        height:$headerH;
+        border-radius: 4px;
+      }
+    }
+    .desc-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .app-name {
+        color: $lightBlack;
+        font-size: 13px;
+      }
+      .desc {
+        color: $grey;
+        @include scaleFont(10)
+      }
+    }
+  }
+  .open-app {
+    width: 68px;
+    height: 28px;
+    border-radius: 2px;
+    background: linear-gradient(to bottom, $cOpenAppStart 0%, $cOpenAppEnd 100%);
+    a {
+      text-align: center;
+      display: block;
+      height: 100%;
+      color: #fff;
+      line-height: 28px; 
+      font-size: 12px;
+    }
+  }
+}
+
+video, .current-video {
+  width: 100%;
+  height: 208px;
+  .vjs-big-play-button {
+    width: 50px;
+    height: 40px;
+    border: 0;
+    border-radius: 4px;
+    background: rgba(0,0,0,.8);
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+.tab-btns {
+  height: $btnH;
+  display: flex;
+  justify-content: space-between;
+  background: $bgDefaultBtn;
+  .btn-video, .btn-suggest {
+    -webkit-tap-highlight-color: transparent;
+    flex-grow: 1;
+    line-height: $btnH;
+    text-align: center;
+    font-size: 12px;
+    color: $lightBlack;
+    &.active {
+      background: #fff;  
+    }
+  }
+}
+
+.tab-content {
+  .videos, .suggests {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    background: #fff;
+    justify-content: space-between;
+    li {
+      position: relative;
+      width: calc(50vw - 10px - .5px);
+      height: 27.68vw;
+      background: #222;
+      margin-bottom: 1px;
+      a {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      p {
+        &.video-duration {
+          position: absolute;
+          bottom: 8px;
+          right: 9px;
+          @include scaleFont(10);
+          color: #fff;
+        }
+      }
+    }
+  }
+  .suggests li {
+    background: #eee;
+  }
+}
+.hide {
+  height: 0;
+  overflow: hidden;
+  padding: 0!important;
+  margin: 0!important;
+}
