@@ -6,8 +6,13 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
+<<<<<<< HEAD
     pubgState: 'pubg/server_state/index.js',
     // record_compare: './src/pages/heybox/pubg/record_compare/index.js',
+=======
+    rankPlayer: './src/pages/maxplus/dota2/rank_official_list_player/index.js',
+    rankTeam: './src/pages/maxplus/dota2/rank_official_list_team/index.js',
+>>>>>>> remove heybox setttings
     vender: './src/vender/zepto.min.js'
   },
   resolve: {
@@ -28,6 +33,7 @@ module.exports = {
     host: '192.168.1.153',
     port: 4002,
     proxy: {
+<<<<<<< HEAD
       '/tools/*': {
         target: 'http://heybox.test.maxjia.com:58888',
         changeOrigin: true
@@ -42,6 +48,10 @@ module.exports = {
       },
       '/pc/*': {
         target: 'http://heybox.test.maxjia.com:58888',
+=======
+      '/api/*': {
+        target: 'http://apidota.test.maxjia.com:58888',
+>>>>>>> remove heybox setttings
         changeOrigin: true
       }
     },
@@ -116,10 +126,27 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(), // 启用 HMR
     new ExtractTextPlugin('[name]/styles.[content:8].css'),
     new HtmlWebpackPlugin({
+<<<<<<< HEAD
       filename: 'state.html',
       template: 'src/pages/heybox/pubg/server_state/index.art',
       xhtml: true, // 需要符合xhtml的标准
       chunks: ['pubgState', 'vender'],
+=======
+      filename: 'rank_player.html',
+      template: 'src/pages/maxplus/dota2/rank_official_list_player/index.art',
+      xhtml: true, // 需要符合xhtml的标准
+      chunks: ['rankPlayer', 'vender'],
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'rank_team.html',
+      template: 'src/pages/maxplus/dota2/rank_official_list_team/index.art',
+      xhtml: true, // 需要符合xhtml的标准
+      chunks: ['rankTeam', 'vender', 'heybox/pubg/server_state'],
+>>>>>>> remove heybox setttings
       minify: {
         removeComments: true,
         collapseWhitespace: true
