@@ -102,6 +102,15 @@ module.exports = {
         removeComments: true,
         collapseWhitespace: true
       }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      warnings: false,
+      compress: {
+        join_vars: true,
+        warnings: false
+      },
+      toplevel: false,
+      ie8: false
     })
   ]
 }
