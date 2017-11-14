@@ -108,3 +108,43 @@
 .hide {
   display: none!important;
 }
+.knockout-match {
+  position: relative;
+  .match {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 44px;
+    height: 184px;
+    img {
+      width: 44px;
+      height: 44px;
+    }
+    &.match-final {
+      .win:after {
+        font-size: 28px;
+        transform: translateY(-4px)
+      }
+    }
+    .home-box, .away-box {
+      position: relative;
+      &.win:after {
+        color:  #f6aa1a;
+      }
+      &:after {
+        content:  attr(data-point);
+        position: absolute;
+        left: 148px;
+        font-size: 22px;
+        color: #28323c
+      }
+    }
+    .home-box:after {
+      top: 24px;
+    }
+    .away-box:after {
+      bottom: 24px;
+    }
+  }
+}

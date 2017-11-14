@@ -1,0 +1,46 @@
+<div class="knockout">
+  {{ if groupMatch }}
+    <div class="title">
+      <p><img src="../../../../asstes/max.png" alt=""><span>淘汰赛</span></p>
+    </div>
+    <ul class="select-bar">
+        <li class="active" data-select="knockout-win">胜者组</li>
+        <li data-select="knockout-lose">败者组</li>
+      </ul>
+  {{ else }}
+  <div class="title">
+    <p><img src="../../../../asstes/max.png" alt=""><span>胜者组</span></p>
+  </div>
+  {{ /if }}
+  {{set data = knockout.winGroup }}
+  <div class="knockout-match knockout-win">
+    {{ each data group index }}
+      <div class="col-{{ index + 1 }}">
+        {{ each group match index }}
+          <div class="match match-{{ index }}">
+            <div class="home-box" data-point="{{ match.pointH }}">
+              <img src="{{ match.home | tmlFormatImgSrc }}" data-url="{{ match.away | tmlFormatImgSrc }}">
+            </div>
+            <div class="away-box" data-point="{{ match.pointA }}">
+              <img src="{{ match.away | tmlFormatImgSrc }}" data-url="{{ match.away | tmlFormatImgSrc }}">
+            </div>
+          </div>
+        {{ /each }}
+      </div>
+    {{ /each }}
+    {{ if knockout.winFinal }}
+    {{ set final = knockout.winFinal }}
+    <div class="match match-final">
+        <div class="home-box" data-point="{{ final.pointH }}">
+          <img src="{{ final.home | tmlFormatImgSrc }}" data-url="{{ final.away | tmlFormatImgSrc }}">
+        </div>
+        <div class="away-box" data-point="{{ final.pointA }}">
+          <img src="{{ final.away | tmlFormatImgSrc }}" data-url="{{ final.away | tmlFormatImgSrc }}">
+        </div>
+        <div class="champion">
+            <img src="{{ final.champion | tmlFormatImgSrc }}" data-url="{{ final.champion | tmlFormatImgSrc }}">
+        </div>
+      </div>
+    {{ /if }}
+  </div>
+</div>

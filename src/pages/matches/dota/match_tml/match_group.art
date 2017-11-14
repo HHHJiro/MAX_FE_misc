@@ -1,8 +1,9 @@
+{{ if  groupMatch }}
 <div class="group">
   <div class="title">
     <p><img src="../../../../asstes/max.png" alt=""><span>小组赛</span></p>
   </div>
-  {{ if groupMatch && groupMatch.groupB && groupMatch.groupB.length > 0}} 
+  {{ if groupMatch.groupB && groupMatch.groupB.length > 0}} 
     <ul class="select-bar">
       <li class="active" data-select="group-a">A组</li>
       <li data-select="group-b">B组</li>
@@ -15,7 +16,7 @@
       <li class="score">积分</li>
     </ul>
     <div class="group-box">
-      {{ if groupMatch && groupMatch.groupA &&  groupMatch.groupA.length > 0 }} 
+      {{ if groupMatch.groupA &&  groupMatch.groupA.length > 0 }} 
       <div class="group-a">
         {{ each groupMatch.groupA team rank }}
         <div class="divide"></div>
@@ -28,7 +29,7 @@
         {{ /each}}
       </div>
       {{/if}}
-      {{ if groupMatch && groupMatch.groupB &&  groupMatch.groupB.length > 0 }} 
+      {{ if groupMatch.groupB &&  groupMatch.groupB.length > 0 }} 
       <div class="group-b hide">
         {{ each groupMatch.groupB team rank }}
         <div class="divide"></div>
@@ -44,3 +45,4 @@
     </div>
 
   </div>
+{{ /if }}

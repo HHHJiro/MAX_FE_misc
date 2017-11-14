@@ -1,9 +1,11 @@
 var Filter = require('./filter')
 var renderGroup = require('./match_group.art')
 // 模板
-var renderKnockout82 = require('./match_knockout_8_2.art')
+var knockoutWin82 = require('./tml_win_8_2.art')
+var knockoutLose82 = require('./tml_lose_8_2.art')
 const knockoutTmls = {
-  "renderKnockout82": renderKnockout82
+  knockoutWin82: knockoutWin82,
+  knockoutLose82: knockoutLose82
 }
 
 class app extends Filter {
@@ -25,11 +27,17 @@ class app extends Filter {
     if (typeof document === 'object') {
       window.onload = function () {
         if (self.nowPlay == 'k') {
-          $('#app').append(self.knockoutTypeHandler().call(self, self.matchData))
-          $('#app').append(renderGroup(self.matchData))
+          $('#app').append(self.knockoutTypeHandler().win.call(self, self.matchData))
+          $('#app').append(self.knockoutTypeHandler().lose.call(self, self.matchData))
+          console.log(self.matchData)
+          // 若没有小组赛 则不去渲染
+          if (self.matchData.groupMatch) {
+            $('#app').append(renderGroup(self.matchData))
+          }
         } else if (self.nowPlay == 'g') {
-          $('#app').append(self.knockoutTypeHandler().call(self, self.matchData))
-          $('#app').append(renderKnockout82(self.matchData))
+          $('#app').append(renderGroup(self.matchData))
+          $('#app').append(self.knockoutTypeHandler().win.call(self, self.matchData))
+          $('#app').append(self.knockoutTypeHandler().lose.call(self, self.matchData))
         }
         self.inBrowserInit.call(self)
       }
@@ -48,11 +56,20 @@ class app extends Filter {
     }
   }
   knockoutTypeHandler () {
-    var knockoutTypes = {
-      "8-2": "renderKnockout82"
+    // 胜者组模板
+    var knockoutWinTypes = {
+      "8-2": "knockoutWin82"
     }
-    var type = this.knockoutType
-    return knockoutTmls[knockoutTypes[type]]
+    // 败者组模板
+    var knockoutLoseTypes = {
+      "8-2": "knockoutLose82"
+    }
+    var winType = this.knockoutWinType
+    var loseType = this.knockoutLoseType
+    return {
+      win: knockoutTmls[knockoutWinTypes[winType]],
+      lose: knockoutTmls[knockoutLoseTypes[loseType]]
+    }
   }
 }
 

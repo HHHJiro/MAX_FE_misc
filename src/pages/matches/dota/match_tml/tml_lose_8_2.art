@@ -1,0 +1,5 @@
+{{ if !groupMatch }}
+<div class="title">
+    <p><img src="../../../../asstes/max.png" alt=""><span>胜者组</span></p>
+</div>
+{{ /if }}

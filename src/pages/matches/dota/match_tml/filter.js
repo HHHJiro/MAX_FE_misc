@@ -2,13 +2,16 @@ var runtime = require('art-template/lib/runtime')
 
 class Filter {
   constructor (imgData, matchData) {
-    runtime.weight = matchData.groupMatch.scoreWeight
+    if (matchData.groupMatch) {
+      runtime.weight = matchData.groupMatch.scoreWeight
+    }
     runtime.imgs = imgData
     this.imgData = imgData
     this.matchData = matchData
     this.scoreWeight = runtime.weight
     this.nowPlay = matchData.nowPlay
-    this.knockoutType = matchData.knockoutType
+    this.knockoutWinType = matchData.knockoutWinType
+    this.knockoutLoseType = matchData.knockoutLoseType
     this.initFilter()
   }
   initFilter () {
@@ -45,12 +48,14 @@ class Filter {
     return arr.map((v, i) => {return v * weight[i]}).reduce((a, b) => {return a + b })
   }
   sortTeamInit () {
-    var {groupMatch: {groupA, groupB}} = this.matchData
-    if (groupA) {
-      this.sortGroup(groupA)
-    }
-    if (groupB) {
-      this.sortGroup(groupB)
+    if (this.matchData.groupMatch) {
+      var {groupMatch: {groupA, groupB}} = this.matchData
+      if (groupA) {
+        this.sortGroup(groupA)
+      }
+      if (groupB) {
+        this.sortGroup(groupB)
+      }
     }
   }
   sortGroup (group) {
