@@ -20,7 +20,7 @@ module.exports = {
   },
   devServer: {
     hot: true, // 告诉 dev-server 我们在使用 HMR
-    host: '192.168.1.153',
+    // host: '192.168.1.153',
     port: 4001,
     proxy: {
       '/tools/*': {
@@ -32,6 +32,10 @@ module.exports = {
         changeOrigin: true
       },
       '/game/*': {
+        target: 'http://heybox.test.maxjia.com:58888',
+        changeOrigin: true
+      },
+      '/pc/*': {
         target: 'http://heybox.test.maxjia.com:58888',
         changeOrigin: true
       }
