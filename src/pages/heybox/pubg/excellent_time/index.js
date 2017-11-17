@@ -1,13 +1,18 @@
+var utils = require('../../../../vender/utils')
 require('../../../../static/pubg/excellent_time/app.scss')
+var runtime = require('art-template/lib/runtime')
 var render = require('./content.art')
 
 if (typeof document === 'object') {
   window.onload = function () {
-    $.get('/tools/games/media/?heybox_id=105053', function (data) {
-      
+    var heybox_id = utils.getQueryString('heybox_id')
+    var id = utils.getQueryString('id')
+    $.get('/pc/media/share/data/', {heybox_id: heybox_id, id: id}, function (res) {
+      var data = res.result
+      console.log(data)
+      $('#app').html(render(data))
+      app.btnHandler()
     })
-    $('#app').html(render())
-    app.btnHandler()
   }
 }
 
@@ -23,4 +28,10 @@ var app = {
   }
 }
 
+runtime.timeHandler = function (time) {
+  time = ~~time
+  return utils.formartDate(time, 3)
+}
+
 module.exports = render
+
