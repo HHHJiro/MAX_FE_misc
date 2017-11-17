@@ -9,7 +9,12 @@
       <p class="time">{{ create_time | timeHandler }}·绝地求生</p>
     </div>
 </div>
-<footer>
+<div class="banner-wrap">
+  <h1 class="title">精彩操作 随手掌握</h1>
+  <p class="desc">访问 xiaoheihe.cn 下载小黑盒电脑版</p>
+  <img src="../../../../asstes/excellen_time_show.png" alt="">
+</div>
+<div class="footer">
     <div class="heybox-logo-wrap">
       <div class="logo-box"><img src="../../../../asstes/heybox.png" alt="logo"></div>
       <div class="desc-box">
@@ -20,6 +25,6 @@
     <div class="open-app">
       <a href="">打开看看</a>
     </div>
-  </footer>
+</div>
 
 

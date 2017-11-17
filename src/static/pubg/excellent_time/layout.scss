@@ -1,14 +1,27 @@
 @include blockSpace();
 $btnH: 32px;
-footer {
+html,body {
+  height: 100vh;
+  overflow: hidden;
+}
+#app {
+  height: 100vh;
+  position: relative;
+}
+div.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background: #fff;
   height: $headerH;
   display: flex;
   align-items: center;
-  padding: 6px 10px;
+  padding: 6px 0;
   .heybox-logo-wrap {
     display: flex;
     flex-grow: 1;
+    padding-left: 10px;
     .logo-box {
       margin-right: 8px;
       img {
@@ -27,7 +40,7 @@ footer {
       }
       .desc {
         color: $grey;
-        @include scaleFont(10)
+        @include scaleFont(10px);
       }
     }
   }
@@ -36,6 +49,7 @@ footer {
     height: 28px;
     border-radius: 2px;
     background: linear-gradient(to right, $cOpenAppStart, $cOpenAppEnd);
+    margin-right: 10px;
     a {
       text-align: center;
       display: block;
@@ -44,6 +58,30 @@ footer {
       line-height: 28px; 
       font-size: 12px;
     }
+  }
+}
+.banner-wrap {
+  width: 100vw;
+  height: calc(100vh - 208px - 42px - 48px);
+  background: url(../../../asstes/excellen_time_bg.png) no-repeat;
+  background-size: cover;
+  img {
+    width: 68.5vw;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 14px;
+    text-align: center;
+    color: #14191e;
+    font-weight: 500;
+    padding: 20px 0 10px;
+  }
+  p.desc {
+    @include scaleFont(11px, 50%);
+    font-weight: 300;
+    text-align: center;
+    color: #64696e;
+    padding-bottom: 14px;
   }
 }
 
@@ -105,7 +143,7 @@ video, .current-video {
           position: absolute;
           bottom: 8px;
           right: 9px;
-          @include scaleFont(10);
+          @include scaleFont(10px);
           color: #fff;
         }
       }
