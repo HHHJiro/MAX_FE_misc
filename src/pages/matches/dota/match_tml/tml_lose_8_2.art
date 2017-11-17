@@ -1,5 +1,33 @@
-{{ if !groupMatch }}
-<div class="title">
-    <p><img src="../../../../asstes/max.png" alt=""><span>胜者组</span></p>
-</div>
-{{ /if }}
+    {{ if !groupMatch }}
+    <div class="title">
+      <p><img src="../../../../asstes/max.png" alt=""><span>败者组</span></p>
+    </div>
+    {{ /if }}
+    {{set data = knockout.loseGroup }}
+    <div class="knockout-match knockout-lose lose-8-2 hide">
+      {{ each data group colIndex }}
+        <div class="col-{{ colIndex + 1 }}">
+          {{ each group match index }}
+            <div class="match match-{{ index }}">
+              <div class="home-box {{ match.pointH | tmlFormatCompare match.pointA }} {{ if colIndex % 2 != 0 }} arrow-down {{ /if }}" data-point="{{ match.pointH }}">
+                {{ if match.home }}
+                  <img src="{{ match.home | tmlFormatImgSrc }}" data-url="{{ match.away | tmlFormatImgSrc }}">
+                {{ else }}
+                  <p class="time"> {{@ match.timeH }}</p>
+                {{ /if }}
+              </div>
+              <div class="away-box {{ match.pointA | tmlFormatCompare match.pointH }}" data-point="{{ match.pointA }}">
+                {{ if match.away }}
+                  <img src="{{ match.away | tmlFormatImgSrc }}" data-url="{{ match.away | tmlFormatImgSrc }}">
+                {{ else }}
+                <p class="time"> {{@ match.timeA }}</p>
+                {{ /if }}
+              </div>
+            </div>
+          {{ /each }}
+        </div>
+      {{ /each }}
+      <div class="lose-win">
+        <img src="{{ knockout.loseWin | tmlFormatImgSrc }}" data-src="{{ knockout.loseWin | tmlFormatImgSrc}}" alt="">
+      </div>
+    </div>

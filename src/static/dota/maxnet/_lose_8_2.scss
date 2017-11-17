@@ -1,0 +1,75 @@
+@function calcTop1 ($level) {
+  @return $baseTop + $level * ($matchH + $matchMarTop)
+};
+@function calcTop2 ($level) {
+  @return $baseTop2 + $level * ($matchH2 + $matchMarTop2)
+};
+
+$matchMarTop: 96px;
+$matchMarTop2: 96px;
+$baseTop: 204px;
+$baseTop2: 132px;
+$baseTop3: 200px;
+$baseTop4: 60px;
+$matchH: 184px;
+$matchH2: 184px;
+$matchH3: 324px;
+$matchH4: 324px;
+.knockout-lose.lose-8-2 {
+  height: 726px;
+  background: url(../../../asstes/lose_8_2.png);
+  background-size: cover;
+  overflow: hidden;
+  .col-1 {
+    .match {
+      left: 50px;
+      &-0 {
+        top: $baseTop;
+      }
+      &-1 {
+        top: calcTop1(1)
+      }
+    }
+  }
+  .col-2 {
+    .match {
+      height: $matchH2;
+      left: 200px;
+      &-0 {
+        top: $baseTop2;
+      }
+      &-1 {
+        top: calcTop2(1)
+      }
+    }
+  }
+  .col-3 {
+    .match {
+      height: $matchH3;
+      left: 352px;
+      &-0 {
+        top: $baseTop3;
+      }
+    }
+  }
+  .col-4 {
+    .match {
+      height: $matchH4;
+      left: 500px;
+      &-0 {
+        top: $baseTop4;
+      }
+    }
+  }
+  .lose-win {
+    position: absolute;
+    height: 44px;
+    width: 44px;
+    top: 200px;
+    left: 650px;
+    img {
+      height: 44px;
+      width: 44px;
+    }
+  }
+}

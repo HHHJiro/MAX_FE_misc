@@ -1,8 +1,8 @@
 var path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+const Ex = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -12,24 +12,8 @@ module.exports = {
   output: {
     filename: '[name].[hash].js',
     chunkFilename: '[name].[chunkhash].js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
-  },
-  devServer: {
-    hot: true, // 告诉 dev-server 我们在使用 HMR
-    port: 3888,
-    host: '192.168.1.153',
-    proxy: {
-      '/live_stats/*': {
-        target: 'http://192.168.1.153:18080/',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/live_stats/json/': '/page/'
-        }
-      }
-    },
-    contentBase: path.resolve(__dirname, './dist'),
-    publicPath: '/'
+    path: path.resolve(__dirname, '../../max/max_net/douyu/view/json/dota_tml'),
+    publicPath: '/live_stats/json/dota_tml'
   },
   module: {
     rules: [
@@ -42,8 +26,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [
-          'style-loader',
+        use: Ex.extract([
           {
             loader: 'css-loader',
             options: {
@@ -52,16 +35,28 @@ module.exports = {
           },
           'postcss-loader',
           'sass-loader'
-        ]
+        ])
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        loader: 'url?limit=8192&name=images/[hash:8].[name].[ext]'
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
-          'file-loader'
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
         ]
       },
       {
@@ -88,8 +83,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']), // 清理dist目录
-    new webpack.HotModuleReplacementPlugin(), // 启用 HMR
     new ExtractTextPlugin('[name]/styles.[contenthash].css'),
     new HtmlWebpackPlugin({
       filename: 'dota_match_tml.html',
@@ -104,7 +97,6 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       warnings: false,
       compress: {
-        join_vars: true,
         warnings: false
       },
       toplevel: false,

@@ -25,22 +25,20 @@ class app extends Filter {
   appentMatch () {
     var self = this
     if (typeof document === 'object') {
-      window.onload = function () {
-        if (self.nowPlay == 'k') {
-          $('#app').append(self.knockoutTypeHandler().win.call(self, self.matchData))
-          $('#app').append(self.knockoutTypeHandler().lose.call(self, self.matchData))
-          console.log(self.matchData)
-          // 若没有小组赛 则不去渲染
-          if (self.matchData.groupMatch) {
-            $('#app').append(renderGroup(self.matchData))
-          }
-        } else if (self.nowPlay == 'g') {
+      if (self.nowPlay == 'k') {
+        $('#app').append(self.knockoutTypeHandler().win.call(self, self.matchData))
+        $('#knockout-box').append(self.knockoutTypeHandler().lose.call(self, self.matchData))
+        console.log(self.matchData)
+        // 若没有小组赛 则不去渲染
+        if (self.matchData.groupMatch) {
           $('#app').append(renderGroup(self.matchData))
-          $('#app').append(self.knockoutTypeHandler().win.call(self, self.matchData))
-          $('#app').append(self.knockoutTypeHandler().lose.call(self, self.matchData))
         }
-        self.inBrowserInit.call(self)
+      } else if (self.nowPlay == 'g') {
+        $('#app').append(renderGroup(self.matchData))
+        $('#app').append(self.knockoutTypeHandler().win.call(self, self.matchData))
+        $('#knockout-box').append(self.knockoutTypeHandler().lose.call(self, self.matchData))
       }
+      self.inBrowserInit.call(self)
     }
   }
   handlerTap () {

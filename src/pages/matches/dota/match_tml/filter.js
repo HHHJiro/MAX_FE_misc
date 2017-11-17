@@ -26,7 +26,8 @@ class Filter {
     var rules = [
       'tmlFormatDesc',
       'tmlFormatScore',
-      'tmlFormatImgSrc'
+      'tmlFormatImgSrc',
+      'tmlFormatCompare'
     ]
     for (let rule of rules) {
       if (this[rule]) {
@@ -81,6 +82,9 @@ class Filter {
         return trW - tlW
       }
     })
+  }
+  tmlFormatCompare (v1, v2) {
+    return (v1 - v2) > 0 && 'win' || ''
   }
 }
 

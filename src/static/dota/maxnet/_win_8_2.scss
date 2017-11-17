@@ -13,7 +13,7 @@ $baseTop3: 270px;
 $matchH: 184px;
 $matchH2: 324px;
 $matchH3: 606px;
-.knockout-win {
+.knockout-win.win-8-2 {
   height: 1144px;
   background: url(../../../asstes/win_8_2.png);
   background-size: cover;
@@ -76,6 +76,9 @@ $matchH3: 606px;
       top: -110px;
       left: 50%;
       transform: translateX(-50%);
+      .time {
+        transform: translateX(-20px);
+      }
       img {
         width: 64px;
         height: 64px;
