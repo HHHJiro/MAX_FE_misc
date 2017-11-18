@@ -1,15 +1,23 @@
+
 var utils = require('../../../../vender/utils')
 require('../../../../static/pubg/excellent_time/app.scss')
 var runtime = require('art-template/lib/runtime')
 var render = require('./content.art')
-
+function downLoadApp () {
+  window.location.href = 'http://xiaoheihe.cn/'
+}
 if (typeof document === 'object') {
   window.onload = function () {
     var heybox_id = utils.getQueryString('heybox_id')
     var id = utils.getQueryString('id')
+    if (!heybox_id || !id) {
+      downLoadApp()
+    }
     $.get('/pc/media/share/data/', {heybox_id: heybox_id, id: id}, function (res) {
       var data = res.result
-      console.log(data)
+      if (!data) {
+        downLoadApp()
+      }
       $('#app').html(render(data))
       app.btnHandler()
     })

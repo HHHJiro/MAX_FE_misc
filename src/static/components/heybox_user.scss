@@ -1,23 +1,23 @@
-$userH: 22px;
-$fsName: 12px;
-$fsTime: 10px;
-$fsUpZhu: 9px;
-$upZhuH: 12px;
-$topocPad: 0 10px 0 4px;
-$topicText: 12px;
-$topicImgH: 16px;
-$topicImgPad: 0 4px 0 2px;
-$iconRighH: 4px;
+$userH: 44px;
+$fsName: 24px;
+$fsTime: 20px;
+$fsUpZhu: 18px;
+$upZhuH: 24px;
+$topocPad: 0 20px 0 8px;
+$topicText: 24px;
+$topicImgH: 32px;
+$topicImgPad: 0 8px 0 4px;
+$iconRighH: 8px;
 $topicTextColor: rgb(0, 129, 255);
 $cUserName: rgb(20, 25, 30);
 .author-wrap {
   height: $userH;
   display: flex;
-  padding: 10px;
+  padding: 20px;
   .avatar-wrap {
     width: $userH;
     height: $userH;
-    padding-right: 6px;
+    padding-right: 12px;
     img {
       max-width: 100%;
       border-radius: 50%;
@@ -39,23 +39,23 @@ $cUserName: rgb(20, 25, 30);
         color: $cUserName;
       }
       &.time {
-        @include scaleFont($fsTime, 100%);
+        font-size: $fsTime;
         color: $grey;
       }
     }
     span.up-zhu {
       display: inline-block;
       font-weight: 400;
-      padding: 1px 5px;
-      border-radius: 1px;
+      padding: 2px 10px;
+      border-radius: 2px;
       background: #51b0eb;
       color: $white;
-      margin-left: 4px;
-      @include scaleFont($fsUpZhu);
+      margin-left: 8px;
+      font-size: $fsUpZhu;
     }
     img {
       height: $topicImgH;
-      margin-right: 4px;
+      margin-right: 8px;
       &:last-child {
         margin-right: 0;
       }
@@ -63,26 +63,26 @@ $cUserName: rgb(20, 25, 30);
   }
   .medales-wrap {
     position: relative;
-    width: 16px;
-    height: 16px;
-    transform: translateX(-2px);
+    width: 32px;
+    height: 32px;
+    transform: translateX(-4px);
     img {
-      height: 13px;
-      width: 13px;
+      height: 26px;
+      width: 26px;
       position: absolute;
-      top: 1px;
+      top: 2px;
       &:first-child {
         left: 0px;
         z-index: 1000;
       }
       &:not(:first-child) {
         position: absolute;
-        left: 2px;
+        left: 4px;
         z-index: 100;
       }
       &:last-child {
         position: absolute;
-        left: 4px;
+        left: 8px;
         z-index: 1;
       }
     }

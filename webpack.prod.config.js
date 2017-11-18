@@ -10,21 +10,19 @@ module.exports = {
     // rankTeam: './src/pages/maxplus/dota2/rank_official_list_team/index.js',
     // rankGroup: './src/pages/heybox/pubg/rank_group/index.js',
     // pubgState: './src/pages/heybox/pubg/server_state/index.js',
-    record_compare: './src/pages/heybox/pubg/record_compare/index.js',
+    // record_compare: './src/pages/heybox/pubg/record_compare/index.js',
+    excellen_time: './src/pages/heybox/pubg/excellent_time/index.js',
     vender: ['./src/vender/zepto.min.js']
   },
   output: {
     filename: '[name].[hash].js',
     chunkFilename: '[name].[chunkhash].js',
-    // apidota
-    // path: path.resolve(__dirname, '../../max/api_dota_test/static/build_assets/official_list'),
-    // publicPath: '/static/build_assets/official_list'
     // heybox
-    // path: path.resolve(__dirname, '../../max/heybox_test/static/build_assets/server_state'),
-    // publicPath: '/static/build_assets/server_state/'
+    path: path.resolve(__dirname, '../../max/heybox_test/static/build_assets/excellen_time'),
+    publicPath: '/static/build_assets/excellen_time/'
     // test server
-    path: path.resolve(__dirname, '../../max/heybox_test/static/build_assets/record_compare'),
-    publicPath: '/static/build_assets/record_compare'
+    // path: path.resolve(__dirname, '../../max/heybox_test/static/build_assets/record_compare'),
+    // publicPath: '/static/build_assets/record_compare'
   },
   module: {
     rules: [
@@ -51,7 +49,12 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
-          'file-loader'
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
         ]
       },
       {
@@ -84,61 +87,11 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']), // 清理dist目录
     new Ex('[name]_[hash]_styles.css'),
-    // new HtmlWebpackPlugin({
-    //   filename: 'rank_player.html',
-    //   template: 'src/pages/maxplus/dota2/rank_official_list_player/index.art',
-    //   xhtml: true, // 需要符合xhtml的标准
-    //   chunks: ['rankPlayer', 'vender'],
-    //   minify: {
-    //     removeComments: true,
-    //     collapseWhitespace: true
-    //   }
-    // }),
-    // new HtmlWebpackPlugin({
-    //   filename: 'rank_team.html',
-    //   template: 'src/pages/maxplus/dota2/rank_official_list_team/index.art',
-    //   xhtml: true, // 需要符合xhtml的标准
-    //   chunks: ['rankTeam', 'vender'],
-    //   minify: {
-    //     removeComments: true,
-    //     collapseWhitespace: true
-    //   }
-    // }),
-    // new HtmlWebpackPlugin({
-    //   filename: 'rank_group.html',
-    //   template: 'src/pages/heybox/pubg/rank_group/index.art',
-    //   xhtml: true, // 需要符合xhtml的标准
-    //   chunks: ['rankGroup', 'vender'],
-    //   minify: {
-    //     removeComments: true,
-    //     collapseWhitespace: true
-    //   }
-    // }),
-    // new HtmlWebpackPlugin({
-    //   filename: 'rank_group.html',
-    //   template: 'src/pages/heybox/pubg/rank_group/index.art',
-    //   xhtml: true, // 需要符合xhtml的标准
-    //   chunks: ['rankGroup', 'vender'],
-    //   minify: {
-    //     removeComments: true,
-    //     collapseWhitespace: true
-    //   }
-    // }),
-    // new HtmlWebpackPlugin({
-    //   filename: 'state.html',
-    //   template: 'src/pages/heybox/pubg/server_state/index.art',
-    //   xhtml: true, // 需要符合xhtml的标准
-    //   chunks: ['pubgState', 'vender'],
-    //   minify: {
-    //     removeComments: true,
-    //     collapseWhitespace: true
-    //   }
-    // }),
     new HtmlWebpackPlugin({
-      filename: 'record_compare.html',
-      template: 'src/pages/heybox/pubg/record_compare/index.art',
+      filename: 'excellen_time.html',
+      template: 'src/pages/heybox/pubg/excellent_time/index.art',
       xhtml: true, // 需要符合xhtml的标准
-      chunks: ['record_compare', 'vender'],
+      chunks: ['excellen_time', 'vender'],
       minify: {
         removeComments: true,
         collapseWhitespace: true

@@ -6,9 +6,9 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
-    pubgState: './src/pages/heybox/pubg/server_state/index.js',
+    // pubgState: './src/pages/heybox/pubg/server_state/index.js',
     excellen_time: './src/pages/heybox/pubg/excellent_time/index.js',
-    record_compare: './src/pages/heybox/pubg/record_compare/index.js',
+    // record_compare: './src/pages/heybox/pubg/record_compare/index.js',
     vender: './src/vender/zepto.min.js'
   },
   devtool: '#inline-source-map',
@@ -20,7 +20,7 @@ module.exports = {
   },
   devServer: {
     hot: true, // 告诉 dev-server 我们在使用 HMR
-    // host: '192.168.1.153',
+    host: '192.168.1.153',
     port: 4002,
     proxy: {
       '/tools/*': {
