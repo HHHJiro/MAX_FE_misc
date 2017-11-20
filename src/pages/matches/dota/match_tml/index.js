@@ -4,6 +4,15 @@ var utils = require('../../../../vender/utils')
 
 var App = require('./app')
 var fly = require('flyio')
+var hrefHandler = function () {
+  var href = window.location.href
+  var hrefarr = href.split('')
+  if (!(href.indexOf('?') === href.lastIndexOf('?'))) {
+    hrefarr.splice(href.lastIndexOf('?'), 1, '&')
+    window.location.href = hrefarr.join('')
+  }
+}
+hrefHandler()
 if (typeof document === 'object') {
   window.onload = function () {
     // 通过matchId 判断是哪场比赛

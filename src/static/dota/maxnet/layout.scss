@@ -19,7 +19,7 @@
 }
 
 .title {
-  background: $lightGray;
+  background: $gray;
   p {
     display: flex;
     align-items: flex-end;
@@ -101,8 +101,8 @@
 }
 
 .divide {
-  border: 1px solid transparent;
-  border-image: svg(1px-border param(--color $gray)) 1 1 stretch;
+  height: 1px;
+  background: white svg(square param(--color $gray));
 }
 
 .hide {

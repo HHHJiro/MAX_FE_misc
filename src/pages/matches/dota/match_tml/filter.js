@@ -69,7 +69,7 @@ class Filter {
       // 分数相同时候的权值
       let tlW = 0
       let trW = 0
-      let eqW = [10000, 0, 1]
+      let eqW = [10000, -1, 1]
       for (let i = 0; i < tlScore.length; i++) {
         countl += tlScore[i] * scoreWeight[i]
         tlW += tlScore[i] * eqW[i]

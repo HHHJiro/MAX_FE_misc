@@ -83,7 +83,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('[name]/styles.[contenthash].css'),
+    new ExtractTextPlugin('[name].styles.[contenthash].css'),
     new HtmlWebpackPlugin({
       filename: 'dota_match_tml.html',
       template: './src/pages/matches/dota/match_tml/index.art',
