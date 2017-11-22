@@ -1,7 +1,12 @@
 
 $arrowH: 6px;
 $headerH: 30px;
-
+html, body {
+  background:  #f1f2f3;
+  #app {
+    background: #fff;
+  }
+}
 @mixin stateColor($color){
   li {
     &.state {
@@ -19,7 +24,7 @@ header {
 }
 .tab-title, .tab-body{
   display: flex;
-  margin: 0 10px;
+  margin: 0 30px 0 10px;
   justify-content: space-between;
   height: $headerH;
   li {
@@ -30,6 +35,7 @@ header {
     color: $grey;
     &.sever {
       width: 60px;
+      font-weight: bold;
     }
     &.state {
       width: 48px;
@@ -133,22 +139,48 @@ i.arrow {
 }
 
 .state-time-box {
-  display: none;
-  height: 82px;
-  background: $bgTimeBox;
+  position: relative;
+  background: #fbfbfc;
   p.title {
     @include scaleFont(10px, 50%);
     text-align: center;
     padding: 10px 0 8px;
     color: $lightSilver;
   }
-  ul.time-line {
+  ul.time-start, ul.time-end {
+    position: absolute;
+    width: calc(100vw - 40px);
+    left: 20px;
     display: flex;
-    padding: 0 20px;
     justify-content: space-between;
-    height: 28px;
     li {
+      width: 14px;
+      span {
+        display: inline-block;
+        @include scaleFont(10px, 50%);
+      }
+    }
+  }
+  ul.time-start {
+    top: 60px;
+  }
+  ul.time-end {
+    top: 110px;
+  }
+  ul.time-line {
+    padding: 0 20px;
+    overflow: hidden;
+    &.no-desc {
+      li {
+        margin-bottom: 6px;
+      }
+    }
+    li {
+      float: left;
       width: 8px;
+      margin-right: calc((100vw - 40px - 240px) / 30);
+      margin-bottom: 20px;
+      height: 28px;
       background: $lightGrey;
       &.normal {
         background: $cNormal;
@@ -171,5 +203,41 @@ i.arrow {
     li {
       @include scaleFont(10px);
     }
+  }
+}
+.show-rest {
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: $grey;
+  background: rgba(#f1f2f3, .4);
+}
+.rest-box {
+  height: 0;
+  position: relative;
+  overflow: hidden;
+  transition: height 0.6s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  // visibility: hidden;
+  // height: 0;
+  // overflow: hidden;
+}
+.hightAuto {
+  height: 100%;
+}
+.arrow-sq {
+  margin-left: 4px;
+  &.down, &.up {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 4px solid #8c9196;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom: none;
+    transform: translateY(-1px);
+  }
+  &.up {
+    transform: rotate(180deg) translateY(2px);
   }
 }
