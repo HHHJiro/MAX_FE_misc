@@ -6,7 +6,9 @@ var timeHandler = function (states) {
   var serverState = []
   var restTimes = []
   // 去掉现在的分钟数
-  states.splice(0, m)
+  var nowHourState = states.splice(0, m)
+  var lastState = states.splice(0, 60)
+  var lastTwoHourServerState = [nowHourState, lastState]
   // 将一个小时的状态弄成一个数组
   for (let i = 0; i < h; i++) {
     var rest = states.splice(0, 60)
@@ -40,6 +42,10 @@ var timeHandler = function (states) {
     oState.time = time
     serverState.push(oState)
   }
+  // var _nowHourState = (states) => {
+    
+  // }
+  // console.log(serverState)
   return serverState
 }
 module.exports = timeHandler

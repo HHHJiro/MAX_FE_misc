@@ -5,7 +5,7 @@
     <li class="state">状态</li>
     <li class="ping">PING</li>
     <li class="data">数据查询</li>
-    <li class="arrow-box"></li>
+    <!-- <li class="arrow-box"></li> -->
   </ul>
 </header>
 {{ each servers}}
@@ -17,33 +17,44 @@
   <li class="state">{{ mainState | stateFormat}}</li>
   <li class="ping">{{ms}}</li>
   <li class="data {{ dataState | stateDataClassFormat }}">{{ dataState | stateDataFormat }}</li>
-  <li class="arrow-box"><i class="arrow"></i></li>
+  <!-- <li class="arrow-box"><i class="arrow"></i></li> -->
 </ul>
-<div class="state-time-box">
-  <p class="title">今日服务器状态</p>
-  <ul class="time-line">
-    {{ each stateHour val key}}
-      <li class="{{ val.mainState | classFormat }}"></li>
-    {{ /each }}
-    {{ each restLen }}
-      <li></li>
-    {{ /each}}
-  </ul>
-  <ul class="time-text">
-    <li>0时</li>
-    <li>2时</li>
-    <li>4时</li>
-    <li>6时</li>
-    <li>8时</li>
-    <li>10时</li>
-    <li>12时</li>
-    <li>14时</li>
-    <li>16时</li>
-    <li>18时</li>
-    <li>20时</li>
-    <li>22时</li>
-    <li>24时</li>
-  </ul>
-</div>
 {{ /each }}
-
+<div class="state-time-box">
+    <p class="title">{{ hour }}时服务器状态</p>
+    <ul class="time-start">
+        {{ each timeLen val key}}
+          <li><span>{{ key * 2 }}</span></li>
+        {{ /each }}
+    </ul>
+    <ul class="time-end">
+        {{ each timeLen val key}}
+        <li><span>{{ key * 2 + 30}}</span></li>
+      {{ /each }}
+    </ul>
+    <ul class="time-line">
+      {{ each nowState val key}}
+        <li class="{{ val.state | classFormat }}"></li>
+      {{ /each }}
+      {{ each restMinutes }}
+        <li></li>
+      {{ /each}}
+    </ul>
+  </div>
+  <div class="rest-box" id="more">
+    <div class="slide-box">
+      {{ each restState lastHourState key }}
+      <div class="state-time-box">
+        <p class="title">{{ hour - key - 1 }}时服务器状态</p>
+        <ul class="time-line no-desc">
+          {{ each lastHourState val key}}
+          <li class="{{ val.state | classFormat }}"></li>
+          {{ /each }}
+        </ul>
+      </div>
+      {{ /each }}
+    </div>
+  </div>
+  <p id="moreClick" class="show-rest" data-rel="more">查看更多<i class="arrow-sq down"></i></p>
+  
+  

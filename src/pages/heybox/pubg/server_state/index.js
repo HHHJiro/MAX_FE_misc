@@ -1,7 +1,8 @@
+
 const render = require('./content.art')
 var timeHandler = require('./data.js')
 var runtime = require('art-template/lib/runtime')
-require('../../../../static/pubg/sever_state/app.scss')
+require('static/pubg/sever_state/app.scss')
 
 runtime.stateFormat = function (state) {
   var serverState = {
@@ -71,26 +72,45 @@ if (typeof document === 'object') {
   window.onload = function () {
     fly.get('/game/pubg/server/stats/')
       .then(function (response) {
+        var nowTime = new Date()
         var data = response.data.result
         var state = data.data_stats
         var states = data.server_stats
-        var stateHour = timeHandler(states)
+        var m = nowTime.getMinutes()
+        var hour = nowTime.getHours()
+        var restMinutes = []
+        restMinutes.length = 60 - m
+        var nowHourState = states.splice(0, m)
+        var lastState = []
+        for (let i = 0 ;i < hour; i++) {
+          lastState.push(states.splice(0, 60))
+        }
+        var timeLen = []
+        timeLen.length = 16
+        var lastTwoHourServerState = [nowHourState, lastState]
+        // var stateHour = timeHandler(states)
         var mainState = data.server_stats[0].state
-        var restLen = []
-        restLen.length = 24 - stateHour.length
+        // var restLen = []
+        // restLen.length = 24 - stateHour.length
         var renderData = {
-          stateHour: stateHour,
           mainState: mainState,
           dataState: state,
-          restLen: restLen,
-          servers: server
+          servers: server,
+          hour: hour,
+          nowState: lastTwoHourServerState[0],
+          restState: lastTwoHourServerState[1],
+          restMinutes: restMinutes,
+          timeLen: timeLen
         }
         const html = render(renderData)
         
         if (typeof document === 'object') {
           document.getElementById('app').innerHTML = html
-          timeBoxHandler()
+          // timeBoxHandler()
+          slideToggleTrans(document.getElementById("moreClick"), false, silideHandler)
+          showRestHandler()
           pingSet(server)
+          imgHandler()
         }
       })
       .catch(function (error) {
@@ -152,4 +172,54 @@ var timeBoxHandler = function () {
     })
   })
 }
+var showRestHandler = function () {
+  // $('.show-rest').tap(function () {
+  //   $('.rest-box').addClass('hightAuto')
+  // })
+}
+
+var slideToggleTrans = function (element, display, callback) { //  display表示默认更多展开元素是显示状态还是隐藏
+  if (typeof window.screenX === "number") {
+    // 现代浏览器
+    element.addEventListener("click", function () {
+      display = !display
+      var rel = this.getAttribute("data-rel")
+      var eleMore = document.querySelector("#" + rel)
+      if (callback) {
+        callback.call(element, eleMore, display)
+      }
+
+      eleMore && (eleMore.style.height = display ? (function () {
+        var height = 0
+        Array.prototype.slice.call(eleMore.childNodes).forEach(function (child) {
+          if (child.nodeType === 1) {
+            var oStyle = window.getComputedStyle(child)
+            height = child.clientHeight + (parseInt(oStyle.borderTopWidth) || 0) + (parseInt(oStyle.borderBottomWidth) || 0)
+          }
+        })
+        return height
+      })() + "px" : "0px")
+    })
+  } else {
+    // IE6-IE8浏览器
+    element.attachEvent("onclick", function () {
+      display = !display
+      var rel = element.getAttribute("data-rel"),
+        eleMore = document.getElementById(rel)
+      eleMore && (eleMore.style.height = display ? "auto" : "0px")
+      return false
+    })
+  }
+}
+
+var silideHandler = function (ele, display) {
+  if (display) {
+    $('#moreClick').html('收起<i class="arrow-sq up"></i>')
+    $('.arrow-sq').removeClass('down').addClass('up')
+  } else {
+    $('#moreClick').html('查看更多<i class="arrow-sq down"></i>')
+    $('.arrow-sq').removeClass('down').addClass('down')
+  }
+}
+
 module.exports = render
