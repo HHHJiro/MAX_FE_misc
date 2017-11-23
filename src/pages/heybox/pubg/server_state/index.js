@@ -81,9 +81,10 @@ if (typeof document === 'object') {
         var restMinutes = []
         restMinutes.length = 60 - m
         var nowHourState = states.splice(0, m)
+        nowHourState.reverse()
         var lastState = []
         for (let i = 0 ;i < hour; i++) {
-          lastState.push(states.splice(0, 60))
+          lastState.push(states.splice(0, 60).reverse())
         }
         var timeLen = []
         timeLen.length = 16
@@ -106,11 +107,9 @@ if (typeof document === 'object') {
         
         if (typeof document === 'object') {
           document.getElementById('app').innerHTML = html
-          // timeBoxHandler()
           slideToggleTrans(document.getElementById("moreClick"), false, silideHandler)
           showRestHandler()
           pingSet(server)
-          imgHandler()
         }
       })
       .catch(function (error) {
