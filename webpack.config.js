@@ -111,60 +111,10 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(), // 启用 HMR
     new ExtractTextPlugin('[name]/styles.[content:8].css'),
     new HtmlWebpackPlugin({
-      filename: 'state.html',
-      template: 'src/pages/heybox/pubg/server_state/index.art',
-      xhtml: true, // 需要符合xhtml的标准
-      chunks: ['pubgState', 'vender'],
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      }
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'rank_group.html',
-      template: 'src/pages/heybox/pubg/rank_group/index.art',
-      xhtml: true, // 需要符合xhtml的标准
-      chunks: ['rankGroup', 'vender'],
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      }
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'rank_player.html',
-      template: 'src/pages/maxplus/dota2/rank_official_list_player/index.art',
-      xhtml: true, // 需要符合xhtml的标准
-      chunks: ['rankPlayer', 'vender'],
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      }
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'rank_team.html',
-      template: 'src/pages/maxplus/dota2/rank_official_list_team/index.art',
-      xhtml: true, // 需要符合xhtml的标准
-      chunks: ['rankTeam', 'vender'],
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      }
-    }),
-    new HtmlWebpackPlugin({
       filename: 'excellen_time.html',
       template: 'src/pages/heybox/pubg/excellent_time/index.art',
       xhtml: true, // 需要符合xhtml的标准
       chunks: ['excellen_time', 'vender'],
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      }
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'record_compare.html',
-      template: 'src/pages/heybox/pubg/record_compare/index.art',
-      xhtml: true, // 需要符合xhtml的标准
-      chunks: ['record_compare', 'vender'],
       minify: {
         removeComments: true,
         collapseWhitespace: true
