@@ -3,13 +3,20 @@ $btnH: 64px;
 html,body {
   height: 100vh;
   overflow: hidden;
+  @media screen and (min-width: 600px) {
+    height: auto;
+    overflow-y: auto;
+  }
 }
 #app {
   height: 100vh;
   position: relative;
 }
-div.footer {
+div.footer.max-screen {
   position: absolute;
+  @media screen and (min-width: 600px) {
+    position: fixed;
+  }
   bottom: 0;
   left: 0;
   width: 100%;
@@ -63,6 +70,10 @@ div.footer {
 .banner-wrap {
   width: 100vw;
   height: calc(100vh - 416px - 84px - 96px);
+  @media screen and (min-width: 600px) {
+    height: auto;
+    padding-bottom: 12%;
+  }
   background: url(//cdn.max-c.com/@/heybox/imgs/05dd84d57707f1af2e9af5b3135d37b8) no-repeat;
   background-size: cover;
   img {

@@ -4,7 +4,7 @@ var pxtoviewportConf = {
   viewportHeight: 1334,
   unitPrecision: 5,
   viewportUnit: 'vw',
-  selectorBlackList: [],
+  selectorBlackList: [/^\.max-screen$/],
   minPixelValue: 1,
   mediaQuery: false
 }
