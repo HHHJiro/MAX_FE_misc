@@ -1,0 +1,31 @@
+<div class="heybox">
+  <div class="pubg-live-box">
+    <div class="main-live">
+      <div class="main-poster">
+        <h3>实力班子冲击国服前四</h3>
+        <div class="play">
+          <svg class="icon icon-play" aria-hidden="true">
+            <use xlink:href="#icon-03-copy"></use>
+          </svg>
+        </div>
+      </div>
+      <div class="main-user-wrap">
+        <img src="" alt="avatar"> <span class="live-owner"></span> <span class="audience">77445 名观众</span>
+      </div>
+    </div>
+    <ul class="live-list">
+      <li class="nor-live-box">
+        <div class="poster">
+          <h4 class="live-title"></h4>
+        </div>
+        <div class="nor-luser-wrap">
+          <img src="" alt="avatar">
+          <div class="info-box">
+            <p class="live-owner"></p>
+            <p class="audience"></p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
