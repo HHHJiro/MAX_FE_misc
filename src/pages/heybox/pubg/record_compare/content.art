@@ -1,8 +1,9 @@
+<div class="loading"><div class="loading-circle fa-spin-round"></div></div>
 {{ each data val index }}
 <div class="content">
   <div class="record-wrap">
     <div class="server-wrap">
-      <span class="sever-name" >{{ val.player_info.best_rating_region_desc }}</span> <i class="triangle"></i>
+      <span class="sever-name" >{{ val.regions[0].value }}</span> <i class="triangle"></i>
       <select name="server" class="server" data-index="{{ index }}" data-user="{{ val.player_info.nickname }}">
         {{ each val.regions val  }}
         <option value="{{ val.key }}">{{ val.value }}</option>

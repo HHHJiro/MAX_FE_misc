@@ -7,6 +7,9 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   padding: 20px 0 0;
+  background: url(//cdn.max-c.com/@/heybox/imgs/28b1bc2083bf4ef487284aaa8fde0f31) no-repeat top;
+  background-size: 100vw;
+  background-color: rgb(27, 40, 56);
 }
 .content {
   width: calc(50vw - 1px);
@@ -54,7 +57,9 @@ html, body {
       border-radius: 4px;
       border: solid 2px $lightDark;
       margin-left: 78px;
+      overflow: hidden;
       img {
+        border-radius: 4px;
         width: 60px;
         height: 60px;
       }
@@ -107,7 +112,7 @@ html, body {
   width: 100vw;
   .c-box {
     .left, .right .center{
-      font-family: SanFranciscoText;
+      font-family: SanFranciscoText PingFang-SC, Arial, Verdana, Sans-serif;
     }
     .center {
       text-align: center;
@@ -124,6 +129,66 @@ html, body {
 }
 
 .divide {
-  border: 1px solid transparent;
-  border-image: svg(1px-border param(--color rgba($lightGray,.1))) 1 1 stretch;
+  width: 1px;
+  background: transparent svg(square param(--color 'rgba(241,242,243, .1)' ));
+}
+.loading {
+  position: fixed;
+  background: #f1f2f3;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  .loading-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 80px;
+    height: 80px;
+    border: 6px solid rgba(0, 0, 0, 0.1);
+    border-top-color: rgba(0, 0, 0, 0.6);
+    border-radius: 100%;
+    margin: auto;
+  }
+}
+.fa-spin-round {
+  -webkit-animation: fa-spin-round 0.9s infinite linear;
+  animation: fa-spin-round 0.9s infinite linear;
+}
+
+@-webkit-keyframes fa-spin-round {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes fa-spin-round {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.hide {
+  visibility: hidden;
+}
+.c-box {
+  font-size: 26px;
+  div:first-child {
+    font-size: 20px;
+  }
 }

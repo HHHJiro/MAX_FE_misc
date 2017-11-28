@@ -29,11 +29,13 @@ class App extends Filter {
       data: pageData
     }
     $('#app').html(render(restult))
+    $('.loading').fadeOut(500)
   }
   _storeDataHandler (dataArr) {
     if (dataArr) {
       for (let data of dataArr) {
-        let {player_info: {nickname}, player_info: {best_rating_region: server }} = data
+        let {player_info: {nickname}, regions: [{key}]} = data
+        let server = key
         if (!this.store.users) {
           this.store.users = []
         }
@@ -236,7 +238,7 @@ class App extends Filter {
         itemMarginBottom: 10,
         symbolHeight: 11,
         reversed: true,
-        itemStyle: {"color": "#fff","font-family": "SFUIText", "font-size": "10px"}
+        itemStyle: {"color": "#fff","font-family": "SFUIText, PingFang-SC,Arial,Verdana,Sans-serif", "font-size": "10px", "font-wight": "400"}
       },
       navigation: {
         buttonOptions: {
@@ -284,6 +286,7 @@ class App extends Filter {
         }
       ]
     })
+    $('.highcharts-grid-line:last-child').css('stroke-width','1')
   }
 }
 
