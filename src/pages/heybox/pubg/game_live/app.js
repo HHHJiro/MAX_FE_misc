@@ -3,6 +3,7 @@ var fly = require('flyio')
 var render = require('./content.art')
 var utils = require('vendorDir/utils.js')
 var renderMore = require('./live_list.art')
+var protocol = require('vendorDir/heybox_protocol.js')
 class App {
   constructor () {
     this.liveUrl = '/api/live/list/'
@@ -19,6 +20,17 @@ class App {
     this.filterHandler()
     this.scrollHandler()
     this.activeFilter()
+    this.linkToLiveHome()
+    $('.loading').fadeOut(600)
+  }
+  linkToLiveHome () {
+    $('.j-live-url').on('click', function () {
+      var info = {}
+      var ethis = $(this)
+      info.title = ethis.data('title')
+      info.url = ethis.data('link')
+      window.location.href = protocol.openNewWindow(info)
+    })
   }
   getUrlQuery () {
     return {

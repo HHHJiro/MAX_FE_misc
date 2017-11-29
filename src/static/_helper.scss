@@ -92,3 +92,44 @@ $cBlockSpace: rgb(241, 242, 243);
     }
   }
 }
+
+@mixin heyboxLoading () {
+  .loading {
+    position: fixed;
+    background: #f1f2f3;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    .loading-circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 80px;
+      height: 80px;
+      border: 6px solid rgba(0, 0, 0, 0.1);
+      border-top-color: rgba(0, 0, 0, 0.6);
+      border-radius: 100%;
+      margin: auto;
+    }
+  }
+  .fa-spin-round {
+    -webkit-animation: fa-spin-round 0.9s infinite linear;
+    animation: fa-spin-round 0.9s infinite linear;
+  }
+  
+  @-webkit-keyframes fa-spin-round {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+  
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+}

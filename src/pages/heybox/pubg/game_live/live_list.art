@@ -1,11 +1,11 @@
 {{ each video_list live i}}
-  <li class="nor-live-box j-live-url" data-link="{{ live.url }}">
+  <li class="nor-live-box j-live-url" data-title="{{ live.live_title }}" data-link="{{ live.url }}">
       <div class="poster">
         <img src="{{ live.live_img }}" alt="">
         <h4 class="live-title">{{ live.live_title }}</h4>
       </div>
       <div class="nor-luser-wrap">
-        <div class="ava-box"><img src="{{ live.live_userimg }}" ></div>
+        <div class="ava-box"><img src="{{ live.live_userimg }}" onerror="imgErrorHandler()" ></div>
         <div class="info-box">
           <p class="live-owner">{{ live.live_nickname }}</p>
           <p class="audience">{{ live.live_online }} 名观众</p>
