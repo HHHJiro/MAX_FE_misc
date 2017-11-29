@@ -1,12 +1,10 @@
 require('staticDir/pubg/game_live/app.scss')
 require('staticDir/font/icon/iconfont.js')
-var render = require('./content.art')
-
+var App = require('./app')
 
 if (typeof document === 'object') {
   window.onload = function  () {
-    $('#app').html(render())
+    var app = new App()
   }
 }
-module.exports = render
 

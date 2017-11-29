@@ -1,24 +1,187 @@
 html, body {
   min-height: 100vh;
-  background: $gray;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: $bgBody;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  
+}
+#app {
+  margin-top: 8px;
 }
 .heybox {
   margin-top: 6px;
+  .filter {
+    height: 64px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    li {
+      position: relative;
+      flex-grow: 1;
+      text-align: center;
+      line-height: 64px;
+      font-size: 22px;
+      color: $gray;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 32px;
+        background: $bgBody;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+      }
+      &.active {
+        color: $lightBlack;
+      }
+      &:last-child:after {
+        right: 9999px
+      }
+    }
+  }
   .main-live {
-    height: 822px;
+    .main-poster {
+      position: relative;
+      height: 422px;
+      img {
+        display: block;
+        position: absolute;
+        width: 100vw;
+      }
+      h3 {
+        position: absolute;
+        left: 0;
+        bottom: 42px;
+        width: 100vw;
+        text-align: center;
+        color: #fff;
+        font-size: 30px;
+        font-weight: normal;
+      }
+    }
     .play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 100px;
       height: 80px;
       background: rgb(19, 19, 19);
       line-height: 80px;
       text-align: center;
       border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .main-user-wrap {
+      padding: 8px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      .desc-wrap {
+        flex-grow: 1;
+        padding-left: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .live-owner {
+          font-size: 24px;
+          color: $userName;
+        }
+        .audience {
+          font-size: 20px;
+          color: $lightGray;
+        }
+      }
+      img {
+        display: block;
+        height: 68px;
+        width: 68px;
+        border-radius: 34px;
+      }
     }
   }
 }
+
+.live-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  li {
+    width: calc(50% - 2px);
+    margin-top: 4px;
+    .poster {
+      position: relative;
+      img {
+        width: 100%;
+        height: 204px;
+      }
+      h4 {
+        position: absolute;
+        left: 0;
+        bottom: 24px;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        font-size: 24px;
+        font-weight: normal;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    .nor-luser-wrap {
+      padding: 8px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      .info-box {
+        flex-grow: 1;
+        padding-left: 6px;
+        height: 68px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        .live-owner {
+          font-size: 24px;
+          color: $userName;
+          width: 280px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .audience {
+          font-size: 20px;
+          color: $lightGray;
+        }
+      }
+      .ava-box {
+        height: 68px;
+        width: 68px;
+        img {
+          display: block;
+          height: 68px;
+          width: 68px;
+          border-radius: 34px;
+        }
+      }
+    }
+  }
+}
+
 .icon-play {
   font-size: 36px;
   color: rgba(#fff, .7);
+  transform: translateX(4px);
 }
 
 
@@ -28,3 +191,4 @@ html, body {
   fill: currentColor;
   overflow: hidden;
 }
+@include loading();

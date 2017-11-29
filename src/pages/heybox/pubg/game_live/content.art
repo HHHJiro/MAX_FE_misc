@@ -1,8 +1,17 @@
+<div class="loading"><div class="loading-circle fa-spin-round"></div></div>
 <div class="heybox">
+  <ul class="filter">
+    <li data-type="" class="active">全部平台</li>
+    {{ each filter val i }}
+    <li data-type="{{ val.key }}">{{ val.desc }}</li>
+    {{ /each }}
+  </ul>
   <div class="pubg-live-box">
-    <div class="main-live">
+      {{ set live = video_list[0] }}
+    <div class="main-live j-live-url" data-link="{{ live.url }}">
       <div class="main-poster">
-        <h3>实力班子冲击国服前四</h3>
+        <img src="{{ live.live_img }}">
+        <h3>{{ live.live_title }}</h3>
         <div class="play">
           <svg class="icon icon-play" aria-hidden="true">
             <use xlink:href="#icon-03-copy"></use>
@@ -10,22 +19,27 @@
         </div>
       </div>
       <div class="main-user-wrap">
-        <img src="" alt="avatar"> <span class="live-owner"></span> <span class="audience">77445 名观众</span>
+        <img src="{{ live.live_userimg }}"><div class="desc-wrap"><span class="live-owner">{{ live.live_nickname }}</span> <span class="audience">{{ live.live_online }} 名观众</span></div>
       </div>
     </div>
     <ul class="live-list">
-      <li class="nor-live-box">
-        <div class="poster">
-          <h4 class="live-title"></h4>
-        </div>
-        <div class="nor-luser-wrap">
-          <img src="" alt="avatar">
-          <div class="info-box">
-            <p class="live-owner"></p>
-            <p class="audience"></p>
-          </div>
-        </div>
-      </li>
+      {{ each video_list live i}}
+        {{ if i !== 0 }}
+          <li class="nor-live-box j-live-url" data-link="{{ live.url }}">
+              <div class="poster">
+                <img src="{{ live.live_img }}">
+                <h4 class="live-title">{{ live.live_title }}</h4>
+              </div>
+              <div class="nor-luser-wrap">
+                <div class="ava-box"><img src="{{ live.live_userimg }}" ></div>
+                <div class="info-box">
+                  <p class="live-owner">{{ live.live_nickname }}</p>
+                  <p class="audience">{{ live.live_online }} 名观众</p>
+                </div>
+              </div>
+          </li>
+        {{ /if}}
+      {{ /each }}
     </ul>
   </div>
 </div>

@@ -35,6 +35,10 @@ module.exports = {
       '/game/*': {
         target: 'http://heybox.test.maxjia.com:58888',
         changeOrigin: true
+      },
+      '/api/*': {
+        target: 'http://apidota.test.maxjia.com:58888',
+        changeOrigin: true
       }
     },
     contentBase: path.resolve(__dirname, 'dist'),
