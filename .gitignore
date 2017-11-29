@@ -2,3 +2,5 @@
 node_modules/
 .vscode
 src/asstes
+src/static/font
+src/vender
