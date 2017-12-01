@@ -11,8 +11,8 @@ module.exports = {
     // rankTeam: './src/pages/maxplus/dota2/rank_official_list_team/index.js',
     // rankGroup: './src/pages/heybox/pubg/rank_group/index.js',
     // pubgState: './src/pages/heybox/pubg/server_state/index.js',
-    // record_compare: './src/pages/heybox/pubg/record_compare/index.js',
-    pubg_live: 'pagePubgDir/game_live/index.js',
+    record_compare: './src/pages/heybox/pubg/record_compare/index.js',
+    // pubg_live: 'pagePubgDir/game_live/index.js',
     vender: ['./src/vender/zepto.min.js']
   },
   resolve: require('./webpack-config/resolve.config'),
@@ -26,8 +26,8 @@ module.exports = {
     // path: path.resolve(__dirname, '../../max/heybox_test/static/build_assets/server_state'),
     // publicPath: '/static/build_assets/server_state/'
     // test server
-    path: path.resolve(__dirname, '../../max/heybox_test/static/build_assets/pubg_live'),
-    publicPath: '/static/build_assets/pubg_live'
+    path: path.resolve(__dirname, '../../max/heybox_test/static/build_assets/record_compare'),
+    publicPath: '/static/build_assets/record_compare'
   },
   module: {
     rules: [
@@ -87,26 +87,26 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']), // 清理dist目录
     new Ex('[name]_[hash]_styles.css'),
-    // new HtmlWebpackPlugin({
-    //   filename: 'record_compare.html',
-    //   template: 'src/pages/heybox/pubg/record_compare/index.art',
-    //   xhtml: true, // 需要符合xhtml的标准
-    //   chunks: ['record_compare', 'vender'],
-    //   minify: {
-    //     removeComments: true,
-    //     collapseWhitespace: true
-    //   }
-    // }),
     new HtmlWebpackPlugin({
-      filename: 'pubg_live.html',
-      template: path.resolve(dirVars.pagePubgDir, './game_live/index.art'),
-      xhtml: true,
-      chunks: ['pubg_live', 'vender'],
+      filename: 'record_compare.html',
+      template: 'src/pages/heybox/pubg/record_compare/index.art',
+      xhtml: true, // 需要符合xhtml的标准
+      chunks: ['record_compare', 'vender'],
       minify: {
         removeComments: true,
         collapseWhitespace: true
       }
     }),
+    // new HtmlWebpackPlugin({
+    //   filename: 'pubg_live.html',
+    //   template: path.resolve(dirVars.pagePubgDir, './game_live/index.art'),
+    //   xhtml: true,
+    //   chunks: ['pubg_live', 'vender'],
+    //   minify: {
+    //     removeComments: true,
+    //     collapseWhitespace: true
+    //   }
+    // }),
     new webpack.optimize.UglifyJsPlugin({
       warnings: false,
       compress: {

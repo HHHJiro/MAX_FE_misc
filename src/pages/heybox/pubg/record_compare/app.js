@@ -32,6 +32,9 @@ class App extends Filter {
     $('.loading').fadeOut(500)
   }
   _storeDataHandler (dataArr) {
+    if (!this.store.season) {
+      this.store.season = dataArr[0].this_season
+    }
     if (dataArr) {
       for (let data of dataArr) {
         let {player_info: {nickname}, regions: [{key}]} = data
@@ -100,6 +103,7 @@ class App extends Filter {
         self.selectAfter.call(self, index, data, server)
       } else {
         params[index].region = server
+        params[index].season = self.store.season
         fly.get(getRecords(params[index]))
           .then(res => {
             let {data: {result: data}} = res

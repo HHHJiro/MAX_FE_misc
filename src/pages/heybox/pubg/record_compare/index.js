@@ -8,14 +8,16 @@ if (typeof document === 'object') {
     var href = '/game/pubg/compare/web/'
     var nickname = getQueryString('nickname')
     var heyboxId = getQueryString('heybox_id')
-    fly.get(href + '?nickname=' + nickname + ' &heybox_id=' + heyboxId + '&return_json=1')
+    var season = getQueryString('season')
+    fly.get(href + '?nickname=' + nickname + ' &heybox_id=' + heyboxId + '&season=' + season + '&return_json=1')
       .then(res => {
-        return res.data.result.bind_nickname
+        var {season, bind_nickname} = res.data.result
+        return {season: season, bind_nickname: bind_nickname}
       })
-      .then( bind_nickname => {
-        var myInfo = {nickname: bind_nickname}
+      .then( data => {
+        var myInfo = {nickname: data.bind_nickname, season: data.season}
         
-        var otherInfo = {nickname: nickname}
+        var otherInfo = {nickname: nickname, season: data.season}
         fly.all([fly.get(getRecords(myInfo)), fly.get(getRecords(otherInfo))])
           .then(fly.spread(function (myRecordsResult, otherRecordsResult) {
             // 两个请求都完成
@@ -24,8 +26,17 @@ if (typeof document === 'object') {
     
             var app = new App(myRecordsData, otherRecordsData)
             app.initApp()
-          }))
+          })).catch( e => {
+            dataGetErrorHandler(e)
+          })
 
+      }).catch( e => {
+        dataGetErrorHandler(e)
       })
   }
+}
+var dataGetErrorHandler = (e) => {
+  console.log(e)
+  $('.loading').hide()
+  $('.tip').attr('data-msg', '没有数据或错误，请重新选择赛季查看').show()
 }

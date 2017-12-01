@@ -15,6 +15,7 @@
   {{block 'head'}}{{/block}}
 </head>
 <body>
+  <div class="tip"></div>
   <div id="app"><div class="loading"><div class="loading-circle fa-spin-round"></div></div></div>
 </body>
 </html>

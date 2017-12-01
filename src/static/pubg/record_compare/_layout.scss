@@ -3,6 +3,7 @@ html, body {
   color: #fff;
   user-select: none;
 }
+@include tip;
 #app {
   display: flex;
   flex-wrap: wrap;
