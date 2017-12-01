@@ -53,11 +53,15 @@ class App {
     var self = this
     $('.filter li').on('click', function () {
       var ethis = $(this)
+      if (ethis.hasClass('active')) {
+        return false
+      }
       ethis.addClass('active').siblings().removeClass('active')
       var type = ethis.data('type')
       self.live_type = type
       self.resetConfig()
       self.init(type)
+      $('.loading').show()
     })
   }
   activeFilter () {
