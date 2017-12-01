@@ -1,5 +1,5 @@
 
-<video class="video" src="{{ url }}" poster="{{ thumb }}" preload="load" x-webkit-airplay="true" webkit-playsinline="true" controls="controls" playsinline></video>
+<video class="video" src="{{ url }}" poster="{{ thumb }}" preload="load" x-webkit-airplay="true" webkit-playsinline="true" controls="controls" autoplay></video>
 <div class="author-wrap">
     <div class="avatar-wrap"><img src="{{avatar}}" alt="avatar"></div>
     <div class="user-wrap">
@@ -12,7 +12,8 @@
 <div class="banner-wrap">
   <h1 class="title">精彩操作 随手掌握</h1>
   <p class="desc">访问 xiaoheihe.cn 下载小黑盒电脑版</p>
-  <img src="//cdn.max-c.com/@/heybox/imgs/0aed5ba07af9da7ae4d6f0b0ad5e239c" alt="">
+  <img class="pc" src="//cdn.max-c.com/@/heybox/imgs/de0dd95e23f288044ba97ca581272033" alt="">
+  <img class="phone" src="//cdn.max-c.com/@/heybox/imgs/0aed5ba07af9da7ae4d6f0b0ad5e239c" alt="">
 </div>
 <div class="footer max-screen">
     <div class="heybox-logo-wrap">

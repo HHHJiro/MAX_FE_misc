@@ -1,23 +1,36 @@
 @include blockSpace();
 $btnH: 64px;
-html,body {
+body {
   height: 100vh;
   overflow: hidden;
-  @media screen and (min-width: 600px) {
-    height: auto;
-    overflow-y: auto;
+  @media screen and (orientation: landscape){
+    height: 100vh;
+    overflow: hidden;
   }
+}
+html, body {
+  @media screen and (orientation: landscape){
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+body {
+  padding: 
+  constant(safe-area-inset-top) 
+  constant(safe-area-inset-right) 
+  0
+  constant(safe-area-inset-left); 
 }
 #app {
   height: 100vh;
   position: relative;
 }
 div.footer.max-screen {
-  position: absolute;
-  @media screen and (min-width: 600px) {
-    position: fixed;
+    @media screen and (orientation: landscape){
+    display: none;
   }
-  bottom: 0;
+  position: absolute;
+  bottom: constant(safe-area-inset-bottom);
   left: 0;
   width: 100%;
   background: #fff;
@@ -68,6 +81,7 @@ div.footer.max-screen {
   }
 }
 .banner-wrap {
+  position: relative;
   width: 100vw;
   height: calc(100vh - 416px - 84px - 96px);
   @media screen and (min-width: 600px) {
@@ -76,29 +90,38 @@ div.footer.max-screen {
   }
   background: url(//cdn.max-c.com/@/heybox/imgs/05dd84d57707f1af2e9af5b3135d37b8) no-repeat;
   background-size: cover;
-  img {
-    width: 68.5vw;
+  .pc {
+    width: 90vw;
     margin: 0 auto;
+  }
+  .phone {
+    position: absolute;
+    bottom: calc((100vh - 416px - 84px - 96px - 538px) / 3);
+    right: 20px;
+    width: 30vw;
   }
   h1 {
     font-size: 28px;
     text-align: center;
     color: #14191e;
     font-weight: 500;
-    padding: 40px 0 20px;
+    padding: calc((100vh - 416px - 84px - 96px - 538px) / 3) 0 20px;
   }
   p.desc {
     font-size: 22px;
     font-weight: 300;
     text-align: center;
     color: #64696e;
-    padding-bottom: 28px;
+    padding-bottom: calc((100vh - 416px - 84px - 96px - 538px) / 3);
   }
 }
 
 video, .current-video {
   width: 100%;
   height: 416px;
+  @media screen and (orientation: landscape){
+    height: 100vh;
+  }
   .vjs-big-play-button {
     width: 100px;
     height: 80px;
