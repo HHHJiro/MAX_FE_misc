@@ -6,7 +6,7 @@ var renderMore = require('./live_list.art')
 var protocol = require('vendorDir/heybox_protocol.js')
 class App {
   constructor () {
-    this.liveUrl = '/api/live/list/'
+    this.liveUrl = '/activity/live_list/data/?'
     this.loadTime = 1
     this.limit = 30
     this.load = true

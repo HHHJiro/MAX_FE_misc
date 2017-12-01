@@ -36,8 +36,8 @@ module.exports = {
         target: 'http://heybox.test.maxjia.com:58888',
         changeOrigin: true
       },
-      '/api/*': {
-        target: 'http://apidota.test.maxjia.com:58888',
+      '/activity/*': {
+        target: 'http://heybox.test.maxjia.com:58888',
         changeOrigin: true
       }
     },
