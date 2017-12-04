@@ -5,32 +5,21 @@ var {getRecords, getQueryString} = require('./utils')
 
 if (typeof document === 'object') {
   window.onload = function () {
-    var href = '/game/pubg/compare/web/'
-    var nickname = getQueryString('nickname')
-    var heyboxId = getQueryString('heybox_id')
-    var season = getQueryString('season')
-    fly.get(href + '?nickname=' + nickname + ' &heybox_id=' + heyboxId + '&season=' + season + '&return_json=1')
-      .then(res => {
-        var {season, bind_nickname} = res.data.result
-        return {season: season, bind_nickname: bind_nickname}
-      })
-      .then( data => {
-        var myInfo = {nickname: data.bind_nickname, season: data.season}
-        
-        var otherInfo = {nickname: nickname, season: data.season}
-        fly.all([fly.get(getRecords(myInfo)), fly.get(getRecords(otherInfo))])
-          .then(fly.spread(function (myRecordsResult, otherRecordsResult) {
-            // 两个请求都完成
-            var {data: {result: myRecordsData}} = myRecordsResult
-            var {data: {result: otherRecordsData}} = otherRecordsResult
+    var nickname = window.nickname
+    var season = window.season
+    var bind_nickname = window.bind_nickname
+    var myInfo = {nickname: bind_nickname, season: season}
     
-            var app = new App(myRecordsData, otherRecordsData)
-            app.initApp()
-          })).catch( e => {
-            dataGetErrorHandler(e)
-          })
+    var otherInfo = {nickname: nickname, season: season}
+    fly.all([fly.get(getRecords(myInfo)), fly.get(getRecords(otherInfo))])
+      .then(fly.spread(function (myRecordsResult, otherRecordsResult) {
+        // 两个请求都完成
+        var {data: {result: myRecordsData}} = myRecordsResult
+        var {data: {result: otherRecordsData}} = otherRecordsResult
 
-      }).catch( e => {
+        var app = new App(myRecordsData, otherRecordsData)
+        app.initApp()
+      })).catch( e => {
         dataGetErrorHandler(e)
       })
   }
