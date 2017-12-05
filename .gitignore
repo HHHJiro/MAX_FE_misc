@@ -1,9 +1,4 @@
 .DS_Store
 node_modules/
-<<<<<<< HEAD
 .vscode
-=======
-.vscode
-src/asstessrc/asstes
-src/asstes
->>>>>>> test
+src/vender
