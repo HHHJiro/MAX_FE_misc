@@ -56,7 +56,7 @@ class App extends Filter {
   storeAddValue (user, server, data) {
     this.store[user][server] = data
   }
-  setSelectOption (index, server) {
+  setSelectOption (index, servers) {
     var serverTrans = {
       'as': '亚洲',
       'oc': '澳洲',
@@ -68,22 +68,25 @@ class App extends Filter {
     }
     this.$eSelect = $('.server')
     this.$severName = $('.sever-name')
-    this.$severName.eq(index).text(serverTrans[server])
-    var $options = this.$eSelect.eq(index).find('option')
-    for (let i = 0; i < $options.length; i++) {
-      if ($options.eq(i).prop('value') === server) {
-        $options.eq(i).prop('selected', 'selected')
-        return ''
+    for (let i = 0; i < servers.length; i++) {
+      let server = servers[i]
+      console.log(server)
+      this.$severName.eq(i).text(serverTrans[server])
+      let $options = this.$eSelect.eq(i).find('option')
+      for (let j = 0; j < $options.length; j++) {
+        if ($options.eq(j).prop('value') === server) {
+          $options.eq(j).prop('selected', 'selected')
+        }
       }
     }
   }
   // 选择完服务器之后做的工作
-  selectAfter (index, data, server) {
+  selectAfter (index, data, servers) {
     let pageData = this.pageDataHandler(index, data)
     this.pageRendHandler(pageData)
     // 渲染完成后 需要绑定select的change函数
     this.selectHandler()
-    this.setSelectOption(index, server)
+    this.setSelectOption(index, servers)
     this.setRadar()
   }
   selectHandler () {
@@ -99,8 +102,11 @@ class App extends Filter {
       var user = $(this).data('user')
       var server = $(this).prop('value')
       var data = self.isDataExist(user, server)
+      var servers = []
+      var eSelect = $('select')
+      servers.push(eSelect.eq(0).val(), eSelect.eq(1).val())
       if (data) {
-        self.selectAfter.call(self, index, data, server)
+        self.selectAfter.call(self, index, data, servers)
       } else {
         params[index].region = server
         params[index].season = self.store.season
@@ -108,7 +114,7 @@ class App extends Filter {
           .then(res => {
             let {data: {result: data}} = res
             self.storeAddValue(user, server, data)
-            self.selectAfter(index, data, server)
+            self.selectAfter(index, data, servers)
           })
       }
       return [$('.server').eq(0).prop('value'), $('.server').eq(1).prop('value')]

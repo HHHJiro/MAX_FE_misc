@@ -8,14 +8,14 @@ if (typeof document === 'object') {
     var nickname = window.nickname
     var season = window.season
     var bind_nickname = window.bind_nickname
-    fly.get('/game/pubg/compare/web/?heybox_id=105091&version=1.0.2&os_type=iOS&season=2017pre-6&region=as&nickname=PDD7&return_json=1')
-      .then( res => {
-        var data = res.data.result
-        var bind_nickname = data.bind_nickname
-        var nickname = data.nickname
-        var season = data.season
-        getCompare(bind_nickname, nickname, season)
-      })
+    // fly.get('/game/pubg/compare/web/?heybox_id=105091&version=1.0.2&os_type=iOS&season=2017pre-6&region=as&nickname=PDD7&return_json=1')
+    //   .then( res => {
+    //     var data = res.data.result
+    //     var bind_nickname = data.bind_nickname
+    //     var nickname = data.nickname
+    //     var season = data.season
+    //     getCompare(bind_nickname, nickname, season)
+    //   })
     
     var getCompare = (bind_nickname, nickname, season) => {
       var myInfo = {nickname: bind_nickname, season: season}
@@ -34,7 +34,7 @@ if (typeof document === 'object') {
           dataGetErrorHandler(e)
         })
     }
-    // getCompare()
+    getCompare()
   }
 }
 var dataGetErrorHandler = (e) => {
