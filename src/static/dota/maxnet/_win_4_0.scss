@@ -1,0 +1,95 @@
+@function calcTop1 ($level) {
+  @return $baseTop + $level * ($matchH + $matchMarTop)
+};
+@function calcTop2 ($level) {
+  @return $baseTop2 + $level * ($matchH2 + $matchMarTop2)
+};
+
+$matchMarTop: 96px;
+$matchMarTop2: 236px;
+$baseTop: 60px;
+$baseTop2: 130px;
+$baseTop3: 270px;
+$matchH: 184px;
+$matchH2: 324px;
+$matchH3: 606px;
+.knockout-win.win-4-0 {
+  height: 584px;
+  background: url(../../../asstes/win_4_0.png);
+  background-size: auto 424px ;
+  background-repeat: no-repeat;
+  background-position: center;
+  .col-1 {
+    .match {
+      left: 50px;
+      &-0 {
+        top: $baseTop;
+      }
+      &-1 {
+        top: calcTop1(1)
+      }
+      &-2 {
+        top: calcTop1(2)
+      }
+      &-3 {
+        top: calcTop1(3)
+      }
+    }
+  }
+  .col-2 {
+    .match {
+      height: $matchH2;
+      left: 340px;
+      &-0 {
+        top: $baseTop2;
+      }
+      &-1 {
+        top: calcTop2(1)
+      }
+    }
+  }
+  .col-3 {
+    .match {
+      height: $matchH3;
+      left: 352px;
+      &-0 {
+        top: $baseTop3;
+      }
+    }
+  }
+  .match-final {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 44px;
+    width: 206px;
+    top: 370px;
+    left: 540px;
+    .home-box:after {
+      left: 54px;
+      top: 26px;
+    }
+    .away-box:after {
+      left: -22px;
+      top: 26px;
+    }
+    .champion {
+      position: absolute;
+      top: -110px;
+      left: 50%;
+      transform: translateX(-50%);
+      .time {
+        transform: translateX(-20px);
+      }
+      img {
+        width: 64px;
+        height: 64px;
+      }
+    }
+  }
+  .home-box, .away-box {
+    &::after {
+      left: 280px;
+    }
+  }
+}

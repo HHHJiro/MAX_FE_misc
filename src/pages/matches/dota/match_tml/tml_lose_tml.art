@@ -4,7 +4,7 @@
     </div>
     {{ /if }}
     {{set data = knockout.loseGroup }}
-    <div class="knockout-match knockout-lose lose-8-2 {{if groupMatch}}hide {{/if}}">
+    <div class="knockout-match knockout-lose lose-{{ knockoutLoseType }} {{if groupMatch}}hide {{/if}}">
       {{ each data group colIndex }}
         <div class="col-{{ colIndex + 1 }}">
           {{ each group match index }}

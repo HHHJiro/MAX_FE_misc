@@ -1,12 +1,14 @@
 var Filter = require('./filter')
 var renderGroup = require('./match_group.art')
 // 模板
-var knockoutWin82 = require('./tml_win_8_2.art')
-var knockoutLose82 = require('./tml_lose_8_2.art')
-const knockoutTmls = {
-  knockoutWin82: knockoutWin82,
-  knockoutLose82: knockoutLose82
-}
+// var knockoutWin82 = require('./tml_win_8_2.art')
+// var knockoutLose82 = require('./tml_lose_8_2.art')
+var knockoutWinTml = require('./tml_win_tml.art')
+var knockoutLoseTml = require('./tml_lose_tml.art')
+// const knockoutTmls = {
+//   knockoutWin82: knockoutWin82,
+//   knockoutLose82: knockoutLose82
+// }
 
 class app extends Filter {
   constructor (imgData, matchData) {
@@ -26,8 +28,8 @@ class app extends Filter {
     var self = this
     if (typeof document === 'object') {
       if (self.nowPlay == 'k') {
-        $('#app').append(self.knockoutTypeHandler().win.call(self, self.matchData))
-        $('#knockout-box').append(self.knockoutTypeHandler().lose.call(self, self.matchData))
+        $('#app').append(knockoutWinTml.call(self, self.matchData))
+        $('#knockout-box').append(knockoutLoseTml.call(self, self.matchData))
         console.log(self.matchData)
         // 若没有小组赛 则不去渲染
         if (self.matchData.groupMatch) {
@@ -35,8 +37,8 @@ class app extends Filter {
         }
       } else if (self.nowPlay == 'g') {
         $('#app').append(renderGroup(self.matchData))
-        $('#app').append(self.knockoutTypeHandler().win.call(self, self.matchData))
-        $('#knockout-box').append(self.knockoutTypeHandler().lose.call(self, self.matchData))
+        $('#app').append(knockoutWinTml.call(self, self.matchData))
+        $('#knockout-box').append(knockoutLoseTml.call(self, self.matchData))
       }
       self.inBrowserInit.call(self)
     }
@@ -56,7 +58,7 @@ class app extends Filter {
   knockoutTypeHandler () {
     // 胜者组模板
     var knockoutWinTypes = {
-      "8-2": "knockoutWin82"
+      "8-2": "knockoutWin82",
     }
     // 败者组模板
     var knockoutLoseTypes = {

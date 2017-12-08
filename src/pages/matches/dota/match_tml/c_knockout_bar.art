@@ -1,0 +1,26 @@
+{{ if groupMatch && knockoutLoseType }}
+<div class="title">
+  <p>
+    <img src="../../../../asstes/max.png" alt="">
+    <span>淘汰赛</span>
+  </p>
+</div>
+<ul class="select-bar">
+  <li class="active" data-select="knockout-win">胜者组</li>
+  <li data-select="knockout-lose">败者组</li>
+</ul>
+{{ else if knockoutLoseType }}
+<div class="title">
+  <p>
+    <img src="../../../../asstes/max.png" alt="">
+    <span>胜者组</span>
+  </p>
+</div>
+{{ else }}
+<div class="title">
+  <p>
+    <img src="../../../../asstes/max.png" alt="">
+    <span>淘汰赛</span>
+  </p>
+</div>
+{{ /if }}

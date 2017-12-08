@@ -1,0 +1,53 @@
+{{set data = knockout.winGroup }}
+<div id="knockout-box">
+  <div class="knockout-match knockout-win win-{{ knockoutWinType }}">
+    {{ each data group index }}
+      <div class="col-{{ index + 1 }}">
+        {{ each group match index }}
+          <div class="match match-{{ index }}">
+            <div class="home-box {{ match.pointH | tmlFormatCompare match.pointA }}" data-point="{{ match.pointH }}">
+              {{ if match.home }}
+                <img src="{{ match.home | tmlFormatImgSrc }}" data-url="{{ match.away | tmlFormatImgSrc }}">
+              {{ else }}
+                <p class="time"> {{@ match.timeH }}</p>
+              {{ /if }}
+            </div>
+            <div class="away-box {{ match.pointA | tmlFormatCompare match.pointH }}" data-point="{{ match.pointA }}">
+              {{ if match.away }}
+                <img src="{{ match.away | tmlFormatImgSrc }}" data-url="{{ match.away | tmlFormatImgSrc }}">
+              {{ else }}
+              <p class="time"> {{@ match.timeA }}</p>
+              {{ /if }}
+            </div>
+          </div>
+        {{ /each }}
+      </div>
+    {{ /each }}
+    {{ if knockout.winFinal }}
+    {{ set final = knockout.winFinal }}
+    <div class="match match-final">
+        <div class="home-box {{ final.pointH | tmlFormatCompare final.pointA }}" data-point="{{ final.pointH }}">
+          {{ if final.home }}
+            <img src="{{ final.home | tmlFormatImgSrc }}" data-url="{{ final.away | tmlFormatImgSrc }}">
+          {{ else if final.timeH }}
+            <p class="time"> {{@ final.timeH }}</p>
+          {{ /if }}
+        </div>
+        <div class="away-box {{ if final.away }} arrow-up {{ /if }} {{ final.pointA | tmlFormatCompare final.pointH }}" data-point="{{ final.pointA }}">
+          {{ if final.away }}
+           <img src="{{ final.away | tmlFormatImgSrc }}" data-url="{{ final.away | tmlFormatImgSrc }}">
+          {{ else if final.timeA }}
+          <p class="time final"> {{@ final.timeA }}</p>
+          {{ /if }}
+        </div>
+        <div class="champion">
+          {{ if final.champion }}
+            <img src="{{ final.champion | tmlFormatImgSrc }}" data-url="{{ final.champion | tmlFormatImgSrc }}">
+          {{ else }}
+          <p class="time"> {{@ final.championTime }}</p>
+          {{ /if }}
+        </div>
+      </div>
+    {{ /if }}
+  </div>
+</div>

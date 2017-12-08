@@ -1,0 +1,5 @@
+<div class="knockout">
+  {{include './c_knockout_bar.art' $data}}
+  
+  {{include './c_knockout_win.art' $data}}
+</div>
