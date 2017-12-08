@@ -34,7 +34,7 @@ if (typeof document === 'object') {
           dataGetErrorHandler(e)
         })
     }
-    getCompare()
+    getCompare(bind_nickname, nickname, season)
   }
 }
 var dataGetErrorHandler = (e) => {

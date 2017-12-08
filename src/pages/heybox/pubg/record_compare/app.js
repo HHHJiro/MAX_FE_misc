@@ -87,7 +87,7 @@ class App extends Filter {
     // 渲染完成后 需要绑定select的change函数
     this.selectHandler()
     this.setSelectOption(index, servers)
-    this.setRadar()
+    this.setRadar(servers)
   }
   selectHandler () {
     this.$eSelect = $('.server')
