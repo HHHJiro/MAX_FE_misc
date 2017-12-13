@@ -50,12 +50,15 @@ class Filter {
   }
   sortTeamInit () {
     if (this.matchData.groupMatch) {
-      var {groupMatch: {groupA, groupB}} = this.matchData
+      var {groupMatch: {groupA, groupB, groupC}} = this.matchData
       if (groupA) {
         this.sortGroup(groupA)
       }
       if (groupB) {
         this.sortGroup(groupB)
+      }
+      if (groupC) {
+        this.sortGroup(groupC)
       }
     }
   }

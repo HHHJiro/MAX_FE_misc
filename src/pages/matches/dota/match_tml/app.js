@@ -23,14 +23,25 @@ class app extends Filter {
     this.$eImg = $('.img-box img')
     this.handlerTap()
     this.imgLoadHandler()
+    this.arrowhandler()
+  }
+  arrowhandler () {
+    if (this.matchData.noArrow) {
+      $('.match div').removeClass('arrow-down').removeClass('arrow-up')
+    }
   }
   appentMatch () {
     var self = this
     if (typeof document === 'object') {
       if (self.nowPlay == 'k') {
         $('#app').append(knockoutWinTml.call(self, self.matchData))
-        $('#knockout-box').append(knockoutLoseTml.call(self, self.matchData))
         console.log(self.matchData)
+        // 第二三阶段反转
+        if (self.matchData.reverseWinLose) {
+          $('.knockout .title').before(knockoutLoseTml.call(self, self.matchData))
+        } else {
+          $('#knockout-box').append(knockoutLoseTml.call(self, self.matchData))
+        }
         // 若没有小组赛 则不去渲染
         if (self.matchData.groupMatch) {
           $('#app').append(renderGroup(self.matchData))
@@ -38,7 +49,13 @@ class app extends Filter {
       } else if (self.nowPlay == 'g') {
         $('#app').append(renderGroup(self.matchData))
         $('#app').append(knockoutWinTml.call(self, self.matchData))
-        $('#knockout-box').append(knockoutLoseTml.call(self, self.matchData))
+
+        // 第二三阶段反转
+        if (self.matchData.reverseWinLose) {
+          $('.knockout .title').before(knockoutLoseTml.call(self, self.matchData))
+        } else {
+          $('#knockout-box').append(knockoutLoseTml.call(self, self.matchData))
+        }
       }
       self.inBrowserInit.call(self)
     }

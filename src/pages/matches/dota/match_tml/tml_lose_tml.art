@@ -3,8 +3,13 @@
       <p><img src="../../../../asstes/max.png" alt=""><span>败者组</span></p>
     </div>
     {{ /if }}
+    {{ if knockout.noSelectBar }}
+    <div class="title">
+      <p><img src="../../../../asstes/max.png" alt=""><span>{{ knockout.loseName || "败者组" }}</span></p>
+    </div>
+    {{ /if }}
     {{set data = knockout.loseGroup }}
-    <div class="knockout-match knockout-lose lose-{{ knockoutLoseType }} {{if groupMatch}}hide {{/if}}">
+    <div class="knockout-match knockout-lose lose-{{ knockoutLoseType }} {{if groupMatch && !knockout.noSelectBar }}hide {{/if}}">
       {{ each data group colIndex }}
         <div class="col-{{ colIndex + 1 }}">
           {{ each group match index }}

@@ -1,4 +1,11 @@
-{{ if groupMatch && knockoutLoseType }}
+{{ if knockout.noSelectBar }}
+  <div class="title">
+    <p>
+      <img src="../../../../asstes/max.png" alt="">
+      <span>{{ knockout.winName || "胜者组" }}</span>
+    </p>
+  </div>
+{{ else if groupMatch && knockoutLoseType }}
 <div class="title">
   <p>
     <img src="../../../../asstes/max.png" alt="">
@@ -20,7 +27,7 @@
 <div class="title">
   <p>
     <img src="../../../../asstes/max.png" alt="">
-    <span>淘汰赛</span>
+    <span>{{ knockout.winGroupName || "淘汰赛"}}</span>
   </p>
 </div>
 {{ /if }}

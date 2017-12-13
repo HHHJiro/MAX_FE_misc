@@ -13,7 +13,7 @@ $baseTop3: 270px;
 $matchH: 184px;
 $matchH2: 324px;
 $matchH3: 606px;
-.knockout-win.win-4-0 {
+.knockout-win.win-4-0, .knockout-lose.lose-4-0 {
   height: 584px;
   background: url(../../../asstes/win_4_0.png);
   background-size: auto 424px ;
@@ -85,6 +85,15 @@ $matchH3: 606px;
         width: 64px;
         height: 64px;
       }
+    }
+  }
+  .lose-win {
+    position: absolute;
+    top: 260px;
+    right: 76px;
+    img {
+      width: 64px;
+      height: 64px;
     }
   }
   .home-box, .away-box {
