@@ -103,11 +103,30 @@ module.exports = {
       filename: 'dota_match_tml.html',
       template: './src/pages/matches/dota/match_tml/index.art',
       xhtml: true, // 需要符合xhtml的标准
-      chunks: ['match', 'vender'],
+      chunks: ['manifest', 'match', 'vender'],
       minify: {
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
+      },
+      chunksSortMode: 'dependency'
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'commons',
+      minChunks: function (module, count) {
+        // any required modules inside node_modules are extracted to vendor
+        return (
+          module.resource &&
+          /\.js$/.test(module.resource) &&
+          module.resource.indexOf(
+            path.join(__dirname, '../node_modules')
+          ) === 0
+        )
       }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest',
+      chunks: ['commons']
     })
   ]
 }
