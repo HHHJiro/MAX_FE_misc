@@ -9,19 +9,19 @@ module.exports = {
   entry: {
     record_compare: 'pagePubgDir/record_compare/index.js',
     pubg_live: 'pagePubgDir/game_live/index.js',
-    vender: './src/vender/zepto.min.js'
+    vendor: ['./src/vender/zepto.min.js', './src/vender/utils.js', './src/vender/heybox_protocol.js', 'flyio']
   },
   devtool: '#inline-source-map',
   resolve: require('./webpack-config/resolve.config'),
   output: {
     filename: '[name].[hash:8].js',
-    chunkFilename: '[name].[chunkhash:8].js',
+    chunkFilename: '[name].[contenhash:8].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
   devServer: {
     hot: true, // 告诉 dev-server 我们在使用 HMR
-    host: '192.168.1.153',
+    host: '192.168.10.170',
     port: 4001,
     proxy: {
       '/tools/*': {
@@ -105,12 +105,17 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']), // 清理dist目录
     new webpack.HotModuleReplacementPlugin(), // 启用 HMR
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor', 'manifest'],
+      minChunks: Infinity
+    }),
+    new webpack.HashedModuleIdsPlugin(),
     new ExtractTextPlugin('[name]/styles.[content:8].css'),
     new HtmlWebpackPlugin({
       filename: 'record_compare.html',
       template: path.resolve(dirVars.pagePubgDir, './record_compare/index.art'),
       xhtml: true, // 需要符合xhtml的标准
-      chunks: ['record_compare', 'vender'],
+      chunks: ['manifest', 'vendor', 'record_compare'],
       minify: {
         removeComments: true,
         collapseWhitespace: true
@@ -120,7 +125,7 @@ module.exports = {
       filename: 'pubg_live.html',
       template: path.resolve(dirVars.pagePubgDir, './game_live/index.art'),
       xhtml: true,
-      chunks: ['pubg_live', 'vender'],
+      chunks: ['manifest', 'vendor', 'pubg_live'],
       minify: {
         removeComments: true,
         collapseWhitespace: true

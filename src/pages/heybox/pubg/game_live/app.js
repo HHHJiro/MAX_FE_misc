@@ -13,6 +13,7 @@ class App {
     this.live_type = ''
     this.config = this.getUrlQuery()
     this.init()
+    console.log('hello')
   }
   async init (type) {
     await this.firstLoad(type)
