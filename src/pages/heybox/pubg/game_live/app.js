@@ -25,7 +25,15 @@ class App {
     $('.loading').fadeOut(600)
   }
   linkToLiveHome () {
-    $('.j-live-url').on('click', function () {
+    $('.live-list').on('click', function (e) {
+      var ele = e.target.closest('li')
+      var info = {}
+      var ethis = $(ele)
+      info.title = ethis.data('title')
+      info.url = ethis.data('link')
+      window.location.href = protocol.openNewWindow(info)
+    })
+    $('.main-live.j-live-url').on('click', function () {
       var info = {}
       var ethis = $(this)
       info.title = ethis.data('title')

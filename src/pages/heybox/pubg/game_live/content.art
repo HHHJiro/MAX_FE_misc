@@ -1,11 +1,13 @@
 <div class="loading"><div class="loading-circle fa-spin-round"></div></div>
 <div class="heybox">
+  {{ if filter.length > 1 }}
   <ul class="filter">
     <li data-type="" class="active">全部平台</li>
     {{ each filter val i }}
     <li data-type="{{ val.key }}">{{ val.desc }}</li>
     {{ /each }}
   </ul>
+  {{ /if }}
   <div class="pubg-live-box">
       {{ set live = video_list[0] }}
     <div class="main-live j-live-url" data-title="{{ live.live_title }}"  data-link="{{ live.url }}">

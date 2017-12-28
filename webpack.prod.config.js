@@ -29,8 +29,8 @@ module.exports = {
     // publicPath: '/static/build_assets/server_state/'
     // test server
     // ../../max/heybox_test/static/build_assets/record_compare
-    path: path.resolve(__dirname, '../../max/heybox_test/static/build_assets/test'),
-    publicPath: '/static/build_assets/test'
+    path: path.resolve(__dirname, '../../max/heybox_test/static/build_assets/pubg_live'),
+    publicPath: '/static/build_assets/pubg_live/'
   },
   module: {
     rules: [
@@ -117,7 +117,10 @@ module.exports = {
       path: './dll',
       entry: {
         vendor: ['./src/vender/utils.js', './src/vender/heybox_protocol.js', 'flyio']
-      }
+      },
+      plugins: [
+        new webpack.optimize.UglifyJsPlugin()
+      ]
     }),
     new webpack.optimize.UglifyJsPlugin({
       warnings: false,

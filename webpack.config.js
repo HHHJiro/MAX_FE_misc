@@ -7,9 +7,9 @@ var dirVars = require('./webpack-config/base/dir.vars.config')
 
 module.exports = {
   entry: {
-    record_compare: 'pagePubgDir/record_compare/index.js',
+    // record_compare: 'pagePubgDir/record_compare/index.js',
     pubg_live: 'pagePubgDir/game_live/index.js',
-    vendor: ['./src/vender/zepto.min.js', './src/vender/utils.js', './src/vender/heybox_protocol.js', 'flyio']
+    vendor: ['./src/vender/zepto.min.js']
   },
   devtool: '#inline-source-map',
   resolve: require('./webpack-config/resolve.config'),
@@ -21,7 +21,7 @@ module.exports = {
   },
   devServer: {
     hot: true, // 告诉 dev-server 我们在使用 HMR
-    host: '192.168.10.170',
+    host: '192.168.1.153',
     port: 4001,
     proxy: {
       '/tools/*': {
@@ -105,11 +105,6 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']), // 清理dist目录
     new webpack.HotModuleReplacementPlugin(), // 启用 HMR
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'manifest'],
-      minChunks: Infinity
-    }),
-    new webpack.HashedModuleIdsPlugin(),
     new ExtractTextPlugin('[name]/styles.[content:8].css'),
     new HtmlWebpackPlugin({
       filename: 'record_compare.html',
@@ -125,7 +120,7 @@ module.exports = {
       filename: 'pubg_live.html',
       template: path.resolve(dirVars.pagePubgDir, './game_live/index.art'),
       xhtml: true,
-      chunks: ['manifest', 'vendor', 'pubg_live'],
+      chunks: ['vendor', 'pubg_live'],
       minify: {
         removeComments: true,
         collapseWhitespace: true
