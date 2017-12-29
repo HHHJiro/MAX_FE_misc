@@ -7,10 +7,22 @@ html, body {
   -webkit-tap-highlight-color: transparent;
   
 }
+@mixin mask {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image:linear-gradient(to top,rgba(0, 0, 0, .7) ,rgba(0,0,0,.0));
+}
 #app {
   margin-top: 8px;
+  transition: all .6 cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
-.heybox {
+.heybox, .heybox-skeleton{
+  // display: none;
   margin-top: 6px;
   .filter {
     height: 64px;
@@ -25,17 +37,6 @@ html, body {
       line-height: 64px;
       font-size: 22px;
       color: $gray;
-      &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 1px;
-        height: 32px;
-        background: $bgBody;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-      }
       &.active {
         color: $lightBlack;
       }
@@ -48,6 +49,10 @@ html, body {
     .main-poster {
       position: relative;
       height: 422px;
+      overflow: hidden;
+      &::after {
+       @include mask;
+      }
       img {
         display: block;
         position: absolute;
@@ -62,6 +67,7 @@ html, body {
         color: #fff;
         font-size: 30px;
         font-weight: normal;
+        z-index: 99;
       }
     }
     .play {
@@ -78,6 +84,7 @@ html, body {
       display: flex;
       justify-content: center;
       align-items: center;
+      z-index: 99;
     }
     .main-user-wrap {
       padding: 8px 20px;
@@ -92,7 +99,7 @@ html, body {
       .desc-wrap {
         height: 68px;
         flex-grow: 1;
-        padding-left: 6px;
+        padding-left: 12px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -124,6 +131,10 @@ html, body {
     margin-top: 4px;
     .poster {
       position: relative;
+      min-height: 204px;
+      &::after {
+        @include mask;
+      }
       img {
         width: 100%;
         height: 204px;
@@ -140,6 +151,7 @@ html, body {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        z-index: 99;
       }
     }
     .nor-luser-wrap {
@@ -150,7 +162,7 @@ html, body {
       background: #fff;
       .info-box {
         flex-grow: 1;
-        padding-left: 6px;
+        padding-left: 12px;
         height: 68px;
         display: flex;
         flex-direction: column;
@@ -182,12 +194,39 @@ html, body {
     }
   }
 }
+.heybox-skeleton {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 199;
+  background: #eee;
+  .main-poster::after, .poster::after{
+    background-image: linear-gradient(0deg,#f1f2f3,#f1f2f3)!important;
+  }
+  .ava-wrap, .ava-box {
+    background-color: #f1f2f3!important;
+    border-radius: 50%;
+  }
+  .ava-box {
+    width: 68px!important;
+  }
+  .info-box {
+    max-width: 250px!important;
+    flex-grow: 0!important;
+  }
+  .live-owner, .audience {
+    color: transparent!important;
+    background-color: #f1f2f3;
+  }
+}
 
 .footer {
-  img {
+  height: 88px;
+  border: 1px solid transparent;
+  img.no-more {
+    display: none;
     height: 36px;
     margin: 36px auto 16px;
-
   }
 }
 
@@ -206,30 +245,27 @@ html, body {
 }
 
 .loading {
-  position: fixed;
+  position: relative;
+  height: 100%;
+  width: 100%;
   background: #f1f2f3;
-  top: 72px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 999;
   .loading-circle {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    width: 80px;
-    height: 80px;
-    border: 6px solid rgba(0, 0, 0, 0.1);
-    border-top-color: rgba(0, 0, 0, 0.6);
+    width: 44px;
+    height: 44px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top-color: rgba(0, 0, 0, 0.4);
     border-radius: 100%;
     margin: auto;
   }
 }
 .fa-spin-round {
-  -webkit-animation: fa-spin-round 0.9s infinite linear;
-  animation: fa-spin-round 0.9s infinite linear;
+  -webkit-animation: fa-spin-round 0.6s infinite linear;
+  animation: fa-spin-round 0.6s infinite linear;
 }
 
 @-webkit-keyframes fa-spin-round {
@@ -241,5 +277,27 @@ html, body {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+.loading-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f1f2f3;
+  .loading-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(0, 0, 0, 0.1);
+    border-top-color: rgba(0, 0, 0, 0.4);
+    border-radius: 100%;
+    margin: auto;
   }
 }

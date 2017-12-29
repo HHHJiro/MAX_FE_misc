@@ -13,7 +13,6 @@ class App {
     this.live_type = ''
     this.config = this.getUrlQuery()
     this.init()
-    console.log('hello')
   }
   async init (type) {
     await this.firstLoad(type)
@@ -22,7 +21,7 @@ class App {
     this.scrollHandler()
     this.activeFilter()
     this.linkToLiveHome()
-    $('.loading').fadeOut(600)
+    // $('.loading').fadeOut(600)
   }
   linkToLiveHome () {
     $('.live-list').on('click', function (e) {
@@ -52,6 +51,8 @@ class App {
         var data = res.data.result
         console.log(data)
         $('#app').html(render(data))
+        $('.heybox-skeleton').fadeOut(600)
+        $('.loading-page').fadeOut(400);
       })
   }
   resetConfig () {
@@ -70,7 +71,7 @@ class App {
       self.live_type = type
       self.resetConfig()
       self.init(type)
-      $('.loading').show()
+      // $('.loading').show()
     })
   }
   activeFilter () {
@@ -89,6 +90,7 @@ class App {
       this.load = true
     } else {
       this.load = false
+      $('.no-more').show().siblings().hide()
     }
   }
   async scrollHandler () {

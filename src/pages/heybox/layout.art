@@ -16,6 +16,98 @@
 </head>
 <body>
   <div class="tip"></div>
-  <div id="app"><div class="loading"><div class="loading-circle fa-spin-round"></div></div></div>
+  <!-- <div class="loading-page"><div class="loading-circle fa-spin-round"></div></div> -->
+  <div class="heybox-skeleton" style="display: block; opacity: 1;">
+    <div class="pubg-live-box">
+      <div class="main-live">
+        <div class="main-poster">
+        </div>
+        <div class="main-user-wrap">
+          <div class="ava-wrap">
+          </div>
+          <div class="desc-wrap">
+            <span class="live-owner">董导丶董小飒</span>
+            <span class="audience">1260359 名观众</span>
+          </div>
+        </div>
+      </div>
+      <ul class="live-list">
+        <li class="nor-live-box j-live-url">
+          <div class="poster">
+          </div>
+          <div class="nor-luser-wrap">
+            <div class="ava-box">
+            </div>
+            <div class="info-box">
+              <p class="live-owner">陈子豪</p>
+              <p class="audience">370521 名观众</p>
+            </div>
+          </div>
+        </li>
+        <li class="nor-live-box j-live-url">
+            <div class="poster">
+            </div>
+            <div class="nor-luser-wrap">
+              <div class="ava-box">
+              </div>
+              <div class="info-box">
+                <p class="live-owner">陈子豪</p>
+                <p class="audience">370521 名观众</p>
+              </div>
+            </div>
+          </li>
+          <li class="nor-live-box j-live-url">
+              <div class="poster">
+              </div>
+              <div class="nor-luser-wrap">
+                <div class="ava-box">
+                </div>
+                <div class="info-box">
+                  <p class="live-owner">陈子豪</p>
+                  <p class="audience">370521 名观众</p>
+                </div>
+              </div>
+            </li>
+            <li class="nor-live-box j-live-url">
+                <div class="poster">
+                </div>
+                <div class="nor-luser-wrap">
+                  <div class="ava-box">
+                  </div>
+                  <div class="info-box">
+                    <p class="live-owner">陈子豪</p>
+                    <p class="audience">370521 名观众</p>
+                  </div>
+                </div>
+              </li>
+              <li class="nor-live-box j-live-url">
+                  <div class="poster">
+                  </div>
+                  <div class="nor-luser-wrap">
+                    <div class="ava-box">
+                    </div>
+                    <div class="info-box">
+                      <p class="live-owner">陈子豪</p>
+                      <p class="audience">370521 名观众</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="nor-live-box j-live-url">
+                    <div class="poster">
+                    </div>
+                    <div class="nor-luser-wrap">
+                      <div class="ava-box">
+                      </div>
+                      <div class="info-box">
+                        <p class="live-owner">陈子豪</p>
+                        <p class="audience">370521 名观众</p>
+                      </div>
+                    </div>
+                  </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="app"></div>
 </body>
 </html>
