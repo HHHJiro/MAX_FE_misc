@@ -1,0 +1,36 @@
+<div class="calander__wrap">
+  <div class="calander__button calander__button--prev button--normal"></div>
+  <div class="calander__button calander__button--next button--normal"></div>
+  <div class="calander__box">
+    {{ each calander card}}
+      <div class="calander__card {{ card.status | calanderStatus }}">
+        <div class="card__title">
+          <h2 class="card__time">{{ card.time }}</h2>
+          <h3 class="card__state">{{ card.status | calanderDesc }}</h3>
+        </div>
+        <div class="card__body">
+          <div class="game__desc">
+            {{ if card.home }}
+              <h1 class="game__title game__title--vsinfo">{{@ card.title }}</h1>
+            {{ else }}
+              <h1 class="game__title">{{ card.title }}</h1>
+            {{ /if }}
+          </div>
+          {{ if card.home }}
+          <div class="vs__info">
+              <span class="team--home">{{ card.home }}</span>
+              {{ if card.away }}
+                <span class="vs__text">vs</span>
+                <span class="team--away">{{ card.away }}</span>
+              {{ /if }}
+            </div>
+            {{ /if }}
+        {{ if card.boText}}
+          <h3 class="game__bo">{{ card.boText }}</h3>
+        {{ /if }}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  {{ include './footer.art'}}
+</div>

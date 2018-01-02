@@ -18,6 +18,8 @@ moduleExports.vendorDir = path.resolve(moduleExports.srcRootDir, './vender') // 
 // moduleExports.libsDir = path.resolve(moduleExports.publbuildDiricDir, './libs') // 与业务逻辑无关的库都可以放到这里
 
 // pubg
-moduleExports.pagePubgDir = path.resolve(moduleExports.pagesDir, './heybox/pubg') // 存放各种配置文件
+moduleExports.pagePubgDir = path.resolve(moduleExports.pagesDir, './heybox/pubg')
+// pubg pagetml
+moduleExports.pageMatchPubgDir = path.resolve(moduleExports.pagesDir, './matches/pubg')
 
 module.exports = moduleExports

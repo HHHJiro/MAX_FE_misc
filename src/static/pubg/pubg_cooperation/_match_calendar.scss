@@ -1,0 +1,126 @@
+$btnWrapWidth: 66px;
+$calanderBoxMar:  20px $btnWrapWidth 0;
+$calanderCardH:  220px;
+$calanderCardW:  200px;
+$btnWidth: 24px;
+$btnHeight: 48px;
+$buttonMar: 20px;
+$cardTitleH: 74px;
+$cardBodyPad: 15px;
+$gameTieleSize: 32px;
+$gameStateSize: 14px;
+$cardTimeSize: 16px;
+$gameVsTitle: 22px;
+.calander__wrap {
+  display: none;
+  width: $mainWidth;
+  height: $calanderHeight;
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+  .calander__box {
+    margin: $calanderBoxMar;
+    height: $calanderCardH;
+    display: flex;
+    justify-content: flex-start;
+    .calander__card {
+      color: #000;
+      min-width: $calanderCardW;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border-radius: 4px;
+      margin-right: ($mainWidth - 2 * $btnWrapWidth - 5 * $calanderCardW) / 4;
+      &.end {
+        .card__title {
+          background-position-y: 100%;
+        }
+        .card__body {
+          color:$endColor;
+          .game__bo {
+            border-color: $endColor;
+          }
+        }
+      }
+      .card__title {
+        height: $cardTitleH;
+        background: url($assetsPath + "calander_bg.jpg") no-repeat;
+        background-size: 100% 200%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .card__time {
+          font-size: $cardTimeSize;
+          font-weight: 600;
+          margin-bottom: 4px;
+        }
+        .card__state {
+          font-size: $gameStateSize;
+        }
+      }
+      .card__body {
+        flex-grow: 1;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: $cardBodyPad;
+        color: $startColor;
+        .game__title {
+          font-size: $gameTieleSize;
+          font-weight: 600;
+          text-align: center;
+          &.game__title--vsinfo {
+            font-size: $gameVsTitle
+          }
+        }
+        .game__bo {
+          padding: 0 23px;
+          height: 24px;
+          border-radius: 14px;
+          border: solid 2px $startColor;
+          text-align: center;
+          line-height: 24px;
+          font-family: Helvetica;
+          font-size: 14px;
+          font-weight: bold;
+        }
+        .vs__info {
+          height: 32px;
+          text-align: center;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          width: 80%;
+          .team--home, .team--away {
+            font-size: $gameTieleSize;
+	          font-weight: 600;
+          }
+          .vs__text {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  .calander__button {
+    position: absolute;
+    width: $btnWidth;
+    height: $btnHeight;
+    background: url( $assetsPath + "arrow.png");
+    background-size: 200%;
+    top: 50%;
+    transform: translateY(-50%);
+    &--prev {
+      left: $buttonMar;
+      background-position: 0 0;
+    }
+    &--next {
+      right: $buttonMar;
+      background-position: 100% 0;
+    }
+  }
+}

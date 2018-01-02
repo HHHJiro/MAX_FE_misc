@@ -8,8 +8,10 @@ var dirVars = require('./webpack-config/base/dir.vars.config')
 module.exports = {
   entry: {
     // record_compare: 'pagePubgDir/record_compare/index.js',
-    pubg_live: 'pagePubgDir/game_live/index.js',
-    vendor: ['./src/vender/zepto.min.js']
+    // pubg_live: 'pagePubgDir/game_live/index.js',
+    vendor: ['./src/vender/zepto.min.js'],
+    pubg_match: 'pageMatchPubgDir/match_tml/index.js',
+    // jquery: './src/vender/jquery.3.2.1.min.js'
   },
   devtool: '#inline-source-map',
   resolve: require('./webpack-config/resolve.config'),
@@ -107,20 +109,20 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(), // 启用 HMR
     new ExtractTextPlugin('[name]/styles.[content:8].css'),
     new HtmlWebpackPlugin({
-      filename: 'record_compare.html',
-      template: path.resolve(dirVars.pagePubgDir, './record_compare/index.art'),
-      xhtml: true, // 需要符合xhtml的标准
-      chunks: ['manifest', 'vendor', 'record_compare'],
+      filename: 'pubg_live.html',
+      template: path.resolve(dirVars.pagePubgDir, './game_live/index.art'),
+      xhtml: true,
+      chunks: ['vendor', 'pubg_live'],
       minify: {
         removeComments: true,
         collapseWhitespace: true
       }
     }),
     new HtmlWebpackPlugin({
-      filename: 'pubg_live.html',
-      template: path.resolve(dirVars.pagePubgDir, './game_live/index.art'),
+      filename: 'pubg_match.html',
+      template: path.resolve(dirVars.pageMatchPubgDir, './match_tml/index.art'),
       xhtml: true,
-      chunks: ['vendor', 'pubg_live'],
+      chunks: ['vendor', 'pubg_match'],
       minify: {
         removeComments: true,
         collapseWhitespace: true

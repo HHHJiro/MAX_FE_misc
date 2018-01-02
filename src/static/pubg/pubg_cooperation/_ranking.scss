@@ -1,0 +1,63 @@
+$listH: 776px;
+$titleH: 46px;
+$wrapW: ($mainWidth - 4 * 20px) / 3 ;
+$tableTitleH: 30px;
+.ranking {
+  display: none;
+}
+.ranking__box {
+  position: relative;
+  height: $listH;
+  width: $mainWidth;
+  display: flex;
+  overflow: hidden;
+  background: transparent;
+  box-sizing: border-box;
+  padding: 20px 20px 60px;
+  justify-content: space-between;
+    .list__wrap {
+      width: $wrapW;
+      display: flex;
+      flex-direction: column;
+      .rank__title {
+        background: $primary;
+        height: $titleH;
+        line-height: $titleH;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        color: #000;
+      }
+      .rank__table {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        flex-grow: 1;
+        border: solid 1px $startColor;
+        background: $evenColor;
+        .table__title {
+          height: $tableTitleH;
+          display: flex;
+          color: #a0a0a0;
+          background: $oddColor;
+          li {
+            line-height: $tableTitleH;
+            height: $tableTitleH;
+            font-size: 14px;
+            text-align: center;
+            flex-grow: 1;
+            flex-basis: 0%;
+            &:nth-child(2) {
+              flex-grow: 2;
+              text-align: left;
+              text-indent: 20px;
+            }
+          }
+        }
+        .table__body {
+          position: relative;
+          flex-grow: 1;
+        }
+      }
+    }
+}

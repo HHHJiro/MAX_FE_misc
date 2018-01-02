@@ -13,7 +13,8 @@ module.exports = {
     // rankGroup: './src/pages/heybox/pubg/rank_group/index.js',
     // pubgState: './src/pages/heybox/pubg/server_state/index.js',
     // record_compare: './src/pages/heybox/pubg/record_compare/index.js',
-    pubg_live: 'pagePubgDir/game_live/index.js',
+    // pubg_live: 'pagePubgDir/game_live/index.js',
+    pubg_match: 'pageMatchPubgDir/match_tml/index.js',
     zepto: './src/vender/zepto.min.js'
     // vendor: ['./src/vender/zepto.min.js', './src/vender/utils.js', './src/vender/heybox_protocol.js', 'flyio']
   },
@@ -29,8 +30,8 @@ module.exports = {
     // publicPath: '/static/build_assets/server_state/'
     // test server
     // ../../max/heybox_test/static/build_assets/record_compare
-    path: path.resolve(__dirname, '../../max/heybox_test/static/build_assets/pubg_live'),
-    publicPath: '/static/build_assets/pubg_live/'
+    path: path.resolve(__dirname, '../../max/max_net/douyu/view/json/pubg_tml'),
+    publicPath: '/live_stats/json/pubg_tml/'
   },
   module: {
     rules: [
@@ -90,38 +91,32 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']), // 清理dist目录
     new Ex('[name]_[contenthash:8]_styles.css'),
-    // new HtmlWebpackPlugin({
-    //   filename: 'record_compare.html',
-    //   template: 'src/pages/heybox/pubg/record_compare/index.art',
-    //   xhtml: true, // 需要符合xhtml的标准
-    //   chunks: ['record_compare'],
-    //   minify: {
-    //     removeComments: true,
-    //     collapseWhitespace: true
-    //   }
-    // }),
+    new webpack.EnvironmentPlugin({
+      NODE_ENV: 'development', // 除非有定义 process.env.NODE_ENV，否则就使用 'development'
+      DEBUG: false
+    }),
     new HtmlWebpackPlugin({
-      filename: 'pubg_live.html',
+      filename: 'pubg_match.html',
       inject: true,
-      template: path.resolve(dirVars.pagePubgDir, './game_live/index.art'),
+      template: path.resolve(dirVars.pageMatchPubgDir, './match_tml/index.art'),
       xhtml: true,
-      chunks: ['zepto', 'pubg_live'],
+      chunks: ['zepto', 'pubg_match'],
       minify: {
         removeComments: true,
         collapseWhitespace: true
       }
     }),
-    new AutoDllPlugin({
-      inject: true,
-      filename: '[name]_[hash].js',
-      path: './dll',
-      entry: {
-        vendor: ['./src/vender/utils.js', './src/vender/heybox_protocol.js', 'flyio']
-      },
-      plugins: [
-        new webpack.optimize.UglifyJsPlugin()
-      ]
-    }),
+    // new AutoDllPlugin({
+    //   inject: true,
+    //   filename: '[name]_[hash].js',
+    //   path: './dll',
+    //   entry: {
+    //     vendor: ['flyio']
+    //   },
+    //   plugins: [
+    //     new webpack.optimize.UglifyJsPlugin()
+    //   ]
+    // }),
     new webpack.optimize.UglifyJsPlugin({
       warnings: false,
       compress: {
@@ -129,7 +124,7 @@ module.exports = {
         warnings: false
       },
       toplevel: false,
-      ie8: false
+      ie8: true
     })
   ]
 }

@@ -1,0 +1,155 @@
+$matchH: 60px;
+$teamH: 42px;
+$baseMarBottom: 20px;
+$tableH: 630px;
+$tabTitleH: 30px;
+$tabBodyH: $tableH - $tabTitleH;
+$tableBorderColor: #563217;
+.score__wrap {
+  display: none;
+  width: $mainWidth;
+  height: $scoreHeight;
+  background:  transparent;
+  overflow: hidden;
+  color: #a0a0a0;
+  position: relative;
+  .match__group {
+    height: $matchH;
+    display: flex;
+    align-items: center;
+    background: $comparedColor;
+    margin-bottom: $baseMarBottom;
+    li {
+      display: block;
+      flex-grow: 1;
+      text-align: center;
+      line-height: $matchH;
+      height:  $matchH;
+      font-size: 22px;
+      &.active {
+        background: url(http://cdn.max-c.com/@/heybox/imgs/0a55c00fe14b07568b80125f7c8e899b) no-repeat;
+        background-size: auto $matchH;
+        background-color: $primary;
+        background-position: right;
+        font-weight: 600;
+        color: #000000;
+      }
+    }
+  }
+  .team__group {
+    height: $teamH;
+    border-top: 2px solid #000;
+    margin-bottom: $baseMarBottom;
+    &>li {
+      line-height: $teamH;
+      height: $teamH;
+      display: block;
+      flex-grow: 1;
+      text-align: center;
+      font-size: 16px;
+      color: #6c6c6c;
+      border-right: 2px solid #000;
+      border-bottom: 2px solid #000;
+      &:last-child {
+        border-right: none;
+      }
+      &:only-child {
+        border-right: 2px solid #000;
+        border-left: 2px solid #000;
+      }
+      &.active {
+        color: $primary;
+        // border-bottom: 2px solid $primary;
+      }
+    }
+  }
+  .bo__group {
+    margin: 0 20px;
+    height: $teamH;
+    border: 1px solid $tableBorderColor;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #a0a0a0;
+    margin-bottom: $baseMarBottom;
+    .total {
+      padding: 0 20px;
+      height: $teamH;
+      line-height: $teamH;
+      &.active {
+        color: #000;
+        background: $primary;
+      }
+    }
+  }
+  .score__table {
+    margin: 0 20px;
+    height: $tableH;
+    border: solid 1px $tableBorderColor;
+    .tab__title {
+      height: $tabTitleH;
+      display: flex;
+      background: $oddColor;
+      font-size: 14px;
+      li {
+        display: block;
+        height: $tabTitleH;
+        line-height: $tabTitleH;
+        flex-grow: 1;
+        text-align: center;
+        flex-basis: 0%;
+        &.team {
+          flex-grow: 2;
+        }
+        &.rank, &.team {
+          text-align: left;
+          text-indent: 20px;
+        }
+      }
+    }
+    .tab__body {
+      position: relative;
+      font-size: 16px;
+      height: $tabBodyH;
+      max-height: $tabBodyH;
+      overflow-y: scroll;
+      background: $evenColor;
+      .team__box {
+        &:nth-child(even) {
+          background: $oddColor;
+        }
+        &:nth-child(odd) {
+          background: $evenColor;
+        }
+        &.win{
+          li.rank {
+            color: #f09e03;
+            font-weight: 600;
+          }
+        }
+        display: flex;
+        height: $matchH;
+        cursor: pointer;
+        li {
+          flex-basis: 0%;
+          display: block;
+          height: $matchH;
+          line-height: $matchH;
+          flex-grow: 1;
+          text-align: center;
+          &.team {
+            flex-grow: 2;
+          }
+          &.rank, &.team {
+            text-align: left;
+            text-indent: 20px;
+          }
+          &.option {
+            font-size: 12px;
+            color: #f09e03;
+          }
+        }
+      }
+    }
+  }
+}

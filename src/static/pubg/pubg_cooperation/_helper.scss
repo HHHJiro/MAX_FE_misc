@@ -1,0 +1,9 @@
+.arrow--down {
+  display: inline-block;
+  width: 6px;
+	height: 6px;
+  border: solid 1px #f09e03;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  transform: translate(4px, -2px) rotate(-45deg);
+}

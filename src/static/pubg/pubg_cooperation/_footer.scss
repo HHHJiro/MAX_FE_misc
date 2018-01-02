@@ -1,0 +1,29 @@
+$footerW: 252px;
+$footerH: 40px;
+.footer {
+  position: absolute;
+  width: $footerW;
+  height: $footerH;
+  bottom: 0;
+  right: 0;
+  a {
+    display: block;
+    height: $footerH;
+  }
+  .footer__text {
+    position: absolute;
+    height: 24px;
+    z-index: 99;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+  }
+  .footer__bg {
+    position: absolute;
+    width: $footerW;
+    height: $footerH;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+  }
+}

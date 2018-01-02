@@ -7,7 +7,9 @@ module.exports = {
     pagesDir: dirVars.pagesDir,
     vendorDir: dirVars.vendorDir,
     staticDir: dirVars.staticDir,
-    pagePubgDir: dirVars.pagePubgDir
+    pagePubgDir: dirVars.pagePubgDir,
+    pageMatchPubgDir: dirVars.pageMatchPubgDir,
+    asstesDir: dirVars.asstesDir
     /* components */
   },
 
