@@ -39,15 +39,14 @@ class CalanderHandler {
       left: 1,
       right: -1
     }
-    // console.log(num * this.unitMoveDistance * moveDirection[type])
     let moveDistance = this.nowtranslateX + num * this.unitMoveDistance * moveDirection[type]
-    this.nowtranslateX = moveDistance
     let translateXStr = moveDistance + 'px'
     if (!this.isAnimation) {
       this.isAnimation = true
+      this.nowtranslateX = moveDistance
       this.$viewCardBox.animate({translateX: translateXStr}, 'ease-out', () =>{this.isAnimation = false})
     } else {
-      console.log('card is moving') 
+      return false
     }
     let buttonStatus = this.canClickStatusHandler()
     this.setButtonClass(buttonStatus)
@@ -64,14 +63,14 @@ class CalanderHandler {
     let normalClass = this.normalClass
     let disableClass = this.disableClass
     if (status.prev) {
-      !this.$btnPrev.hasClass(normalClass) && this.$btnPrev.removeCalss(disableClass).addClass(normalClass)
+      !this.$btnPrev.hasClass(normalClass) && this.$btnPrev.removeClass(disableClass).addClass(normalClass)
     } else {
-      this.$btnPrev.addClass(disableClass)
+      this.$btnPrev.removeClass(normalClass).addClass(disableClass)
     }
     if (status.next) {
-      !this.$btnNext.hasClass(normalClass) && this.$btnNext.removeCalss(disableClass).addClass(normalClass)
+      !this.$btnNext.hasClass(normalClass) && this.$btnNext.removeClass(disableClass).addClass(normalClass)
     } else {
-      this.$btnNext.addClass(disableClass)
+      this.$btnNext.removeClass(normalClass).addClass(disableClass)
     }
   }
   // prev next => Boolean 判断是否可以滑动
