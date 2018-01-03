@@ -26,6 +26,7 @@ $gameVsTitle: 22px;
       display: flex;
       height: 100%;
       flex-wrap: nowrap;
+      transition: all .8s ease-in-out;
     }
     .calander__card {
       color: #000;

@@ -1,5 +1,5 @@
 <div class="footer">
-  <a class="heybox" href="http://xiaoheihe.cn/" target="_blank">
+  <a class="heybox" href="#xiaoheihe">
     <img class="footer__text" src="../../../../asstes/pubg_match/footer_text.png">
     <img class="footer__bg" src="../../../../asstes/pubg_match/footer_bg.svg">
   </a>

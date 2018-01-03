@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var dirVars = require('./webpack-config/base/dir.vars.config')
-
 module.exports = {
   entry: {
     // record_compare: 'pagePubgDir/record_compare/index.js',
@@ -108,6 +107,9 @@ module.exports = {
     new CleanWebpackPlugin(['dist']), // 清理dist目录
     new webpack.HotModuleReplacementPlugin(), // 启用 HMR
     new ExtractTextPlugin('[name]/styles.[content:8].css'),
+    new webpack.DefinePlugin({
+      PRODUCTION: false
+    }),
     new HtmlWebpackPlugin({
       filename: 'pubg_live.html',
       template: path.resolve(dirVars.pagePubgDir, './game_live/index.art'),

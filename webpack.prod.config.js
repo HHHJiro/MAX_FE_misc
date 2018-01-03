@@ -91,9 +91,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']), // 清理dist目录
     new Ex('[name]_[contenthash:8]_styles.css'),
-    new webpack.EnvironmentPlugin({
-      NODE_ENV: 'development', // 除非有定义 process.env.NODE_ENV，否则就使用 'development'
-      DEBUG: false
+    new webpack.DefinePlugin({
+      PRODUCTION: true
     }),
     new HtmlWebpackPlugin({
       filename: 'pubg_match.html',
