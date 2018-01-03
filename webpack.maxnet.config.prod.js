@@ -94,6 +94,9 @@ module.exports = {
         collapseWhitespace: true
       }
     }),
+    new webpack.DefinePlugin({
+      PRODUCTION: true
+    }),
     new webpack.optimize.UglifyJsPlugin({
       warnings: false,
       compress: {

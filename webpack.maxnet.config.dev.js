@@ -19,10 +19,10 @@ module.exports = {
   devServer: {
     hot: true, // 告诉 dev-server 我们在使用 HMR
     port: 3888,
-    host: '192.168.10.170',
+    host: '192.168.1.153',
     proxy: {
       '/live_stats/*': {
-        target: 'http://192.168.10.170:18080/',
+        target: '192.168.1.153:18080/',
         changeOrigin: true,
         pathRewrite: {
           '^/live_stats/json/': '/page/'
@@ -99,6 +99,9 @@ module.exports = {
     new CleanWebpackPlugin(['dist']), // 清理dist目录
     new webpack.HotModuleReplacementPlugin(), // 启用 HMR
     new ExtractTextPlugin('[name]/styles.[contenthash].css'),
+    new webpack.DefinePlugin({
+      PRODUCTION: false
+    }),
     new HtmlWebpackPlugin({
       filename: 'dota_match_tml.html',
       template: './src/pages/matches/dota/match_tml/index.art',

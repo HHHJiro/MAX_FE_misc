@@ -1,6 +1,9 @@
 {{set data = knockout.winGroup }}
-<div id="knockout-box">
+<div id="knockout-box" class="{{ if hideWinChampion }}no__scroll{{/if}}">
   <div class="knockout-match knockout-win win-{{ knockoutWinType }}">
+    {{ if hideWinChampion }}
+      <div class="hide__Champiom"></div>
+    {{/if}}
     {{ each data group index }}
       <div class="col-{{ index + 1 }}">
         {{ each group match index }}
@@ -28,7 +31,7 @@
     <div class="match match-final">
         <div class="home-box {{ final.pointH | tmlFormatCompare final.pointA }}" data-point="{{ final.pointH }}">
           {{ if final.home }}
-            <img src="{{ final.home | tmlFormatImgSrc }}" data-url="{{ final.away | tmlFormatImgSrc }}">
+            <img src="{{ final.home | tmlFormatImgSrc }}" {{ if hideWinChampion }} class="win__champion" {{/if}} data-url="{{ final.away | tmlFormatImgSrc }}">
           {{ else if final.timeH }}
             <p class="time"> {{@ final.timeH }}</p>
           {{ /if }}

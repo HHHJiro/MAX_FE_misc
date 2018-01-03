@@ -12,11 +12,35 @@ $baseTop2: 130px;
 $baseTop3: 270px;
 $matchH: 184px;
 $matchH2: 324px;
-$matchH3: 606px;
+$matchH3: 606px; 
+.no__scroll {
+  overflow: hidden;
+  .knockout-win {
+    transform: translateX(60px);
+  }
+}
 .knockout-win.win-8-2 {
   height: 1144px;
   background: url(../../../asstes/win_8_2.png);
   background-size: cover;
+  .hide__Champiom {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .win__champion {
+    width: 64px;
+    height: 64px;
+    transform: translateX(-10px) translateY(-10px);
+  }
+  .match {
+    z-index: 11;
+  }
   .col-1 {
     .match {
       left: 50px;
