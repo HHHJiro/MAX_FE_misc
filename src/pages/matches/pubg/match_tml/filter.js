@@ -27,11 +27,11 @@ class Filter {
   tmlFormatDesc () {
     return 'formart'
   }
-  calanderDesc (status = 1) {
+  calanderDesc (status = 2) {
     var statusDesc = ['已结束', '比赛中', '未开始']
     return statusDesc[status]
   }
-  calanderStatus (status = 1) {
+  calanderStatus (status = 2) {
     var statusClass = ['end', 'gaming', 'unstart']
     return statusClass[status]
   }

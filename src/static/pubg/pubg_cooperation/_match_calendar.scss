@@ -16,13 +16,17 @@ $gameVsTitle: 22px;
   width: $mainWidth;
   height: $calanderHeight;
   position: relative;
-  background: transparent;
+  background: #222;
   overflow: hidden;
   .calander__box {
     margin: $calanderBoxMar;
     height: $calanderCardH;
-    display: flex;
-    justify-content: flex-start;
+    overflow: hidden;
+    .view__box {
+      display: flex;
+      height: 100%;
+      flex-wrap: nowrap;
+    }
     .calander__card {
       color: #000;
       min-width: $calanderCardW;
@@ -114,12 +118,22 @@ $gameVsTitle: 22px;
     background-size: 200%;
     top: 50%;
     transform: translateY(-50%);
-    &--prev {
+    cursor: pointer;
+    &--prev, &--prev.button--normal {
       left: $buttonMar;
+      background-position: 0 100%;
+    }
+    &.button--disable {
+      cursor: not-allowed;
+    }
+    &--prev.button--disable {
       background-position: 0 0;
     }
-    &--next {
+    &--next, &--next.button--normal {
       right: $buttonMar;
+      background-position: 100% 100%;
+    }
+    &--next.button--disable {
       background-position: 100% 0;
     }
   }

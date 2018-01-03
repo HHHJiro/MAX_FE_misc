@@ -1,12 +1,15 @@
 var artBus = require('./bus.art')
 var Filter = require('./filter')
+var {bindElemet} = require('./utils')
+var CalanderHandler = require('./calander')
 
 var Eles = {
   $btnPrev: '.calander__button--prev',
   $btnNext: '.calander__button--next',
   $scoreWrap: '.score__wrap',
   $calacderWrap: '.calander__wrap',
-  $rankWrap: '.ranking'
+  $rankWrap: '.ranking',
+  $calanderCard: '.calander__card'
 }
 class App extends Filter {
   constructor (res) {
@@ -14,37 +17,28 @@ class App extends Filter {
     this.init()
   }
   init () {
-    var _this = this
-    // if (typeof document === 'object') {
-    //   window.onload = function () {
-        _this.appentMatch()
-        _this.inBrowserInit()
-        var href = window.location.href
-        if (href.indexOf('score') > 0) {
-          _this.$scoreWrap.show()
-        }
-        if (href.indexOf('calander') > 0) {
-          _this.$calacderWrap.show()
-        }
-        if (href.indexOf('rank') > 0) {
-          _this.$rankWrap.show()
-        }
-    //   }
-    // }
+    this.appentMatch()
+    this.inBrowserInit()
+    var href = window.location.href
+    if (href.indexOf('score') > 0) {
+      this.$scoreWrap.show()
+    }
+    if (href.indexOf('calander') > 0) {
+      this.calanderHandler()
+      this.$calacderWrap.show()
+    }
+    if (href.indexOf('rank') > 0) {
+      this.$rankWrap.show()
+    }
   }
   inBrowserInit () {
-    this.bindElemet()
-  }
-  bindElemet () {
-    var eles = Eles
-    for (var name in eles) {
-      if (eles.hasOwnProperty(name)) {
-        this[name] = $(eles[name])
-      }
-    }
+    bindElemet.call(this, Eles)
   }
   appentMatch () {
     $('#app').append(artBus(this.res))
+  }
+  calanderHandler () {
+    var calanderHandler = new CalanderHandler(this.res.calander)
   }
 }
 module.exports = App
