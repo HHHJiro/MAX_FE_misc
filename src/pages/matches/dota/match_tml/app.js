@@ -1,5 +1,6 @@
 var Filter = require('./filter')
 var renderGroup = require('./match_group.art')
+var renderDiyGroup = require('./diy_group.art')
 // 模板
 // var knockoutWin82 = require('./tml_win_8_2.art')
 // var knockoutLose82 = require('./tml_lose_8_2.art')
@@ -17,6 +18,16 @@ class app extends Filter {
   }
   init () {
     this.appentMatch()
+  }
+  groupRenderGet (data) {
+    console.log(data)
+    if (data.groupMatch) {
+      return renderGroup
+    } else if (data.diyGroup) {
+      return renderDiyGroup
+    } else {
+      return false
+    }
   }
   inBrowserInit () {
     this.$eSelect = $('.select-bar li')
@@ -43,11 +54,11 @@ class app extends Filter {
           $('#knockout-box').append(knockoutLoseTml.call(self, self.matchData))
         }
         // 若没有小组赛 则不去渲染
-        if (self.matchData.groupMatch) {
-          $('#app').append(renderGroup(self.matchData))
+        if (this.groupRenderGet(self.matchData)) {
+          $('#app').append(this.groupRenderGet(self.matchData)(self.matchData))
         }
       } else if (self.nowPlay == 'g') {
-        $('#app').append(renderGroup(self.matchData))
+        $('#app').append(this.groupRenderGet(self.matchData)(self.matchData))
         $('#app').append(knockoutWinTml.call(self, self.matchData))
 
         // 第二三阶段反转
@@ -62,8 +73,11 @@ class app extends Filter {
   }
   handlerTap () {
     this.$eSelect.tap(function () {
-      $(this).addClass('active').siblings().removeClass('active')
-      $('.' + $(this).data('select')).removeClass('hide').siblings().addClass('hide')
+      var $this = $(this)
+      $this.addClass('active').siblings().removeClass('active')
+      // $this.closest('.knockout').find('.knockout-match').addClass('hide')
+      // $this.closest('.knockout').find('.' + $this.data('select'))
+      $('.' + $this.data('select')).removeClass('hide').siblings().addClass('hide')
     })
   }
   imgLoadHandler () {

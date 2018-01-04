@@ -1,0 +1,19 @@
+
+{{ if diyGroup }}
+  {{ include './group_title.art' $data.diyGroup }}
+  {{set groupMatch = $data.diyGroup}}
+  <div class="group-box">
+      {{ if groupMatch.groupA &&  groupMatch.groupA.length > 0 }} 
+      <div class="group-a">
+        {{ include './c_knockout_win.art' groupMatch.groupA[0] }}
+        {{ include './tml_lose_tml.art' groupMatch.groupA[1] }}
+      </div>
+      {{/if}}
+      {{ if groupMatch.groupB && groupMatch.groupB.length > 0 }} 
+      <div class="group-b hide">
+          {{ include './c_knockout_win.art' groupMatch.groupB[0] }}
+          {{ include './tml_lose_tml.art' groupMatch.groupB[1] }}
+      </div>
+      {{/if}}
+    </div>
+{{ /if }}

@@ -1,4 +1,4 @@
-    {{ if !groupMatch }}
+    {{ if !groupMatch && knockout.loseGroup && knockout.loseTitle }}
     <div class="title">
       <p><img src="../../../../asstes/max.png" alt=""><span>败者组</span></p>
     </div>

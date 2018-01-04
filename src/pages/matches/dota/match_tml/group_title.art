@@ -1,0 +1,16 @@
+{{ set groupMatch = $data }}
+<div class="title">
+    <p><img src="../../../../asstes/max.png"><span>{{ groupMatch.groupName || '小组赛'  }}</span></p>
+  </div>
+  {{ if groupMatch.groupC && groupMatch.groupC.length > 0}} 
+  <ul class="select-bar">
+    <li class="active" data-select="group-a">A组</li>
+    <li data-select="group-b">B组</li>
+    <li data-select="group-c">C组</li>
+  </ul>
+  {{ else if groupMatch.groupB && groupMatch.groupB.length > 0}} 
+    <ul class="select-bar">
+      <li class="active" data-select="group-a">A组</li>
+      <li data-select="group-b">B组</li>
+    </ul>
+  {{/if}}

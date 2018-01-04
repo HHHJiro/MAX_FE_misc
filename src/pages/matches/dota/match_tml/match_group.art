@@ -1,20 +1,6 @@
 {{ if  groupMatch }}
 <div class="group">
-  <div class="title">
-    <p><img src="../../../../asstes/max.png"><span>{{ groupMatch.groupName || '小组赛'  }}</span></p>
-  </div>
-  {{ if groupMatch.groupC && groupMatch.groupC.length > 0}} 
-  <ul class="select-bar">
-    <li class="active" data-select="group-a">A组</li>
-    <li data-select="group-b">B组</li>
-    <li data-select="group-c">C组</li>
-  </ul>
-  {{ else if groupMatch.groupB && groupMatch.groupB.length > 0}} 
-    <ul class="select-bar">
-      <li class="active" data-select="group-a">A组</li>
-      <li data-select="group-b">B组</li>
-    </ul>
-  {{/if}}
+  {{ include './group_title.art' $data.groupMatch }}
     <ul class="tab-title">
       <li class="rank">排名</li>
       <li class="team">战队</li>
@@ -24,41 +10,17 @@
     <div class="group-box">
       {{ if groupMatch.groupA &&  groupMatch.groupA.length > 0 }} 
       <div class="group-a">
-        {{ each groupMatch.groupA team rank }}
-        <div class="divide"></div>
-        <ul class="tab-body">
-          <li class="rank">{{ rank + 1}}</li>
-          <li class="team"><div class="img-box"><img data-src="{{ team.teamName | tmlFormatImgSrc }}" alt=""></div><p>{{ team.teamName }}</p></li>
-          <li class="desc">{{ team.score | tmlFormatDesc }}</li>
-          <li class="score">{{ team.score | tmlFormatScore }}</li>
-        </ul>
-        {{ /each}}
+        {{ include './group_list.art' groupMatch.groupA }}
       </div>
       {{/if}}
       {{ if groupMatch.groupB &&  groupMatch.groupB.length > 0 }} 
       <div class="group-b hide">
-        {{ each groupMatch.groupB team rank }}
-        <div class="divide"></div>
-        <ul class="tab-body">
-          <li class="rank">{{ rank + 1}}</li>
-          <li class="team"><div class="img-box"><img data-src="{{ team.teamName | tmlFormatImgSrc }}" alt=""></div><p>{{ team.teamName }}</p></li>
-          <li class="desc">{{ team.score | tmlFormatDesc }}</li>
-          <li class="score">{{ team.score | tmlFormatScore }}</li>
-        </ul>
-        {{ /each}}
+          {{ include './group_list.art' groupMatch.groupB }}
       </div>
       {{/if}}
       {{ if groupMatch.groupC &&  groupMatch.groupC.length > 0 }} 
       <div class="group-c hide">
-        {{ each groupMatch.groupC team rank }}
-        <div class="divide"></div>
-        <ul class="tab-body">
-          <li class="rank">{{ rank + 1}}</li>
-          <li class="team"><div class="img-box"><img data-src="{{ team.teamName | tmlFormatImgSrc }}" alt=""></div><p>{{ team.teamName }}</p></li>
-          <li class="desc">{{ team.score | tmlFormatDesc }}</li>
-          <li class="score">{{ team.score | tmlFormatScore }}</li>
-        </ul>
-        {{ /each}}
+        {{ include './group_list.art' groupMatch.groupC }}
       </div>
       {{/if}}
     </div>
