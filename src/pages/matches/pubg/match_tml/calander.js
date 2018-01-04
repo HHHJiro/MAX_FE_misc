@@ -9,18 +9,17 @@ var Eles = {
 class CalanderHandler {
   constructor (data) {
     bindElemet.call(this, Eles)
-    
     this.data = data
     this.CARD_OFFSET = data.cardOffset
-    this.isNowCardSet = false
     this.MAX_VISIBLE_CARDS = 5
+    this.cardWidth = 200
+    this.isNowCardSet = false
     this.isAnimation = false
     this.canPrevClick = false
     this.canNextClick = true
     this.cardsQuantity = this.$calanderCard.length
     this.normalClass = 'button--normal'
     this.disableClass = 'button--disable'
-    this.cardWidth = 200
     this.nowtranslateX = 0
     this.compute()
     this.init()

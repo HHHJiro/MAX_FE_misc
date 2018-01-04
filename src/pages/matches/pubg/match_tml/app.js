@@ -2,7 +2,7 @@ var artBus = require('./bus.art')
 var Filter = require('./filter')
 var {bindElemet} = require('./utils')
 var CalanderHandler = require('./calander')
-
+var ScoreHandler = require('./score')
 var Eles = {
   $btnPrev: '.calander__button--prev',
   $btnNext: '.calander__button--next',
@@ -21,6 +21,7 @@ class App extends Filter {
     this.inBrowserInit()
     var href = window.location.href
     if (href.indexOf('score') > 0) {
+      this.scoreHandler()
       this.$scoreWrap.show()
     }
     if (href.indexOf('calander') > 0) {
@@ -39,6 +40,9 @@ class App extends Filter {
   }
   calanderHandler () {
     var calanderHandler = new CalanderHandler(this.res.calander)
+  }
+  scoreHandler () {
+    var scoreHandler = new ScoreHandler(this.res.score)
   }
 }
 module.exports = App

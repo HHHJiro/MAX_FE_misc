@@ -37,6 +37,7 @@ $gameVsTitle: 22px;
       overflow: hidden;
       border-radius: 4px;
       margin-right: ($mainWidth - 2 * $btnWrapWidth - 5 * $calanderCardW) / 4;
+      user-select: none;
       &.end {
         .card__title {
           background-position-y: 100%;

@@ -5,6 +5,11 @@ $tableH: 630px;
 $tabTitleH: 30px;
 $tabBodyH: $tableH - $tabTitleH;
 $tableBorderColor: #563217;
+@mixin liCursor {
+  &:not(.active) {
+    cursor: pointer;
+  }
+}
 .score__wrap {
   display: none;
   width: $mainWidth;
@@ -13,6 +18,7 @@ $tableBorderColor: #563217;
   overflow: hidden;
   color: #a0a0a0;
   position: relative;
+  user-select: none;
   .match__group {
     height: $matchH;
     display: flex;
@@ -26,6 +32,7 @@ $tableBorderColor: #563217;
       line-height: $matchH;
       height:  $matchH;
       font-size: 22px;
+      @include liCursor;
       &.active {
         background: url(http://cdn.max-c.com/@/heybox/imgs/0a55c00fe14b07568b80125f7c8e899b) no-repeat;
         background-size: auto $matchH;
@@ -38,8 +45,9 @@ $tableBorderColor: #563217;
   }
   .team__group {
     height: $teamH;
-    border-top: 2px solid #000;
+    // border-top: 2px solid #000;
     margin-bottom: $baseMarBottom;
+    display: flex;
     &>li {
       line-height: $teamH;
       height: $teamH;
@@ -48,15 +56,17 @@ $tableBorderColor: #563217;
       text-align: center;
       font-size: 16px;
       color: #6c6c6c;
+      border-top: 2px solid #000;
       border-right: 2px solid #000;
       border-bottom: 2px solid #000;
-      &:last-child {
-        border-right: none;
-      }
-      &:only-child {
-        border-right: 2px solid #000;
+      @include liCursor;
+      &:first-child {
         border-left: 2px solid #000;
       }
+      // &:only-child {
+      //   border-right: 2px solid #000;
+      //   border-left: 2px solid #000;
+      // }
       &.active {
         color: $primary;
         // border-bottom: 2px solid $primary;
@@ -67,25 +77,45 @@ $tableBorderColor: #563217;
     margin: 0 20px;
     height: $teamH;
     border: 1px solid $tableBorderColor;
+    padding: 0 12px;
     display: flex;
     align-items: center;
     text-align: center;
     color: #a0a0a0;
     margin-bottom: $baseMarBottom;
-    .total {
-      padding: 0 20px;
-      height: $teamH;
-      line-height: $teamH;
+    li {
+      margin-right: 12px;
+      height: 28px;
+      line-height: 28px;
+      background: $endColor;
+      color: $boDefaultFontColor;
+      padding: 0 18px;
+      border-radius: 14px;
+      font-size: 14px;
+      @include liCursor;
+      &.total {
+        padding: 0 8px;
+        border-radius: 0;
+        font-size: 16px;
+      }
       &.active {
-        color: #000;
         background: $primary;
+        color: #000;
+        font-weight: 500;
       }
     }
+
   }
   .score__table {
     margin: 0 20px;
     height: $tableH;
     border: solid 1px $tableBorderColor;
+    .rank__text {
+      display: block;
+      width: 80px;
+      text-align: center;
+      flex-grow: 1;
+    }
     .tab__title {
       height: $tabTitleH;
       display: flex;
@@ -103,7 +133,6 @@ $tableBorderColor: #563217;
         }
         &.rank, &.team {
           text-align: left;
-          text-indent: 20px;
         }
       }
     }
@@ -114,11 +143,12 @@ $tableBorderColor: #563217;
       max-height: $tabBodyH;
       overflow-y: scroll;
       background: $evenColor;
+      color: $scoreTableBodyFont;
       .team__box {
-        &:nth-child(even) {
+        &.table--even {
           background: $oddColor;
         }
-        &:nth-child(odd) {
+        &.table--odd {
           background: $evenColor;
         }
         &.win{
@@ -140,14 +170,25 @@ $tableBorderColor: #563217;
           &.team {
             flex-grow: 2;
           }
+          &.rank {
+            font-size: 20px;
+          }
           &.rank, &.team {
             text-align: left;
-            text-indent: 20px;
           }
           &.option {
             font-size: 12px;
             color: #f09e03;
           }
+        }
+      }
+      .data__info {
+        background: #000;
+        height: 82px;
+        padding: 20px;
+        display: flex;
+        .info__card {
+          flex-grow: 1;
         }
       }
     }
