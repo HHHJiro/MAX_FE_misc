@@ -1,0 +1,4 @@
+{{set match_list = $data}}
+  {{ each match_list match }}
+    <li>{{ match.desc }}</li>
+  {{/each}}

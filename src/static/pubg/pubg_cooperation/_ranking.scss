@@ -1,9 +1,14 @@
-$listH: 776px;
+$listH: 776px - $matchH;
 $titleH: 46px;
 $wrapW: ($mainWidth - 4 * 20px) / 3 ;
 $tableTitleH: 30px;
+$tableHeight: $listH - 80px - 46px - 20px;
 .ranking {
   display: none;
+}
+.rank--filter {
+  @include filterFirst;
+  margin-bottom: 0;
 }
 .ranking__box {
   position: relative;
@@ -15,10 +20,16 @@ $tableTitleH: 30px;
   box-sizing: border-box;
   padding: 20px 20px 60px;
   justify-content: space-between;
+  
     .list__wrap {
-      width: $wrapW;
+      flex-grow: 1;
       display: flex;
       flex-direction: column;
+      margin-right: 20px;
+      flex-basis: 0%;
+      &:last-child {
+        margin-right: 0;
+      }
       .rank__title {
         background: $primary;
         height: $titleH;
@@ -48,15 +59,87 @@ $tableTitleH: 30px;
             flex-grow: 1;
             flex-basis: 0%;
             &:nth-child(2) {
-              flex-grow: 2;
+              flex-grow: 3;
               text-align: left;
               text-indent: 20px;
+            }
+            &:nth-child(3) {
+              flex-grow: 1;
+              text-align: center;
+            }
+            &.option {
+              flex-grow: 1;
+              text-align: left;
             }
           }
         }
         .table__body {
           position: relative;
           flex-grow: 1;
+          font-size: 16px;
+          overflow-y: scroll;
+          height: $tableHeight;
+          max-height: $tableHeight;
+          background: $tableBg;
+          color: $scoreTableBodyFont;
+          .rank__item {
+            &.table--even {
+              background: $oddColor;
+            }
+            &.table--odd {
+              background: $evenColor;
+            }
+            &.win{
+              li:first-child {
+                color: #f09e03;
+                font-weight: 600;
+              }
+            }
+            display: flex;
+            height: $matchH;
+            cursor: pointer;
+            li {
+              flex-basis: 0%;
+              display: block;
+              height: $matchH;
+              line-height: $matchH;
+              flex-grow: 1;
+              text-align: center;
+              &:nth-child(2) {
+                flex-grow: 3;
+                text-align: left;
+                text-indent: 20px;
+              }
+              &:nth-child(3) {
+                flex-grow: 1;
+                text-align: center;
+              }
+              &.option {
+                flex-grow: 1;
+                text-align: left;
+                font-size: 12px;
+                color: #f09e03;
+                text-indent: 4px;
+              }
+            }
+          }
+          .data__info {
+            @include player_card;
+            flex-wrap: wrap;
+            overflow: hidden;
+            height: auto;
+            padding: 10px;
+            flex-direction: column;
+            .info__card {
+              flex-grow: 1;
+              flex-basis: 0%;
+              margin: 0;
+              margin-top: 10px;
+              &:first-child{
+                margin: 0;
+              }
+            }
+          }
         }
       }
     }

@@ -5,11 +5,7 @@ $tableH: 630px;
 $tabTitleH: 30px;
 $tabBodyH: $tableH - $tabTitleH;
 $tableBorderColor: #563217;
-@mixin liCursor {
-  &:not(.active) {
-    cursor: pointer;
-  }
-}
+
 .score__wrap {
   display: none;
   width: $mainWidth;
@@ -20,28 +16,7 @@ $tableBorderColor: #563217;
   position: relative;
   user-select: none;
   .match__group {
-    height: $matchH;
-    display: flex;
-    align-items: center;
-    background: $comparedColor;
-    margin-bottom: $baseMarBottom;
-    li {
-      display: block;
-      flex-grow: 1;
-      text-align: center;
-      line-height: $matchH;
-      height:  $matchH;
-      font-size: 22px;
-      @include liCursor;
-      &.active {
-        background: url(http://cdn.max-c.com/@/heybox/imgs/0a55c00fe14b07568b80125f7c8e899b) no-repeat;
-        background-size: auto $matchH;
-        background-color: $primary;
-        background-position: right;
-        font-weight: 600;
-        color: #000000;
-      }
-    }
+    @include filterFirst;
   }
   .team__group {
     height: $teamH;
@@ -60,16 +35,12 @@ $tableBorderColor: #563217;
       border-right: 2px solid #000;
       border-bottom: 2px solid #000;
       @include liCursor;
-      &:first-child {
-        border-left: 2px solid #000;
+      &:last-child {
+        border-right: none;
       }
-      // &:only-child {
-      //   border-right: 2px solid #000;
-      //   border-left: 2px solid #000;
-      // }
       &.active {
         color: $primary;
-        // border-bottom: 2px solid $primary;
+        border-bottom: 2px solid $primary;
       }
     }
   }
@@ -93,7 +64,7 @@ $tableBorderColor: #563217;
       border-radius: 14px;
       font-size: 14px;
       @include liCursor;
-      &.total {
+      &:first-child {
         padding: 0 8px;
         border-radius: 0;
         font-size: 16px;
@@ -142,7 +113,7 @@ $tableBorderColor: #563217;
       height: $tabBodyH;
       max-height: $tabBodyH;
       overflow-y: scroll;
-      background: $evenColor;
+      background: $tableBg;
       color: $scoreTableBodyFont;
       .team__box {
         &.table--even {
@@ -183,13 +154,7 @@ $tableBorderColor: #563217;
         }
       }
       .data__info {
-        background: #000;
-        height: 82px;
-        padding: 20px;
-        display: flex;
-        .info__card {
-          flex-grow: 1;
-        }
+        @include player_card;
       }
     }
   }

@@ -1,55 +1,16 @@
+{{ if result && result.stage_list}}
+{{ set stage_list = result.stage_list}}
 <div class="score__wrap">
-  <ul class="match__group">
-    {{ each score.match matchName index}}
-    <li class="{{if index == 0}} active {{/if}}">{{ matchName }}</li>
+  <ul id="stage" class="match__group">
+    {{ each stage_list stage index}}
+    <li>{{ stage.desc }}</li>
     {{/each}}
   </ul>
-  <ul class="team__group">
-  {{ each score.group groupName index }}
-    <li class="{{if index == 0}} active {{/if}}">{{ groupName }}</li>
-  {{/each}}
-  </ul>
-  <div class="bo__group">
-    <li class="total active">积分总榜</li>
-    {{ each score.bo boName }}
-      <li>{{ boName }}</li>
-    {{/each}}
-  </div>
-  <div class="score__table">
-    <ul class="tab__title">
-      <li class="rank"><span class="rank__text">排名</span></li>
-      <li class="team">队伍名</li>
-      <li class="rank__point">排位分</li>
-      <li class="total_kill">总击杀</li>
-      <li class="kill__score">击杀分</li>
-      <li class="total__score">局总分</li>
-      <li></li>
-    </ul>
-    <div class="tab__body">
-      {{if score.teamList && score.teamList.length > 0}}
-        {{ each score.teamList team index}}
-        <ul class="team__box {{ if index < 3 }} win {{/if}}{{ if index % 2 == 0 }} table--odd {{else}} table--even {{/if}}">
-            <li class="rank"><span class="rank__text">{{ index + 1 }}</span></li>
-            <li class="team">{{ team }}</li>
-            <li class="rank__point">-</li>
-            <li class="total_kill">-</li>
-            <li class="kill__score">-</li>
-            <li class="total__score">-</li>
-            <li class="option">展开<span class="arrow--down"></span></li>
-        </ul>
-        <div class="data__info">
-            <% for(var i = 0; i < 4; i++){ %>
-              <div class="info__card">
-                <p class="player__name">godV{{ index }}</p>
-                <p class="player__kill">击杀:<span>{{ index }}</span></p>
-              </div>
-            <% } %>
-          </div>
-        {{/each}}
-      {{else}}
-        {{include './noData.art'}}
-      {{/if}}
-    </div>
-  </div>
+  <ul id="series" class="team__group"></ul>
+
+  <div id="match" class="bo__group"></div>
+
+  <div id="team" class="score__table"></div>
   {{ include './footer.art'}}
 </div>
+{{ /if }}

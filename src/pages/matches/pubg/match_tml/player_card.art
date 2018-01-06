@@ -1,0 +1,27 @@
+{{ set player_list = $data }}
+{{ if player_list && player_list.length }}
+<div class="data__info hide">
+  <% for (var i = 0; i < player_list.length; i++) { %>
+    <% var player =  player_list[i] %>
+    <% if (player) { %>
+    <div class="info__card">
+      <p class="player__name">{{ player.name }}</p>
+      <div class="player__kill">
+        <div class="kill__total">
+          <span class="kill__text">击杀:</span>
+          <span class="kill__num">{{ player.kill }}</span>
+        </div>
+        {{ if player.avg_kill }}
+        <div class="kill__avg">
+            <span class="kill__text">场均击杀:</span>
+            <span class="kill__num">{{ player.avg_kill | avgKill }}</span>
+        </div>
+        {{ /if }}
+      </div>
+    </div>
+    <% } else { %>
+      <div class="info__card"></div>
+    <% } %>
+  <% } %>
+</div>
+{{ /if }}

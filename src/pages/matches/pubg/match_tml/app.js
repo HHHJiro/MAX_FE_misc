@@ -3,6 +3,8 @@ var Filter = require('./filter')
 var {bindElemet} = require('./utils')
 var CalanderHandler = require('./calander')
 var ScoreHandler = require('./score')
+var RankHandler = require('./rank')
+
 var Eles = {
   $btnPrev: '.calander__button--prev',
   $btnNext: '.calander__button--next',
@@ -29,6 +31,7 @@ class App extends Filter {
       this.$calacderWrap.show()
     }
     if (href.indexOf('rank') > 0) {
+      this.rankHandler()
       this.$rankWrap.show()
     }
   }
@@ -42,7 +45,10 @@ class App extends Filter {
     var calanderHandler = new CalanderHandler(this.res.calander)
   }
   scoreHandler () {
-    var scoreHandler = new ScoreHandler(this.res.score)
+    var scoreHandler = new ScoreHandler(this.res)
+  }
+  rankHandler () {
+    var rankHandler = new RankHandler(this.res)
   }
 }
 module.exports = App

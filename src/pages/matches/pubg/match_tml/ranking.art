@@ -1,23 +1,14 @@
-
+{{ if $data && $data.result && $data.result.rank }}
+{{set rankData = $data.result.rank}}
+{{ /if }}
 <div class="ranking">
-  <div class="ranking__box">
-   {{each ranking.list rank index }}
-   <div class="list__wrap">
-     <div class="rank__title">
-         {{rank}}
-     </div>
-     <div class="rank__table">
-       <ul class="table__title">
-         {{each ranking.rankDesc[index] rankName}}
-         <li>{{ rankName }}</li>
-         {{/each}}
-       </ul>
-       <ul class="table__body">
-         {{ include './noData.art'}}
-       </ul>
-     </div>
-   </div>
-   {{ /each }}
-   {{ include './footer.art'}}
- </div>
+  <ul class="rank--filter">
+    {{ each rankData rank index }}
+      <li {{ if index == 0 }} class="active" {{ /if }}>{{ rank.desc }}</li>
+    {{ /each }}
+  </ul>
+  <div id="rank" class="ranking__box">
+    
+  </div>
+  {{ include './footer.art'}}
 </div>

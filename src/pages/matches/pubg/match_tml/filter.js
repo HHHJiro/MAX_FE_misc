@@ -16,7 +16,9 @@ class Filter {
   FormatHandler () {
     var rules = [
       'calanderStatus',
-      'calanderDesc'
+      'calanderDesc',
+      'avgKill',
+      'dataDefault'
     ]
     for (let rule of rules) {
       if (this[rule]) {
@@ -34,6 +36,15 @@ class Filter {
   calanderStatus (status = 2) {
     var statusClass = ['end', 'gaming', 'unstart']
     return statusClass[status]
+  }
+  avgKill (kill) {
+    return Number(kill).toFixed(2)
+  }
+  dataDefault (data) {
+    if (data === '' || typeof data == 'undefined') {
+      return '-'
+    }
+    return data
   }
 }
 

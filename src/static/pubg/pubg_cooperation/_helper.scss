@@ -1,4 +1,4 @@
-.arrow--down {
+.arrow {
   display: inline-block;
   width: 6px;
 	height: 6px;
@@ -6,4 +6,48 @@
   border-top-color: transparent;
   border-right-color: transparent;
   transform: translate(4px, -2px) rotate(-45deg);
+  transition: all .3s ease-in-out;
+}
+.arrow--down {
+  transform: translate(4px, -2px) rotate(-45deg);
+}
+.arrow--up {
+  transform: translate(4px ,2px) rotate(135deg)
+}
+.hide {
+  display: none!important;
+}
+@mixin liCursor {
+  &:not(.active) {
+    cursor: pointer;
+  }
+}
+@mixin filterFirst {
+  height: $matchH;
+  display: flex;
+  align-items: center;
+  background: $comparedColor;
+  margin-bottom: $baseMarBottom;
+  color: #a0a0a0;
+  li {
+    display: block;
+    flex-grow: 1;
+    text-align: center;
+    line-height: $matchH;
+    height:  $matchH;
+    font-size: 22px;
+    @include liCursor;
+    &.active {
+      background: url(http://cdn.max-c.com/@/heybox/imgs/0a55c00fe14b07568b80125f7c8e899b) no-repeat;
+      background-size: auto $matchH;
+      background-color: $primary;
+      background-position: right;
+      font-weight: 600;
+      color: #000000;
+    }
+  }
+}
+
+.table__body {
+  user-select: none;
 }
