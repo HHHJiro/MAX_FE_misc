@@ -1,16 +1,17 @@
-$btnWrapWidth: 66px;
-$calanderBoxMar:  20px $btnWrapWidth 0;
+$btnWrapWidth: 53px;
+$calanderBoxMar:  26px $btnWrapWidth 0;
 $calanderCardH:  220px;
-$calanderCardW:  200px;
+$calanderCardW:  220px;
 $btnWidth: 24px;
 $btnHeight: 48px;
-$buttonMar: 20px;
+$buttonMar: 0;
 $cardTitleH: 74px;
-$cardBodyPad: 15px;
-$gameTieleSize: 32px;
+$cardBodyPad: 10px 0;
+$gameTieleSize: 24px;
 $gameStateSize: 14px;
 $cardTimeSize: 16px;
-$gameVsTitle: 22px;
+$gameTitleSize: 16px;
+
 .calander__wrap {
   display: none;
   width: $mainWidth;
@@ -36,16 +37,21 @@ $gameVsTitle: 22px;
       flex-direction: column;
       overflow: hidden;
       border-radius: 4px;
-      margin-right: ($mainWidth - 2 * $btnWrapWidth - 5 * $calanderCardW) / 4;
+      margin-right: ($mainWidth - 2 * $btnWrapWidth - $calanderCardNum * $calanderCardW) / ($calanderCardNum - 1);
       user-select: none;
       &.end {
+        .game__desc {
+          .game__title {
+            color: $endColor;
+          }
+        }
         .card__title {
           background-position-y: 100%;
         }
         .card__body {
-          color:$endColor;
+          color: $startColor;
           .game__bo {
-            border-color: $endColor;
+            border-color: $startColor;
           }
         }
       }
@@ -74,20 +80,20 @@ $gameVsTitle: 22px;
         justify-content: space-around;
         align-items: center;
         padding: $cardBodyPad;
-        color: $startColor;
+        color: $endColor;
         .game__title {
-          font-size: $gameTieleSize;
           font-weight: 600;
           text-align: center;
+          color: $startColor;
           &.game__title--vsinfo {
-            font-size: $gameVsTitle
+            font-size: $gameTitleSize
           }
         }
         .game__bo {
           padding: 0 23px;
           height: 24px;
           border-radius: 14px;
-          border: solid 2px $startColor;
+          border: solid 2px $endColor;
           text-align: center;
           line-height: 24px;
           font-family: Helvetica;

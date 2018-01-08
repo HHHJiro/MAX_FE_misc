@@ -19,7 +19,7 @@ class RankHandler {
   }
   init () {
     console.log(this.data)
-    this.setRankListHTML(this.data[0].list)
+    this.setRankListHTML(this.data[0])
     this.filterClickHandler()
     this.teamClickHandler()
   }
@@ -29,7 +29,7 @@ class RankHandler {
       let $ele = $(e.target)
       let index = $ele.index()
       $ele.addClass('active').siblings().removeClass('active')
-      _this.setRankListHTML(_this.data[index].list)
+      _this.setRankListHTML(_this.data[index])
     })
   }
   teamClickHandler () {

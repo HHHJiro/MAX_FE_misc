@@ -1,4 +1,5 @@
-{{set rankData = $data }}
+{{set rankData = $data.list }}
+{{ set type = $data.is_solo }}
 {{each rankData rank index }}
 <div class="list__wrap">
   <div class="rank__title">
@@ -6,8 +7,8 @@
   </div>
   <div class="rank__table">
     <ul class="table__title">
-      {{each rank.title title}}
-      <li>{{ title }}</li>
+      {{each rank.title title index}}
+      <li {{if index == 1 && type == 'solo'}} class="solo__rank" {{/if}}>{{ title }}</li>
       {{/each}}
       <li class="option"></li>
     </ul>
@@ -18,7 +19,7 @@
       {{each rank.list list index}}
       <ul class="rank__item team__box {{ if index % 2 == 0 }}table--odd{{else}}table--even {{ /if }} {{ if index < 3 }} win {{/if}}">
         <li>{{list.rank}}</li>
-        <li>{{list.team_name}}{{list.player_name}}</li>
+        <li {{if index == 1 && type == 'solo'}} class="solo__rank" {{/if}}>{{list.team_name}}{{list.player_name}}</li>
         <li>{{list.best}}{{list.kill}}</li>
         <li class="option">
           {{ if list.team_name && list.player_list && list.player_list.length > 0}}

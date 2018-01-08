@@ -1,15 +1,26 @@
-$primary:  #f09e03;
+$primary:  #ffbd1f;
 $assetsPath: "../../../asstes/pubg_match/";
-$comparedColor: darken($primary, 38.2%);
-$startColor: #563217;
+// $comparedColor: darken($primary, 38.2%);
+$comparedColor:#121318;
+$startColor: #a1750c;
 $endColor: #646464;
-$oddColor: #211a16;
-$evenColor: #141414;
+$oddColor: rgba(41, 41, 50, 0.2);
+$evenColor: #121318;
 $boDefaultFontColor: #333;
 $scoreTableBodyFont: #d0d0d0;
-$tableBg:  #0b0c0e;
+$tableBg: #121318;
+$tableBorderColor: #292932;
+$passTeamColor: #50e3c2;
 
-$mainWidth: 1210px;
-$calanderHeight: 300px;
-$scoreHeight: 902px;
+$mainWidth: 1100px;
+
+$calanderHeight: 270px;
+$calanderCardNum: 4;
+
+$scoreHeight: 600px;
+$tabTitleH: 30px;
+$tabBodyH: 380px;
+$tableH: $tabBodyH + $tabTitleH;
+
+
 $matchH: 60px;

@@ -11,8 +11,8 @@ class CalanderHandler {
     bindElemet.call(this, Eles)
     this.data = data
     this.CARD_OFFSET = data.cardOffset
-    this.MAX_VISIBLE_CARDS = 5
-    this.cardWidth = 200
+    this.MAX_VISIBLE_CARDS = 4
+    this.cardWidth = 220
     this.isNowCardSet = false
     this.isAnimation = false
     this.canPrevClick = false

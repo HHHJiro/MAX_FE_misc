@@ -1,7 +1,11 @@
 {{ set rank_list = $data.rank_list }}
 <ul class="tab__title">
     <li class="rank"><span class="rank__text">排名</span></li>
-    <li class="team">{{ if is_solo == '1' }} 选手名 {{ else }} 队伍名 {{ /if }}</li>
+    {{ if is_solo == '1' }} 
+    <li class="team solo__rank">选手名</li>
+    {{ else }}
+    <li class="team">队伍名</li>
+    {{ /if }}
     <li class="rank__point">排位分</li>
     <li class="total_kill">总击杀</li>
     <li class="kill__score">击杀分</li>
@@ -11,11 +15,15 @@
   <div class="tab__body">
   {{if rank_list && rank_list.length > 0}} 
   {{ each rank_list team index}}
-  <ul class="team__box {{ if index < 3 }} win {{/if}}{{ if index % 2 == 0 }} table--odd {{else}} table--even {{/if}}">
+  <ul class="team__box {{ if index < 6 }} win {{ else if index < 17 }}pass {{/if}}{{ if index % 2 == 0 }} table--odd {{else}} table--even {{/if}}">
     <li class="rank">
       <span class="rank__text">{{ team.rank }}</span>
     </li>
-    <li class="team">{{ if is_solo == '1' }} {{ team.player_name }} {{ else }} {{ team.team_name }} {{ /if }}</li>
+    {{ if is_solo == '1' }} 
+    <li class="team solo__rank">{{ team.player_name }}</li>
+    {{ else }}
+    <li class="team">{{ team.team_name }} </li>
+    {{ /if }}
     <li class="rank__point">{{team.rank_score | dataDefault}}</li>
     <li class="total_kill">{{team.kill | dataDefault}}</li>
     <li class="kill__score">{{team.kill_score | dataDefault}}</li>
