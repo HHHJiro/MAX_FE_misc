@@ -13,10 +13,10 @@ if (typeof document === 'object') {
   window.onload = function () {
     var time = new Date().getTime()
     $.get( pubgDataUrl + '?' + time, function (res) {
-      $.get(scoreRankDataUrl + '&time=' + time, function (data) {
-        res.result = data.result
+      // $.get(scoreRankDataUrl + '&time=' + time, function (data) {
+      //   res.result = data.result
         var app = new App(res)
-      })
+      // })
     })
   }
 }
