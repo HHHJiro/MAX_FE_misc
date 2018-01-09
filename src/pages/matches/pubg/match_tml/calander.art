@@ -3,6 +3,7 @@
   <div class="calander__button calander__button--next button--normal"></div>
   <div class="calander__box">
     <div class="view__box">
+      {{ data }}
       {{ each calander.cards card}}
         <div class="calander__card {{ card.status | calanderStatus }}">
           <div class="card__title">
@@ -12,14 +13,14 @@
           <div class="card__body">
             <div class="game__desc">
               {{ if card.home }}
-                <h1 class="game__title game__title--vsinfo">{{@ card.title }}</h1>
+                <h1 class="game__title game__title--vsinfo">{{ card.title }}</h1>
               {{ else }}
                 <h1 class="game__title">{{ card.title }}</h1>
               {{ /if }}
             </div>
             {{ if card.home }}
             <div class="vs__info">
-                <span class="team--home">{{ card.home }}</span>
+                <span class="team--home">{{ if card.status == 0 }}<img src="../../../../asstes/pubg_match/champion.png"> {{ card.home }}{{else}}本轮冠军： - {{/if}}</span>
                 {{ if card.away }}
                   <span class="vs__text">vs</span>
                   <span class="team--away">{{ card.away }}</span>
@@ -27,11 +28,21 @@
               </div>
               {{ /if }}
           {{ if card.boText}}
-            <h3 class="game__bo">{{ card.boText }}</h3>
+            <h3 class="game__bo" data-status="{{ card.status }}">{{ if card.status == 0 }} 吃鸡战队 <span class="arrow arrow--down"></span> {{else}} 敬请期待 {{/if}}</h3>
           {{ /if }}
           </div>
         </div>
       {{/each}}
+      <div id="win__table" class="win__table hide right__show">
+          <ul class="table__title">
+            <li>场次</li>
+            <li><div class="team__img"></div> 吃鸡队伍名</li>
+            <li>击杀数</li>
+          </ul>
+          <ul id="calander--winteam__table" class="table__body">
+            
+          </ul>
+        </div>
     </div>
   </div>
   {{ include './footer.art'}}

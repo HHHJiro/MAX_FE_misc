@@ -1,4 +1,6 @@
 {{ set series_list = $data }}
 {{ each series_list series index }}
-  <li>{{ series.desc }}</li>
+  <li>
+    {{ series.desc }}
+  </li>
 {{/each}}

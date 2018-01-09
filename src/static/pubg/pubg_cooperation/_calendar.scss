@@ -1,5 +1,5 @@
 $btnWrapWidth: 53px;
-$calanderBoxMar:  26px $btnWrapWidth 0;
+$calanderBoxMar:  34px $btnWrapWidth 0;
 $calanderCardH:  220px;
 $calanderCardW:  220px;
 $btnWidth: 24px;
@@ -17,17 +17,118 @@ $gameTitleSize: 16px;
   width: $mainWidth;
   height: $calanderHeight;
   position: relative;
-  background: #222;
+  background: transparent;
   overflow: hidden;
   .calander__box {
     margin: $calanderBoxMar;
     height: $calanderCardH;
     overflow: hidden;
     .view__box {
+      position: relative;
       display: flex;
       height: 100%;
       flex-wrap: nowrap;
       transition: all .8s ease-in-out;
+      .win__table {
+        user-select: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 360px;
+        background: $tableBg;
+        &::after, &::before {
+          content: '';
+          display: block;
+          width: 12px;
+          height: 12px;
+          position: absolute;
+          right: -12px;
+          transform: translate(-6px, -50%) rotate(45deg);
+          background: #222;
+          top: 50%;
+          z-index: 1;
+          border-radius: 0 2px ;
+        }
+        &::before {
+          right: 0;
+          left: 0;
+        }
+        &.right__show {
+          &::after {
+            display: none;
+          }
+        }
+        &.left__show {
+          &::before {
+            display: none;
+          }
+        }
+        .table__title {
+          @include tableTitle;
+        }
+        .table__body {
+          position: relative;
+          flex-grow: 1;
+          font-size: 16px;
+          overflow-y: scroll;
+          background: $tableBg;
+          max-height: $calanderCardH - 30px;
+          color: $scoreTableBodyFont;
+          z-index: 99;
+          @include teamImgBox;
+          .rank__item {
+            display: flex;
+            height: 42px;
+            cursor: pointer;
+            &.table--even {
+              background: $oddColor;
+            }
+            &.table--odd {
+              background: $evenColor;
+            }
+            &.win{
+              li:first-child {
+                color: #f09e03;
+                font-weight: 600;
+              }
+            }
+            li {
+              flex-basis: 0%;
+              display: block;
+              height: 42px;
+              line-height: 42px;
+              flex-grow: 1;
+              text-align: center;
+              &:nth-child(2) {
+                flex-grow: 3;
+                text-align: left;
+                text-indent: 20px;
+                max-width: 100%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                @include teamImg;
+                .team__img {
+                  width: 24px;
+                  height: 24px;
+                  margin-right: 50px - 24px;
+                  img {
+                    width: 24px;
+                    height: 24px;
+                  }
+                }
+              }
+              &:nth-child(3) {
+                flex-grow: 1;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
     }
     .calander__card {
       color: #000;
@@ -39,6 +140,10 @@ $gameTitleSize: 16px;
       border-radius: 4px;
       margin-right: ($mainWidth - 2 * $btnWrapWidth - $calanderCardNum * $calanderCardW) / ($calanderCardNum - 1);
       user-select: none;
+      .arrow {
+        border-color: $startColor;
+        border-width: 2px;
+      }
       &.end {
         .game__desc {
           .game__title {
@@ -52,12 +157,13 @@ $gameTitleSize: 16px;
           color: $startColor;
           .game__bo {
             border-color: $startColor;
+            cursor: pointer;
           }
         }
       }
       .card__title {
         height: $cardTitleH;
-        background: url($assetsPath + "calander_bg.jpg") no-repeat;
+        background: url($assetsPath + "calander_status_douyugold.jpg") no-repeat;
         background-size: 100% 200%;
         text-align: center;
         display: flex;
@@ -109,7 +215,14 @@ $gameTitleSize: 16px;
           width: 80%;
           .team--home, .team--away {
             font-size: $gameTieleSize;
-	          font-weight: 600;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              width: 30px;
+              margin-right: 12px;
+            }
           }
           .vs__text {
             font-size: 16px;

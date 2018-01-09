@@ -1,5 +1,5 @@
-{{ if $data && $data.result && $data.result.rank }}
-{{set rankData = $data.result.rank}}
+{{ if $data && $data.rank }}
+{{set rankData = $data.rank}}
 {{ /if }}
 <div class="ranking">
   <ul class="rank--filter">

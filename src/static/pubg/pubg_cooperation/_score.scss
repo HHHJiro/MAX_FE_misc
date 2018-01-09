@@ -97,6 +97,15 @@ $baseMarBottom: 10px;
         flex-basis: 0%;
         &.team {
           flex-grow: 2;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          .team__img {
+            display: inline-block;
+            width: $teamImgWidth;
+            height: $tabTitleH;
+            margin-right: $teamMarRight;
+          }
         }
         &.rank, &.team {
           text-align: left;
@@ -141,6 +150,29 @@ $baseMarBottom: 10px;
           text-align: center;
           &.team {
             flex-grow: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .team__info, .chicken__box {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              flex-basis: 0%;
+              flex-grow: 1;
+            }
+            .team__img {
+              display: inline-block;
+              width: $teamImgWidth;
+              height: $teamImgWidth;
+              margin-right: $teamMarRight;
+              img {
+                width: $teamImgWidth;
+                height: $teamImgWidth;
+                &[src=""] {
+                  opacity: 0;
+                }
+              }
+            }
           }
           &.rank {
             font-size: 20px;

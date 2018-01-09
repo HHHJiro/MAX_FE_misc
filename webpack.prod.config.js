@@ -30,8 +30,8 @@ module.exports = {
     // publicPath: '/static/build_assets/server_state/'
     // test server
     // ../../max/heybox_test/static/build_assets/record_compare
-    path: path.resolve(__dirname, '../../max/max_net/douyu/view/json/pubg_tml'),
-    publicPath: '/live_stats/json/pubg_tml/'
+    path: path.resolve(__dirname, '../../max/max_net/douyu/view/json/pubg_douyu_gold_s3'),
+    publicPath: '/live_stats/json/pubg_douyu_gold_s3/'
   },
   module: {
     rules: [

@@ -4,30 +4,44 @@
     {{ if is_solo == '1' }} 
     <li class="team solo__rank">选手名</li>
     {{ else }}
-    <li class="team">队伍名</li>
+    <li class="team"><div class="team__img"></div>队伍名</li>
     {{ /if }}
     <li class="rank__point">排位分</li>
     <li class="total_kill">总击杀</li>
     <li class="kill__score">击杀分</li>
-    <li class="total__score">局总分</li>
+    <!-- <li class="total__score">局总分</li> -->
     <li></li>
   </ul>
   <div class="tab__body">
   {{if rank_list && rank_list.length > 0}} 
   {{ each rank_list team index}}
-  <ul class="team__box {{ if index < 6 }} win {{ else if index < 17 }}pass {{/if}}{{ if index % 2 == 0 }} table--odd {{else}} table--even {{/if}}">
+  <ul class="team__box 
+  {{ if isTotal }}{{ if team.rank < 7 }} win {{ else if team.rank < 17 }}pass {{ /if }}
+  {{ else }} {{ if team.rank < 4 }}  win {{ /if }} {{ /if }}
+  {{ if index % 2 == 0 }} table--odd {{else}} table--even {{/if}}">
     <li class="rank">
       <span class="rank__text">{{ team.rank }}</span>
     </li>
     {{ if is_solo == '1' }} 
     <li class="team solo__rank">{{ team.player_name }}</li>
     {{ else }}
-    <li class="team">{{ team.team_name }} </li>
+    <li class="team">
+      <div class="team__info">
+        <div class="team__img"><img src="{{team.team_image_url}}"></div>{{ team.team_name }}
+      </div>
+      <div class="chicken__box">
+        <% for(var i = 0; i < team.best; i++) { %>
+          <img class="chicken" src="../../../../asstes/pubg_match/chicken.png">
+        <% } %>
+      </div>
+      <!-- {{ if isTotal }} {{if team.best }}<img class="chicken" src="../../../../asstes/pubg_match/chicken.png"><span class="team__chicken">×{{ team.best }}{{/if}}</span>
+      {{else}} {{ if team.rank == 1}}<img class="chicken" src="../../../../asstes/pubg_match/chicken.png"><span class="team__chicken">×1{{/if}}{{/if}} -->
+    </li>
     {{ /if }}
-    <li class="rank__point">{{team.rank_score | dataDefault}}</li>
+    <li class="rank__point">{{ if team.rank == 1 || team.best}}-{{ else }}{{team.rank_score | dataDefault}}{{/if}}</li>
     <li class="total_kill">{{team.kill | dataDefault}}</li>
     <li class="kill__score">{{team.kill_score | dataDefault}}</li>
-    <li class="total__score">{{ team.total_score | dataDefault}}</li>
+    <!-- <li class="total__score">{{ team.total_score | dataDefault}}</li> -->
     <li class="option">
         {{ if !is_solo && team.player_list.length > 0}}
           <span class="arrow__text">展开</span>

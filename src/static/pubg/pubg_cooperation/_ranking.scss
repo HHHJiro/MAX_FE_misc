@@ -1,15 +1,17 @@
-$listH: 776px - $matchH;
+$listH: $rankBoxHeight - $matchH - 40px;
 $titleH: 46px;
 $wrapW: ($mainWidth - 4 * 20px) / 3 ;
-$tableTitleH: 30px;
-$tableHeight: $listH - 80px - 46px - 20px;
+$tableHeight: $matchH * 9;
 .ranking {
   display: none;
+  padding-top: 40px;
 }
 .rank--filter {
   @include filterFirst;
   margin-bottom: 0;
+  margin-right: 0;
 }
+
 .ranking__box {
   position: relative;
   height: $listH;
@@ -18,7 +20,7 @@ $tableHeight: $listH - 80px - 46px - 20px;
   overflow: hidden;
   background: transparent;
   box-sizing: border-box;
-  padding: 20px 20px 60px;
+  padding: 20px 0 3px 0;
   justify-content: space-between;
 
     .list__wrap {
@@ -49,8 +51,9 @@ $tableHeight: $listH - 80px - 46px - 20px;
         .table__title {
           height: $tableTitleH;
           display: flex;
-          color: #a0a0a0;
+          color: $tableTitleColor;
           background: $oddColor;
+          @include teamImgBox;
           li {
             line-height: $tableTitleH;
             height: $tableTitleH;
@@ -62,6 +65,9 @@ $tableHeight: $listH - 80px - 46px - 20px;
               flex-grow: 3;
               text-align: left;
               text-indent: 20px;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
             }
             &:nth-child(3) {
               flex-grow: 1;
@@ -82,6 +88,7 @@ $tableHeight: $listH - 80px - 46px - 20px;
           max-height: $tableHeight;
           background: $tableBg;
           color: $scoreTableBodyFont;
+          @include teamImgBox;
           .rank__item {
             &.table--even {
               background: $oddColor;
@@ -113,6 +120,10 @@ $tableHeight: $listH - 80px - 46px - 20px;
                 overflow: hidden;
                 white-space: nowrap;
                 text-overflow: ellipsis;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                @include teamImg;
               }
               &:nth-child(3) {
                 flex-grow: 1;

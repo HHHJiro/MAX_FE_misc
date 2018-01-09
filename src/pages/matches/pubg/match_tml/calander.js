@@ -1,5 +1,6 @@
 
 var {bindElemet} = require('./utils')
+var {cardTeamBoxHandler} = require('./utils')
 var Eles = {
   $btnPrev: '.calander__button--prev',
   $btnNext: '.calander__button--next',
@@ -27,6 +28,7 @@ class CalanderHandler {
   init () {
     this.offsetCardHandler()
     this.calanderButtonHandler()
+    this.teamBoxHandler()
   }
   compute () {
     this.cardMarginRigth = ~~this.$calanderCard.css('margin-right').replace('px', '')
@@ -116,6 +118,15 @@ class CalanderHandler {
       }
       _this.moveCard('right')
     })
+  }
+  teamBoxHandler () {
+    var $teamBoxTigger = $('.game__bo')
+    var cardData = {
+      width: this.cardWidth,
+      marginRight: this.cardMarginRigth,
+      nowtranslateX: this.nowtranslateX
+    }
+    cardTeamBoxHandler($teamBoxTigger, cardData, this.data.cards)
   }
 }
 

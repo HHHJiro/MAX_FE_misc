@@ -1,10 +1,10 @@
-$footerW: 252px;
-$footerH: 40px;
+$footerW: 222px;
+$footerH: 28px;
 .footer {
   position: absolute;
   width: $footerW;
   height: $footerH;
-  bottom: 0;
+  top: 0;
   right: 0;
   a {
     display: block;
@@ -16,7 +16,7 @@ $footerH: 40px;
     z-index: 99;
     top: 50%;
     transform: translateY(-50%);
-    right: 20px;
+    right: 0;
   }
   .footer__bg {
     position: absolute;
@@ -25,5 +25,11 @@ $footerH: 40px;
     bottom: 0;
     right: 0;
     z-index: 1;
+  }
+}
+.score__wrap {
+  .footer {
+    top: 16px;
+    right: 0;
   }
 }

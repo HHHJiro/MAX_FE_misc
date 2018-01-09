@@ -1,6 +1,6 @@
-{{ if result && result.stage_list}}
-{{ set stage_list = result.stage_list}}
 <div class="score__wrap">
+{{ if stage_list && stage_list.length > 0}}
+{{ set stage_list = stage_list}}
   <ul id="stage" class="match__group">
     {{ each stage_list stage index}}
     <li>{{ stage.desc }}</li>
@@ -11,6 +11,8 @@
   <div id="match" class="bo__group"></div>
 
   <div id="team" class="score__table"></div>
+  {{ else }} 
+  <img class="heybox__holder" src="//cdn.max-c.com/@/heybox/imgs/8e9a23bf62208a6c34c1ea3c971f92c0">
+  {{/if}}
   {{ include './footer.art'}}
 </div>
-{{ /if }}

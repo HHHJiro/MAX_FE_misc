@@ -1,0 +1,10 @@
+{{each $data team index}}
+<ul class="rank__item team__box {{ if index % 2 == 0 }}table--odd{{else}}table--even{{/if}}">
+  <li>{{team.id}}</li>
+  <li>
+    <div class="team__img">
+      <img src="{{ team.team_image_url }}">
+    </div>{{ team.team_name }}</li>
+  <li>{{ team.kill }}</li>
+</ul>
+{{/each}}

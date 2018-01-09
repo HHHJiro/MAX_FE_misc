@@ -15,8 +15,9 @@ class ScoreHandler {
   constructor (data) {
     bindElemet.call(this, Eles)
     this.data = data
-    this.stageData = this.data.result.stage_list
-    this.highlight = this.data.result.highlight
+    this.stageData = this.data.stage_list
+    this.highlight = this.data.highlight
+    console.log(this.stageData)
     this.init()
   }
   init () {
@@ -45,10 +46,20 @@ class ScoreHandler {
       } finally {
         return 'default'
       }
+    } else {
+      try {
+        dataPath = Object.assign([0, 0, 0], dataPath)
+        let data = this.stageData[dataPath[0]].series_list[dataPath[1]].match_list[[dataPath[2]]]
+        if (dataPath[2] === 0 && data) {
+          data.isTotal = 1
+        }
+        this.$team.html(randerScoreTeam(data))
+      } catch (err) {
+        console.log(err)
+        let data = {rnak_list: []}
+        this.$team.html(randerScoreTeam(data))
+      }
     }
-    dataPath = Object.assign([0, 0, 0], dataPath)
-    let data = this.stageData[dataPath[0]].series_list[dataPath[1]].match_list[[dataPath[2]]]
-    this.$team.html(randerScoreTeam(data))
   }
   scoreMatchRender (dataPath) {
     if (!dataPath) {
@@ -60,10 +71,17 @@ class ScoreHandler {
       } finally {
         return 'default'
       }
+    } else {
+      try {
+        dataPath = Object.assign([0, 0, 0], dataPath)
+        let data = this.stageData[dataPath[0]].series_list[dataPath[1]].match_list
+        this.$match.html(randerScoreMatch(data))
+      } catch (err) {
+        console.log(err)
+        let data = [{desc: '积分总榜'}]
+        this.$match.html(randerScoreMatch(data))
+      }
     }
-    dataPath = Object.assign([0, 0, 0], dataPath)
-    let data = this.stageData[dataPath[0]].series_list[dataPath[1]].match_list
-    this.$match.html(randerScoreMatch(data))
   }
   scoreSeriesRender (dataPath) {
     if (!dataPath) {

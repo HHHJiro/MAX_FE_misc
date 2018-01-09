@@ -2,18 +2,22 @@
   display: inline-block;
   width: 6px;
 	height: 6px;
-  border: solid 1px #f09e03;
-  border-top-color: transparent;
-  border-right-color: transparent;
+  border: solid 1px $primary;
+  border-top: none;
+  border-right: none;
   transform: translate(4px, -2px) rotate(-45deg);
   transition: all .3s ease-in-out;
+  &.arrow--down {
+    transform: translate(4px, -2px) rotate(-45deg);
+  }
+  &.arrow--up {
+    transform: translate(4px ,2px) rotate(135deg);
+  }
+  &.arrow--right {
+    transform: translate(4px,-1px) rotate(-135deg);
+  }
 }
-.arrow--down {
-  transform: translate(4px, -2px) rotate(-45deg);
-}
-.arrow--up {
-  transform: translate(4px ,2px) rotate(135deg)
-}
+
 .hide {
   display: none!important;
 }
@@ -24,6 +28,7 @@
 }
 @mixin filterFirst {
   height: $matchH;
+  margin-right: $footerWidth;
   display: flex;
   align-items: center;
   background: $comparedColor;
@@ -44,6 +49,24 @@
       background-position: right;
       font-weight: 600;
       color: #000000;
+    }
+  }
+}
+
+@mixin teamImgBox {
+  .team__img {
+    display: inline-block;
+    width: $teamImgWidth;
+    height: $teamImgWidth;
+    margin-right: $teamMarRight;
+  }
+}
+@mixin teamImg {
+  img {
+    width: $teamImgWidth;
+    height: $teamImgWidth;
+    &[src=""] {
+      opacity: 0;
     }
   }
 }

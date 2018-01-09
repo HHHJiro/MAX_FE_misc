@@ -11,7 +11,7 @@ var Eles = {
 class RankHandler {
   constructor (data) {
     bindElemet.call(this, Eles)
-    this.data = data.result.rank
+    this.data = data.rank
     this.init()
   }
   setRankListHTML (data) {

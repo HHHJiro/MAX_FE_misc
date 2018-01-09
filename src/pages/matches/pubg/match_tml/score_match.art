@@ -1,4 +1,14 @@
 {{set match_list = $data}}
-  {{ each match_list match }}
-    <li>{{ match.desc }}</li>
+{{if match_list.length == 0 }}
+  <li>排名总表</li>
+{{else}}
+  {{ each match_list match index}}
+    <li>
+    {{ if index == 0 }}
+    排名总表
+    {{ else }}
+    {{ match.desc }}
+    {{/if}}
+    </li>
   {{/each}}
+{{/if}}

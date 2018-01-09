@@ -39,6 +39,7 @@ class App extends Filter {
     bindElemet.call(this, Eles)
   }
   appentMatch () {
+    console.log(this.res)
     $('#app').append(artBus(this.res))
   }
   calanderHandler () {

@@ -1,0 +1,34 @@
+@mixin tableTitle {
+  height: $tableTitleH;
+  display: flex;
+  color: $tableTitleColor;
+  background: $oddColor;
+  @include teamImgBox;
+  li {
+    line-height: $tableTitleH;
+    height: $tableTitleH;
+    font-size: 14px;
+    text-align: center;
+    flex-grow: 1;
+    flex-basis: 0%;
+    &:nth-child(2) {
+      flex-grow: 3;
+      text-align: left;
+      text-indent: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    &:nth-child(3) {
+      flex-grow: 1;
+      text-align: center;
+    }
+    &.option {
+      flex-grow: 1;
+      text-align: left;
+    }
+  }
+}
+@mixin tableBody {
+  
+}

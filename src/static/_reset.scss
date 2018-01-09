@@ -24,3 +24,23 @@ img{
   border: none;
   display: block;
 }
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 2px;
+  }
+  ::-webkit-scrollbar-thumb {
+  background: #333;
+  min-height: 150px;
+  min-width: 150px;
+  border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+  background: #333 !important;
+  }
+  ::-webkit-scrollbar-corner {
+  background: transparent;
+  }
