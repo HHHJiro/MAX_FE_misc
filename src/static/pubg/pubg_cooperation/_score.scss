@@ -1,7 +1,7 @@
 $matchH: 60px;
 $teamH: 42px;
 $baseMarBottom: 10px;
-
+$boAndScoreMar: 0;
 .score__wrap {
   display: none;
   width: $mainWidth;
@@ -16,7 +16,6 @@ $baseMarBottom: 10px;
   }
   .team__group {
     height: $teamH;
-    // border-top: 2px solid #000;
     margin-bottom: $baseMarBottom;
     display: flex;
     &>li {
@@ -27,23 +26,23 @@ $baseMarBottom: 10px;
       text-align: center;
       font-size: 16px;
       color: #6c6c6c;
-      border-top: 2px solid #000;
-      border-right: 2px solid #000;
-      border-bottom: 2px solid #000;
+      border-top: $borderWidth solid $matchBorderColor;
+      border-right: $borderWidth solid $matchBorderColor;
+      border-bottom: $borderWidth solid $matchBorderColor;
       @include liCursor;
-      &:last-child {
-        border-right: none;
+      &:first-child {
+        border-left: $borderWidth solid $matchBorderColor;
       }
       &.active {
         color: $primary;
-        border-bottom: 2px solid $primary;
+        border-bottom: $borderWidth solid $primary;
       }
     }
   }
   .bo__group {
-    margin: 0 20px;
+    margin: $boAndScoreMar;
     height: $teamH;
-    border: 1px solid $tableBorderColor;
+    border: $borderWidth solid $tableBorderColor;
     padding: 0 12px;
     display: flex;
     align-items: center;
@@ -74,9 +73,10 @@ $baseMarBottom: 10px;
 
   }
   .score__table {
-    margin: 0 20px;
+    margin: $boAndScoreMar;
     height: $tableH;
-    border: solid 1px $tableBorderColor;
+    border: solid $borderWidth $tableBorderColor;
+    background: $tableBg;
     .rank__text {
       display: block;
       width: 80px;
@@ -86,7 +86,7 @@ $baseMarBottom: 10px;
     .tab__title {
       height: $tabTitleH;
       display: flex;
-      background: $tableBg;
+      background: $oddColor;
       font-size: 14px;
       li {
         display: block;

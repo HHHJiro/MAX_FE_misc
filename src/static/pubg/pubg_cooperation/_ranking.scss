@@ -46,8 +46,8 @@ $tableHeight: $matchH * 9;
         flex-direction: column;
         margin-top: 20px;
         flex-grow: 1;
-        border: solid 1px $startColor;
-        background: $evenColor;
+        border: solid $borderWidth $tableBorderColor;
+        background: $oddColor;
         .table__title {
           height: $tableTitleH;
           display: flex;

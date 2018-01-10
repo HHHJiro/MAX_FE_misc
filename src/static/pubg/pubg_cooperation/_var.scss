@@ -2,31 +2,40 @@ $primary:  #ffbd1f;
 $assetsPath: "../../../asstes/pubg_match/";
 // $comparedColor: darken($primary, 38.2%);
 $comparedColor:#121318;
-$startColor: #a1750c;
-$endColor: #646464;
-$oddColor: rgba(41, 41, 50, 0.2);
-$evenColor: #121318;
 $boDefaultFontColor: #333;
 $scoreTableBodyFont: #d0d0d0;
-$tableBg: #121318;
-$tableBorderColor: #292932;
 $passTeamColor: #50e3c2;
-$tableTitleColor: #a0a0a0;
 $mainWidth: 1100px;
 
+// calander
 $calanderHeight: 270px;
 $calanderCardNum: 4;
+$startColor: #a1750c;
+$endColor: #646464;
 
+// score
 $scoreHeight: 600px;
 $tabTitleH: 30px;
 $tabBodyH: 380px;
 $tableH: $tabBodyH + $tabTitleH;
 $tableTitleH: 30px;
 
+//rank
 $rankBoxHeight: 760px;
 
-$matchH: 60px;
+// footer
 $footerWidth: 260px;
 
+// 队伍图片
 $teamImgWidth: 40px;
 $teamMarRight: 10px;
+
+// table 
+$borderWidth: 2px;
+$tableBorderColor: #292932;
+$tableTitleColor: #a0a0a0;
+$tableBg: #121318;
+$oddColor: rgba(41, 41, 50, 0.2);
+$evenColor: #121318;
+$matchH: 60px;
+$matchBorderColor: $comparedColor;
