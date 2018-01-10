@@ -151,7 +151,7 @@ $baseMarBottom: 10px;
           &.team {
             flex-grow: 2;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             .team__info, .chicken__box {
               display: flex;

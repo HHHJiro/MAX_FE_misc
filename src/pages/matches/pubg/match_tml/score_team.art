@@ -26,14 +26,14 @@
     <li class="team solo__rank">{{ team.player_name }}</li>
     {{ else }}
     <li class="team">
-      <div class="team__info">
+      <!-- <div class="team__info"> -->
         <div class="team__img"><img src="{{team.team_image_url}}"></div>{{ team.team_name }}
-      </div>
-      <div class="chicken__box">
+      <!-- </div> -->
+      <!-- <div class="chicken__box"> -->
         <% for(var i = 0; i < team.best; i++) { %>
           <img class="chicken" src="../../../../asstes/pubg_match/chicken.png">
         <% } %>
-      </div>
+      <!-- </div> -->
       <!-- {{ if isTotal }} {{if team.best }}<img class="chicken" src="../../../../asstes/pubg_match/chicken.png"><span class="team__chicken">×{{ team.best }}{{/if}}</span>
       {{else}} {{ if team.rank == 1}}<img class="chicken" src="../../../../asstes/pubg_match/chicken.png"><span class="team__chicken">×1{{/if}}{{/if}} -->
     </li>
