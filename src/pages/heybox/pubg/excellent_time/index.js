@@ -20,7 +20,11 @@ if (typeof document === 'object') {
       }
       $('#app').html(render(data))
       app.btnHandler()
-      $('.video').eq(0).requestFullScreen()
+      try {
+        $('.video').eq(0).requestFullScreen()
+      } catch (err) {
+        console.log(err)
+      }
     })
   }
 }

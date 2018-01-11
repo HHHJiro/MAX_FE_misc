@@ -1,20 +1,15 @@
 @include blockSpace();
 $btnH: 64px;
 body {
-  height: 100vh;
   overflow: hidden;
-  @media screen and (orientation: landscape){
-    height: 100vh;
-    overflow: hidden;
-  }
+  max-width: 1000px;
 }
 html, body {
-  @media screen and (orientation: landscape){
-    height: 100vh;
-    overflow: hidden;
-  }
+  background: #f1f2f3;
+  height: 100vh;
 }
 body {
+  margin: 0 auto;
   padding: 
   constant(safe-area-inset-top) 
   constant(safe-area-inset-right) 
@@ -22,12 +17,15 @@ body {
   constant(safe-area-inset-left); 
 }
 #app {
-  height: 100vh;
+  min-height: 1334px;
   position: relative;
 }
-div.footer.max-screen {
-    @media screen and (orientation: landscape){
-    display: none;
+div.footer {
+  //   @media screen and (orientation: landscape){
+  //   display: none;
+  // }
+  @media screen and (min-width: 1000px) {
+    display: flex!important;
   }
   position: absolute;
   bottom: constant(safe-area-inset-bottom);
@@ -38,6 +36,7 @@ div.footer.max-screen {
   display: flex;
   align-items: center;
   padding: 12px 0;
+  z-index: 999;
   .heybox-logo-wrap {
     display: flex;
     flex-grow: 1;
@@ -82,46 +81,43 @@ div.footer.max-screen {
 }
 .banner-wrap {
   position: relative;
-  width: 100vw;
-  height: calc(100vh - 416px - 84px - 96px);
-  @media screen and (min-width: 600px) {
-    height: auto;
-    padding-bottom: 12%;
-  }
+  height: calc(1334px - 416px - 84px - 96px);
+  width: 100%;
+  // @media screen and (min-width: 600px) {
+  //   height: auto;
+  //   padding-bottom: 12%;
+  // }
   background: url(//cdn.max-c.com/@/heybox/imgs/05dd84d57707f1af2e9af5b3135d37b8) no-repeat;
   background-size: cover;
   .pc {
-    width: 90vw;
+    width: 675px;
     margin: 0 auto;
   }
   .phone {
     position: absolute;
-    bottom: calc((100vh - 416px - 84px - 96px - 538px) / 3);
+    bottom: calc((1334px - 416px - 84px - 96px - 538px) / 3);
     right: 20px;
-    width: 30vw;
+    width: 225px;
   }
   h1 {
     font-size: 28px;
     text-align: center;
     color: #14191e;
     font-weight: 500;
-    padding: calc((100vh - 416px - 84px - 96px - 538px) / 3) 0 20px;
+    padding: calc((1334px - 416px - 84px - 96px - 538px) / 3) 0 20px;
   }
   p.desc {
     font-size: 22px;
     font-weight: 300;
     text-align: center;
     color: #64696e;
-    padding-bottom: calc((100vh - 416px - 84px - 96px - 538px) / 3);
+    padding-bottom: calc((1334px - 416px - 84px - 96px - 538px) / 3);
   }
 }
 
 video, .current-video {
   width: 100%;
-  height: 416px;
-  @media screen and (orientation: landscape){
-    height: 100vh;
-  }
+  height: 55.2%;
   .vjs-big-play-button {
     width: 100px;
     height: 80px;
@@ -162,8 +158,8 @@ video, .current-video {
     justify-content: space-between;
     li {
       position: relative;
-      width: calc(50vw - 20px - 1px);
-      height: 27.68vw;
+      width: calc(375px - 20px - 1px);
+      height: 208px;
       background: #222;
       margin-bottom: 2px;
       a {

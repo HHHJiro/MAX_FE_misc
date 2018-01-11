@@ -1,2 +1,6 @@
 {{extend '../../layout.art'}}
 {{block 'title'}}我的精彩时刻{{/block}}
+{{block 'head'}}
+<script src="//cdn.max-c.com/js/flexible/0.3.4/flexible.js"></script>
+<script src="//cdn.max-c.com/js/flexible/0.3.4/flexible_css.js "></script>
+{{/block}}
