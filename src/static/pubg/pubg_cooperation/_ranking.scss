@@ -5,6 +5,8 @@ $tableHeight: $matchH * 9;
 .ranking {
   display: none;
   padding-top: 40px;
+  width: $mainWidth;
+  height: $rankBoxHeight - 40px;
 }
 .rank--filter {
   @include filterFirst;
@@ -47,7 +49,7 @@ $tableHeight: $matchH * 9;
         margin-top: 20px;
         flex-grow: 1;
         border: solid $borderWidth $tableBorderColor;
-        background: $oddColor;
+        background: $tableBg;
         .table__title {
           height: $tableTitleH;
           display: flex;

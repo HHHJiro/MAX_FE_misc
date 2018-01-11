@@ -7,8 +7,9 @@ var fly = require('flyio')
 // 通过matchId 判断是哪场比赛
 // /live_stats/json/pubg_match.json
 // http://192.168.1.153:18080/page/pubg_match.json
+// https://heybox.tt.maxjia.com/game/pubg_league/data/?league_id=1
 var pubgDataUrl = PRODUCTION ? '/live_stats/json/pubg_match.json' : 'http://192.168.1.153:18080/page/pubg_match.json'
-var scoreRankDataUrl = PRODUCTION ? '//api.xiaoheihe.cn/game/pubg_league/data/?league_id=3' : 'https://heybox.tt.maxjia.com/game/pubg_league/data/?league_id=1'
+var scoreRankDataUrl = PRODUCTION ? '//api.xiaoheihe.cn/game/pubg_league/data/?league_id=5' : 'http://192.168.1.153:18080/page/pubg_match.json?id=1'
 if (typeof document === 'object') {
   window.onload = function () {
     var time = new Date().getTime()

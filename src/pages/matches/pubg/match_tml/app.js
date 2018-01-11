@@ -1,3 +1,5 @@
+import { error } from 'util';
+
 var artBus = require('./bus.art')
 var Filter = require('./filter')
 var {bindElemet} = require('./utils')
@@ -27,8 +29,13 @@ class App extends Filter {
       this.$scoreWrap.show()
     }
     if (href.indexOf('calander') > 0) {
-      this.calanderHandler()
-      this.$calacderWrap.show()
+      try {
+        this.calanderHandler()
+      } catch (err) {
+        throw new Error(err)
+      } finally {
+        this.$calacderWrap.show()
+      }
     }
     if (href.indexOf('rank') > 0) {
       this.rankHandler()
@@ -39,7 +46,6 @@ class App extends Filter {
     bindElemet.call(this, Eles)
   }
   appentMatch () {
-    console.log(this.res)
     $('#app').append(artBus(this.res))
   }
   calanderHandler () {

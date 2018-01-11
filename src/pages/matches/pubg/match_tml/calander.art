@@ -1,9 +1,9 @@
 <div class="calander__wrap">
+    {{ if calander.cards && calander.cards.length }}
   <div class="calander__button calander__button--prev button--normal"></div>
   <div class="calander__button calander__button--next button--normal"></div>
   <div class="calander__box">
     <div class="view__box">
-      {{ data }}
       {{ each calander.cards card}}
         <div class="calander__card {{ card.status | calanderStatus }}">
           <div class="card__title">
@@ -45,5 +45,8 @@
         </div>
     </div>
   </div>
+  {{else}}
+  <img class="heybox__holder" src="//cdn.max-c.com/@/heybox/imgs/8e9a23bf62208a6c34c1ea3c971f92c0">
   {{ include './footer.art'}}
+  {{/if}}
 </div>
