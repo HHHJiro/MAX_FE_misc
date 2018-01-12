@@ -20,6 +20,7 @@ if (typeof document === 'object') {
       }
       $('#app').html(render(data))
       app.btnHandler()
+      app.footerHandler()
       try {
         $('.video').eq(0).requestFullScreen()
       } catch (err) {
@@ -37,6 +38,12 @@ var app = {
       var index = btns.index($(this))
       var uls = $('.tab-content ul')
       uls.addClass('hide').eq(index).removeClass('hide')
+    })
+  },
+  footerHandler: function () {
+    var $footer = $('.footer')
+    $footer.on('click', function () {
+      window.location.href = '//xiaoheihe.cn/'
     })
   }
 }

@@ -9,13 +9,17 @@
       <p class="time">{{ create_time | timeHandler }}·绝地求生</p>
     </div>
 </div>
-<div class="banner-wrap pc__view">
-  <h1 class="title">精彩操作 随手掌握</h1>
-  <p class="desc">访问 xiaoheihe.cn 下载小黑盒电脑版</p>
-  <img class="pc pc__view" src="//cdn.max-c.com/@/heybox/imgs/de0dd95e23f288044ba97ca581272033" alt="">
-  <img class="phone pc__view" src="//cdn.max-c.com/@/heybox/imgs/0aed5ba07af9da7ae4d6f0b0ad5e239c" alt="">
+<div class="banner-wrap">
+  <div class="textbox">
+    <h1 class="title">精彩操作 随手掌握</h1>
+    <p class="desc">访问 xiaoheihe.cn 下载小黑盒电脑版</p>
+  </div>
+  <div class="imgbox">
+    <img class="pc" src="//cdn.max-c.com/@/heybox/imgs/de0dd95e23f288044ba97ca581272033" alt="">
+    <img class="phone" src="//cdn.max-c.com/@/heybox/imgs/0aed5ba07af9da7ae4d6f0b0ad5e239c" alt="">
+  </div>
 </div>
-<div class="footer max-screen">
+<div class="footer">
     <div class="heybox-logo-wrap">
       <div class="logo-box"><img src="../../../../asstes/heybox.png" alt="logo"></div>
       <div class="desc-box">
