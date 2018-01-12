@@ -1,3 +1,4 @@
+{{set calander = $data.result.calander}}
 <div class="calander__wrap">
   <div class="calander__button calander__button--prev button--normal"></div>
   <div class="calander__button calander__button--next button--normal"></div>
