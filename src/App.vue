@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <Calander :matchData="matchData" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Calander from './components/Calander'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Calander
+  },
+  data () {
+    return {
+      matchData: null
+    }
+  },
+  methods: {
+    getPubgMatchData () {
+    let url = this._Api.getPubgMatchUrl
+      this.$axios.get(url)
+        .then(res => {
+          this.matchData = res.data
+        })
+    }
+  },
+  mounted: function () {
+    this.getPubgMatchData()
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
