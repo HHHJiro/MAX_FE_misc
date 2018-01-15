@@ -47,8 +47,14 @@ class ScoreHandler {
       }
     }
     dataPath = Object.assign([0, 0, 0], dataPath)
-    let data = this.stageData[dataPath[0]].series_list[dataPath[1]].match_list[[dataPath[2]]]
     // var defaultData = {desc: '积分总榜'}
+    let data = null
+    try {
+      data = this.stageData[dataPath[0]].series_list[dataPath[1]].match_list[[dataPath[2]]]
+    } catch (err) {
+      console.log(err)
+      data = [{desc: '积分总榜', is_solo: 0, rank_list:[]}]
+    }
     this.$team.html(randerScoreTeam(data))
   }
   scoreMatchRender (dataPath) {
@@ -63,8 +69,14 @@ class ScoreHandler {
       }
     }
     dataPath = Object.assign([0, 0, 0], dataPath)
-    let data = this.stageData[dataPath[0]].series_list[dataPath[1]].match_list
-    // var defaultData = [{desc: '积分总榜'}]
+    let data = null
+    try {
+      data = this.stageData[dataPath[0]].series_list[dataPath[1]].match_list
+    } catch (err) {
+      console.log(err)
+      data = [{desc: '积分总榜', is_solo: 0, rank_list:[]}]
+    }
+    // var defaultData = [{desc: '积分总榜', is_solo: 0, rank_list:[]}]
     this.$match.html(randerScoreMatch(data))
   }
   scoreSeriesRender (dataPath) {
