@@ -1,8 +1,10 @@
 @include blockSpace();
+@import '../../components/share_header.scss';
 $btnH: 64px;
 html, body {
   background: #f1f2f3;
-  height: 100vh;
+  height: calc(100vh - $shareHeaderheight);
+  overflow: hidden;
 }
 body {
   margin: 0 auto;
@@ -12,67 +14,8 @@ body {
 }
 
 #app {
-  height: 100vh;
+  height: calc(100vh - $shareHeaderheight);
   position: relative;
-}
-div.footer {
-  cursor: pointer;
-  @media screen and (min-width: 1000px) {
-    display: flex!important;
-  }
-  position: absolute;
-  // bottom: constant(safe-area-inset-bottom);
-  bottom: 0;
-  // top: 0;
-  left: 0;
-  width: 100%;
-  background: #fff;
-  height: calc($headerH + env(safe-area-inset-bottom));
-  display: flex;
-  align-items: center;
-  padding: 12px 0;
-  z-index: 999;
-  .heybox-logo-wrap {
-    display: flex;
-    flex-grow: 1;
-    padding-left: 20px;
-    .logo-box {
-      margin-right: 16px;
-      img {
-        width: $headerH;
-        height:$headerH;
-        border-radius: 8px;
-      }
-    }
-    .desc-box {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      .app-name {
-        color: $lightBlack;
-        font-size: 26px;
-      }
-      .desc {
-        color: $grey;
-        font-size: 20px;
-      }
-    }
-  }
-  .open-app {
-    width: 136px;
-    height: 56px;
-    border-radius: 4px; 
-    background: linear-gradient(to right, $cOpenAppStart, $cOpenAppEnd);
-    margin-right: 20px;
-    a {
-      text-align: center;
-      display: block;
-      height: 100%;
-      color: #fff;
-      line-height: 56px; 
-      font-size: 24px;
-    }
-  }
 }
 .banner-wrap {
   position: relative;
@@ -80,8 +23,8 @@ div.footer {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 40px 0 146px;
-  height: calc(100vh - 31vh - 84px - 146px - 40px);
+  padding: 20px 0 60px;
+  height: calc(100vh - 31vh - 84px - 100px - 80px);
   width: 100%;
   background: url(//cdn.max-c.com/@/heybox/imgs/05dd84d57707f1af2e9af5b3135d37b8) no-repeat;
   background-size: cover;
@@ -188,27 +131,3 @@ video, .current-video {
   padding: 0!important;
   margin: 0!important;
 }
-
-
-@supports (bottom: env(safe-area-inset-bottom)) {
-  body {
-    padding: env(safe-area-inset-top)
-    env(safe-area-inset-right)
-    0
-    env(safe-area-inset-left)
-  }
-  .footer {
-    height: 108px;
-  }
-  }
-  @supports (bottom: constant(safe-area-inset-bottom)) {
-    body {
-      padding: constant(safe-area-inset-top)
-      constant(safe-area-inset-right)
-      0
-      constant(safe-area-inset-left)
-    }
-    .footer {
-      height: 108px;
-    }
-  }

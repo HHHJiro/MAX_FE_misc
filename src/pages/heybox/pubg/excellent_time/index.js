@@ -4,7 +4,7 @@ require('../../../../static/pubg/excellent_time/app.scss')
 var runtime = require('art-template/lib/runtime')
 var render = require('./content.art')
 function downLoadApp () {
-  window.location.href = 'http://xiaoheihe.cn/'
+  window.location.href = '//api.xiaoheihe.cn/heybox/hotclips'
 }
 if (typeof document === 'object') {
   window.onload = function () {
@@ -43,7 +43,7 @@ var app = {
   footerHandler: function () {
     var $footer = $('.footer')
     $footer.on('click', function () {
-      window.location.href = '//xiaoheihe.cn/'
+      window.location.href = '//api.xiaoheihe.cn/heybox/hotclips'
     })
   }
 }

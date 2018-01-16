@@ -19,17 +19,5 @@
     <img class="phone" src="//cdn.max-c.com/@/heybox/imgs/0aed5ba07af9da7ae4d6f0b0ad5e239c" alt="">
   </div>
 </div>
-<div class="footer">
-    <div class="heybox-logo-wrap">
-      <div class="logo-box"><img src="../../../../asstes/heybox.png" alt="logo"></div>
-      <div class="desc-box">
-        <h2 class="app-name">小黑盒</h2>
-        <p class="desc">三亿Steam玩家的必备应用</p>
-      </div>
-    </div>
-    <div class="open-app">
-      <a href="http://xiaoheihe.cn/">打开看看</a>
-    </div>
-</div>
-
+{{ include '../components/download_app.art' }}
 

@@ -1,0 +1,64 @@
+$headerH: 68px;
+@import '../var';
+$cOpenAppStart: rgb(0, 190, 255);
+$cOpenAppEnd: rgb(0, 129, 255);
+body {
+  padding-top: 100px!important;
+}
+div.footer {
+  cursor: pointer;
+  max-width: 750px;
+  margin: 0 auto;
+  position: fixed;
+  // bottom: constant(safe-area-inset-bottom);
+  top: 0;
+  width: 100%;
+  background: $azure;
+  height: $headerH;
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  z-index: 999;
+  .heybox-logo-wrap {
+    display: flex;
+    flex-grow: 1;
+    padding-left: 20px;
+    .logo-box {
+      margin-right: 16px;
+      img {
+        width: $headerH;
+        height:$headerH;
+        border-radius: 8px;
+      }
+    }
+    .desc-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .app-name {
+        color: $white;
+        font-size: 26px;
+      }
+      .desc {
+        color: $white;
+        font-size: 20px;
+      }
+    }
+  }
+  .open-app {
+    width: 136px;
+    height: 56px;
+    border-radius: 4px; 
+    background: transparent;
+    margin-right: 20px;
+    border: 2px solid $white;
+    a {
+      text-align: center;
+      display: block;
+      height: 100%;
+      color: $white;
+      line-height: 56px; 
+      font-size: 24px;
+    }
+  }
+}
