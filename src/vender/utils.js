@@ -1,3 +1,6 @@
+var reportTypes = {
+  hotclips: 'hotclips'
+}
 var Utils = function () {}
 Utils.prototype = {
   construct: Utils,
@@ -8,6 +11,16 @@ Utils.prototype = {
       return unescape(r[2])
     }
     return null
+  },
+  firstLoadReportToServer: function (type = 'hotclips') {
+    var baseReportToServerUrl = '/game/upload_share_page_click/?source='
+    var url = baseReportToServerUrl + reportTypes[type]
+    var img = document.createElement('img')
+    img.src = url
+  },
+  downLoadHref: function (type = 'hotclips') {
+    var baseDownLoadHref = '//api.xiaoheihe.cn/heybox/'
+    return baseDownLoadHref + reportTypes[type]
   },
   formartDate: function (t, type) {
     if (!type) {

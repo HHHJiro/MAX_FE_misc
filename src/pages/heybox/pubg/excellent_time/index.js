@@ -3,11 +3,13 @@ var utils = require('../../../../vender/utils')
 require('../../../../static/pubg/excellent_time/app.scss')
 var runtime = require('art-template/lib/runtime')
 var render = require('./content.art')
+const PAGE_TYPE = 'hotclips'
 function downLoadApp () {
-  window.location.href = '//api.xiaoheihe.cn/heybox/hotclips'
+  window.location.href = utils.downLoadHref(PAGE_TYPE)
 }
 if (typeof document === 'object') {
   window.onload = function () {
+    utils.firstLoadReportToServer(PAGE_TYPE)
     var heybox_id = utils.getQueryString('heybox_id')
     var id = utils.getQueryString('id')
     if (!heybox_id || !id) {
@@ -43,7 +45,7 @@ var app = {
   footerHandler: function () {
     var $footer = $('.footer')
     $footer.on('click', function () {
-      window.location.href = '//api.xiaoheihe.cn/heybox/hotclips'
+      window.location.href = utils.downLoadHref(PAGE_TYPE)
     })
   }
 }
