@@ -1,4 +1,8 @@
-{{ set rank_list = $data.rank_list }}
+{{if $data.length > 0}}
+  {{ set rank_list = $data }}
+{{ else }}
+  {{ set rank_list = $data.rank_list }}
+{{/if}}
 <ul class="tab__title">
     <li class="rank"><span class="rank__text">排名</span></li>
     {{ if is_solo == '1' }} 
@@ -20,7 +24,7 @@
   {{ else }} {{ if team.rank < 4 }}  win {{ /if }} {{ /if }}
   {{ if index % 2 == 0 }} table--odd {{else}} table--even {{/if}}">
     <li class="rank">
-      <span class="rank__text">{{ team.rank }}</span>
+      <span class="rank__text">{{if team.rank >= 0 }} {{ team.rank }}{{else}} {{index + 1}} {{/if}}</span>
     </li>
     {{ if is_solo == '1' }} 
     <li class="team solo__rank">{{ team.player_name }}</li>
@@ -43,7 +47,7 @@
     <li class="kill__score">{{team.kill_score | dataDefault}}</li>
     {{ if !isTotal }}<li class="total__score">{{ if team.rank == 1 || team.best}}-{{ else }}{{ team.total_score | dataDefault}}{{/if}}</li>{{/if}}
     <li class="option">
-        {{ if !is_solo && team.player_list.length > 0}}
+        {{ if !is_solo && team.player_list && team.player_list.length > 0}}
           <span class="arrow__text">展开</span>
           <span class="arrow arrow--down"></span>
         {{ /if }}

@@ -1,6 +1,10 @@
 {{ set series_list = $data }}
 {{ each series_list series index }}
   <li>
+    {{if series.desc == '阶段总榜'}}
+    积分总表
+    {{else}}
     {{ series.desc }}
+    {{/if}}
   </li>
 {{/each}}

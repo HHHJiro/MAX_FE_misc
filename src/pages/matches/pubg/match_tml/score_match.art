@@ -1,11 +1,13 @@
 {{set match_list = $data}}
 {{if match_list.length == 0 }}
-  <li>排名总表</li>
+  <li>当日总表</li>
+{{else if !($data.length >= 0)}}
+<li>积分总表</li>
 {{else}}
   {{ each match_list match index}}
     <li>
     {{ if index == 0 }}
-    排名总表
+    当日总表
     {{ else }}
     {{ match.desc }}
     {{/if}}
