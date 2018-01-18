@@ -1,4 +1,9 @@
+
+{{if $data.length > 0}} 
+{{ set rank_list = $data}}
+{{else}}
 {{ set rank_list = $data.rank_list }}
+{{/if}}
 <ul class="tab__title">
     <li class="rank"><span class="rank__text">排名</span></li>
     <li class="team">{{ if is_solo == '1' }} 选手名 {{ else }} 队伍名 {{ /if }}</li>

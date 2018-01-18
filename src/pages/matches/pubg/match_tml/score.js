@@ -38,24 +38,35 @@ class ScoreHandler {
   scoreTeamRender (dataPath) {
     if (!dataPath) {
       try {
-        let data = this.stageData[0].series_list[0].match_list[0]
+        let data = this.stageData[0].series_list[0].rank_list ||  this.stageData[0].series_list[0].match_list[0] 
         this.$team.html(randerScoreTeam(data))
       } catch (err) {
         console.log(err)
       } finally {
         return 'default'
       }
+    } else {
+      try {
+        dataPath = Object.assign([0, 0, 0], dataPath)
+        let data = this.stageData[dataPath[0]].series_list[dataPath[1]].rank_list || this.stageData[dataPath[0]].series_list[dataPath[1]].match_list[[dataPath[2]]]
+        // console.log(dataPath)
+        // if (typeof data != 'undefined' && dataPath[0] != 2  && data.length  ==  0) {
+        //   data = {
+        //     is_solo: 0,
+        //     rank_list: teamPromotion
+        //   }
+        // }
+        
+        if (dataPath[2] === 0 && data) {
+          data.isTotal = 1
+        }
+        this.$team.html(randerScoreTeam(data))
+      } catch (err) {
+        console.log(err)
+        let data = {rnak_list: []}
+        this.$team.html(randerScoreTeam(data))
+      }
     }
-    dataPath = Object.assign([0, 0, 0], dataPath)
-    // var defaultData = {desc: '积分总榜'}
-    let data = null
-    try {
-      data = this.stageData[dataPath[0]].series_list[dataPath[1]].match_list[[dataPath[2]]]
-    } catch (err) {
-      console.log(err)
-      data = [{desc: '积分总榜', is_solo: 0, rank_list:[]}]
-    }
-    this.$team.html(randerScoreTeam(data))
   }
   scoreMatchRender (dataPath) {
     if (!dataPath) {
@@ -67,23 +78,22 @@ class ScoreHandler {
       } finally {
         return 'default'
       }
+    } else {
+      try {
+        dataPath = Object.assign([0, 0, 0], dataPath)
+        let data = this.stageData[dataPath[0]].series_list[dataPath[1]].match_list
+        this.$match.html(randerScoreMatch(data))
+      } catch (err) {
+        console.log(err)
+        let data = [{desc: '积分总榜'}]
+        this.$match.html(randerScoreMatch(data))
+      }
     }
-    dataPath = Object.assign([0, 0, 0], dataPath)
-    let data = null
-    try {
-      data = this.stageData[dataPath[0]].series_list[dataPath[1]].match_list
-    } catch (err) {
-      console.log(err)
-      data = [{desc: '积分总榜', is_solo: 0, rank_list:[]}]
-    }
-    // var defaultData = [{desc: '积分总榜', is_solo: 0, rank_list:[]}]
-    this.$match.html(randerScoreMatch(data))
   }
   scoreSeriesRender (dataPath) {
     if (!dataPath) {
       try {
         let data = this.stageData[0].series_list
-        // var dafaultData = [{desc: '- vs -'}]
         this.$series.html(randerScoreSeries(data))
       } catch (err) {
         console.log(err)
