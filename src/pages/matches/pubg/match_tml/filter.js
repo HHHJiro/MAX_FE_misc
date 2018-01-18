@@ -5,6 +5,7 @@ class Filter {
     runtime.var = 'var'
     this.res = res
     this.initFilter()
+    runtime.team = res.team
   }
   initFilter () {
     this.tmlHandler()
@@ -18,12 +19,21 @@ class Filter {
       'calanderStatus',
       'calanderDesc',
       'avgKill',
-      'dataDefault'
+      'dataDefault',
+      'teamImg'
     ]
     for (let rule of rules) {
       if (this[rule]) {
         runtime[rule] = this[rule]
       }
+    }
+  }
+  teamImg (teamName) {
+    var img = runtime.team[teamName].team_image_url
+    if(img) {
+      return runtime.team[teamName].team_image_url
+    } else {
+      return ''
     }
   }
   tmlFormatDesc () {

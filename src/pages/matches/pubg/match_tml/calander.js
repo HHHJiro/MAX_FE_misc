@@ -10,6 +10,7 @@ var Eles = {
 class CalanderHandler {
   constructor (data) {
     bindElemet.call(this, Eles)
+    console.log(data)
     this.data = data
     this.CARD_OFFSET = data.cardOffset
     this.MAX_VISIBLE_CARDS = 4

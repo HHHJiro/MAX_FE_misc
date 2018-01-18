@@ -31,7 +31,7 @@
     {{ else }}
     <li class="team">
       <!-- <div class="team__info"> -->
-        <div class="team__img"><img src="{{team.team_image_url}}"></div>{{ team.team_name }}
+        <div class="team__img"><img src="{{team.team_name | teamImg}}"></div>{{ team.team_name }}
       <!-- </div> -->
       <!-- <div class="chicken__box"> -->
         <% for(var i = 0; i < team.best; i++) { %>

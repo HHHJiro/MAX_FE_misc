@@ -47,6 +47,6 @@
   </div>
   {{else}}
   <img class="heybox__holder" src="//cdn.max-c.com/@/heybox/imgs/8e9a23bf62208a6c34c1ea3c971f92c0">
-  {{ include './footer.art'}}
   {{/if}}
+  {{ include './footer.art'}}
 </div>
