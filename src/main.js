@@ -9,7 +9,6 @@ import 'normalize.css'
 import './style/app.scss'
 
 import Api from './common/api'
-console.log(process.env)
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
 Vue.prototype._Api = Api

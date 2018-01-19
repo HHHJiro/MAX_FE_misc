@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Calander :matchData="matchData" />
+    <Calander v-if="matchData" :matchData="matchData.calander" />
   </div>
 </template>
 
@@ -22,7 +22,7 @@ export default {
     let url = this._Api.getPubgMatchUrl
       this.$axios.get(url)
         .then(res => {
-          this.matchData = res.data
+          this.matchData = res.data.result
         })
     }
   },

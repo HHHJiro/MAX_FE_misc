@@ -3,6 +3,9 @@
     <Badge/>
     <div class="calander__btn btn__prev btn--normal"></div>
     <div class="cards__group">
+      <div class="cards-view__box">
+        <Card v-for="(card, index) in cards"  :data="cards[index]" :state="index" :key="index"/>
+      </div>
     </div>
     <div class="calander__btn btn__next btn--disable"></div>
     
@@ -10,21 +13,28 @@
 </template>
 <script>
 import Badge from './Badge'
+import Card from './Card'
 export default {
   name: 'Calander',
    components: {
-    Badge
+    Badge,
+    Card
   },
   props: {
     matchData: {
       type: Object,
-      default: {}
+      default: null
     }
   },
   data () {
     return {
-      msg: 'this is calander'
+      
     }
+  },
+  computed: {
+     cards: function () {
+       return this.matchData.cards
+     }
   }
 }
 </script>
@@ -40,9 +50,14 @@ $cardsGroupHeight: 220px;
     height: $boxHeight;
     overflow: hidden;
     margin: 0 auto;
+    color: #fff;
     .cards__group {
       margin: $cardsGroupMar;
       height: $cardsGroupHeight;
+      overflow: hidden;
+    }
+    .cards-view__box {
+      width: 99999px;
     }
     .calander__btn {
       width: 24px;

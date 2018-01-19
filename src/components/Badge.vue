@@ -1,5 +1,5 @@
 <template>
-  <div id="heybox__logo">
+  <div class="heybox__logo">
     <img class="logo__img" src="../assets/douyu_gold_s3/heybox_support.png">
   </div>
 </template>
