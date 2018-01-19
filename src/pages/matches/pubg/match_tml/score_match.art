@@ -5,12 +5,16 @@
 <li>积分总表</li>
 {{else}}
   {{ each match_list match index}}
+  {{ if index == 0 }}
     <li>
-    {{ if index == 0 }}
-    当日总表
-    {{ else }}
-    {{ match.desc }}
-    {{/if}}
+      当日总表
     </li>
+    {{ else }}
+    {{if match.rank_list && match.rank_list.length > 0}}
+      <li>
+       {{ match.desc }}
+      </li>
+    {{/if}}
+    {{/if}}
   {{/each}}
 {{/if}}
