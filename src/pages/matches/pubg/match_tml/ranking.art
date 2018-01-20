@@ -1,5 +1,5 @@
 {{ if $data && $data.result && $data.result.rank }}
-{{set rankData = $data.result.rank}}
+{{set rankData = $data.result.rank.reverse() }}
 {{ /if }}
 <div class="ranking">
   <ul class="rank--filter">
