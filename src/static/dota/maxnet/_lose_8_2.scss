@@ -20,6 +20,28 @@ $matchH4: 324px;
   background: url(../../../asstes/lose_8_2.png);
   background-size: cover;
   overflow: hidden;
+  .hide__Champiom {
+    width: 220px;
+    height: 400px;
+    background: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 11;
+  }
+  &.other__champion {
+    transform: translateX(60px);
+    .col-4 {
+      .away-box {
+        z-index: 99;
+        transform: translate(-10px, 10px);
+        img {
+          width: 64px;
+          height: 64px;
+        }
+      }
+    }
+  }
   .col-1 {
     .match {
       left: 50px;

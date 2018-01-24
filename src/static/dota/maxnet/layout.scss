@@ -1,7 +1,15 @@
+html ,body {
+  overflow-x: hidden;
+}
+
+img[src=""] {
+  opacity: 0;
+}
 .select-bar {
   height: 74px;
   display: flex;
   background: $silver;
+  border-bottom: solid 4px $gray;
   li {
     flex-grow: 1;
     display: flex;
@@ -12,9 +20,6 @@
     &.active {
       background: #fff;
     }
-  }
-  & + .tab-title ,& + #knockout-box{
-    border-top: solid 4px $gray;
   }
 }
 

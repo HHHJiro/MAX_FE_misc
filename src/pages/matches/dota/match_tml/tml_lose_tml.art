@@ -9,7 +9,10 @@
     </div>
     {{ /if }}
     {{set data = knockout.loseGroup }}
-    <div class="knockout-match knockout-lose lose-{{ knockoutLoseType }} {{if groupMatch && !knockout.noSelectBar }}hide {{/if}}">
+    <div class="knockout-match knockout-lose lose-{{ knockoutLoseType }} {{if groupMatch && !knockout.noSelectBar }}hide {{/if}} {{ if hideWinChampion }} other__champion {{ /if }}">
+      {{ if hideWinChampion }}
+      <div class="hide__Champiom"></div>
+    {{/if}}
       {{ each data group colIndex }}
         <div class="col-{{ colIndex + 1 }}">
           {{ each group match index }}
