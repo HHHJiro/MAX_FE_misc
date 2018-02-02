@@ -17,10 +17,11 @@ var ajaxUrl = PRODUCTION ? '/live_stats/json/' : 'http://192.168.1.153:18080/pag
 
 if (typeof document === 'object') {
   window.onload = function () {
+    var time = new Date().getTime()
     // 通过matchId 判断是哪场比赛
     var matchId = utils.getQueryString('match_id')
-    var pImgs = fly.get(ajaxUrl + 'team_imgs.json')
-    var pmatch = fly.get(ajaxUrl + 'match.' + matchId + '.json')
+    var pImgs = fly.get(ajaxUrl + 'team_imgs.json?time=' + time)
+    var pmatch = fly.get(ajaxUrl + 'match.' + matchId + '.json?time=' + time)
     
     Promise.all([pImgs, pmatch]).then(([imgRes, matchRes]) => {
       var app = new App(imgRes.data, matchRes.data)

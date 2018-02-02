@@ -36,6 +36,12 @@
         </div>
       {{ /each }}
       <div class="lose-win">
+        {{ if knockout.loseWin && knockout.loseWin != '' }}
         <img src="{{ knockout.loseWin | tmlFormatImgSrc }}" data-src="{{ knockout.loseWin | tmlFormatImgSrc}}" alt="">
+        {{ else }}
+          {{ if knockout.loseTime }}
+          <p class="time"> {{@ knockout.loseTime }}</p>
+          {{ /if }}
+        {{ /if }}
       </div>
     </div>
