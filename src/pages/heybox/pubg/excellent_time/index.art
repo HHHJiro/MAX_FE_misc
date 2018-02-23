@@ -3,4 +3,6 @@
 {{block 'head'}}
 <script src="//cdn.max-c.com/js/flexible/0.3.4/flexible.js"></script>
 <script src="//cdn.max-c.com/js/flexible/0.3.4/flexible_css.js "></script>
+<link href="//cdn.max-c.com/static/data/css/videojs.6.7.1.min.css" rel="stylesheet">
+<script src="//cdn.max-c.com/static/data/js/videojs.6.7.1.min.js"></script>
 {{/block}}

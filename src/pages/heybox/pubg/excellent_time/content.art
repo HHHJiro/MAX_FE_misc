@@ -1,5 +1,19 @@
 
-<video class="video" src="{{ url }}" poster="{{ thumb }}" preload="load" x-webkit-airplay="true" webkit-playsinline="true" controls="controls" autoplay></video>
+<!-- <video class="video" src="{{ url }}" poster="{{ thumb }}" preload="load" x-webkit-airplay="true" webkit-playsinline="true" controls="controls" autoplay></video> -->
+<div id="videobox">
+    <video 
+    id="my-player"
+    class="video-js"
+    controls
+    poster="{{ thumb }}"
+    >
+    <source src="{{ url }}" type="video/mp4">
+    <source src="{{ url }}" type='application/x-mpegurl'>
+    <source src="{{ url }}" type='video/h264'>
+    <source src="{{ url }}" type='video/mpeg4-generec'>
+  </video>
+  </div>
+
 <div class="author-wrap">
     <div class="avatar-wrap"><img src="{{avatar}}" alt="avatar"></div>
     <div class="user-wrap">
