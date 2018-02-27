@@ -109,6 +109,10 @@ html, body {
   li {
     p {
       @include scaleFont(12px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 90px;
     }
   }
   .team {
