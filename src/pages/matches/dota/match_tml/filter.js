@@ -27,7 +27,8 @@ class Filter {
       'tmlFormatDesc',
       'tmlFormatScore',
       'tmlFormatImgSrc',
-      'tmlFormatCompare'
+      'tmlFormatCompare',
+      'transNumToCN'
     ]
     for (let rule of rules) {
       if (this[rule]) {
@@ -88,6 +89,11 @@ class Filter {
   }
   tmlFormatCompare (v1, v2) {
     return (v1 - v2) > 0 && 'win' || ''
+  }
+  transNumToCN (num) {
+    var transNum = ~~num
+    var transCN = '一二三四五六七'.split('')
+    return transCN[transNum]
   }
 }
 

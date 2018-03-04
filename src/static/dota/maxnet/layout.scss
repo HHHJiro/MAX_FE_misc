@@ -200,3 +200,63 @@ p.time {
     transform: translateX(0);
   }
 }
+
+.rounds-game__box {
+  display: flex;
+  background: #fff;
+  li {
+    flex-basis: 0%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background: $silver;
+    margin-right: 4px;
+    font-size: 24px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+.rounds-game__box {
+  &--title, &--body {
+    @extend .rounds-game__box
+  }
+  &--title {
+    border-bottom: 4px solid $gray;
+    li {
+      color: $lightGray;
+      height: 68px;
+    }
+  }
+  &--body {
+    li {
+      background: #fff;
+      color: $lightGray;
+      &.team {
+        color: $dark;
+        img {
+          margin: 0 8px 0 0;
+        }
+      }
+      &.win {
+        color: $cPointWin;
+      }
+      &.total-point {
+        color: $dark;
+        font-size: 28px;
+      }
+      .team__name {
+        max-width: 50px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: clip;
+      }
+      img {
+        width: 38px;
+        margin-left: 8px;
+      }
+    }
+  }
+}

@@ -15,5 +15,33 @@
           {{ include './tml_lose_tml.art' groupMatch.groupB[1] }}
       </div>
       {{/if}}
+      {{ if groupMatch.manyRoundsGame }} 
+        {{set manyRoundsGame = groupMatch.manyRoundsGame}}
+        {{set showItemNum = manyRoundsGame.rounds + 2}}
+        {{set rounds = manyRoundsGame.rounds }}
+        {{set info = manyRoundsGame.info }}
+        <ul class="rounds-game__box--title">
+          <li>队伍</li>
+          <li>大比分</li>
+          <% for (var i = 0; i < rounds; i++ ) { %>
+          <li>第{{ i | transNumToCN }}轮</li>
+          <%  } %>
+        </ul>
+        {{each info game }}
+        <div class="divide"></div>
+        <ul class="rounds-game__box--body">
+            <li class="team"><img src="{{ game.team  | tmlFormatImgSrc}}"></li>
+            <li class="total-point">{{ game.pointTotal }}</li>
+            {{set roundPoint = game.roundPoint }}
+            <% for (var i = 0; i < rounds; i++ ) { %>
+              <li {{ if roundPoint[i]}} class="{{roundPoint[i].home | tmlFormatCompare roundPoint[i].away}}"{{/if}}>
+                <% if (roundPoint[i]) { %>
+                  {{roundPoint[i].home}}:{{roundPoint[i].away}} <img src="{{roundPoint[i].teamA | tmlFormatImgSrc}}">
+                <%  } %>
+              </li>
+            <%  } %>
+          </ul>
+          {{/each}}
+      {{/if}}
     </div>
 {{ /if }}
