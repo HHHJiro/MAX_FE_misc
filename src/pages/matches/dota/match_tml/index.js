@@ -13,7 +13,7 @@ var hrefHandler = function () {
   }
 }
 hrefHandler()
-var ajaxUrl = PRODUCTION ? '/live_stats/json/' : 'http://192.168.2.100:18080/page/'
+var ajaxUrl = PRODUCTION ? '/live_stats/json/' : 'http://192.168.1.153:18080/page/'
 
 if (typeof document === 'object') {
   window.onload = function () {
