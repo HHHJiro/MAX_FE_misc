@@ -6,13 +6,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
-<<<<<<< HEAD
     pubgState: 'pubg/server_state/index.js',
     // record_compare: './src/pages/heybox/pubg/record_compare/index.js',
-=======
-    rankPlayer: './src/pages/maxplus/dota2/rank_official_list_player/index.js',
-    rankTeam: './src/pages/maxplus/dota2/rank_official_list_team/index.js',
->>>>>>> remove heybox setttings
     vender: './src/vender/zepto.min.js'
   },
   resolve: {
