@@ -7,5 +7,5 @@
 * [heybox-postcss](https://github.com/HHHJiro/MAX_FE_misc/tree/heybox-postcss) （小黑盒战绩对比，pubg直播页）
 * [heybox](https://github.com/HHHJiro/MAX_FE_misc/tree/heybox) （小黑盒战绩对比，pubg服务器状态）
 * [heybox-now-to-vw](https://github.com/HHHJiro/MAX_FE_misc/tree/heybox-now-to-vw) （小黑盒精彩时刻，战绩对比 使用vw）
-* [pubg-iframe](https://github.com/HHHJiro/MAX_FE_misc/tree/pubg-iframe) （虎牙PUBG天命杯嵌套页）
+* [pubg-iframe](https://github.com/HHHJiro/MAX_FE_misc/tree/pung-iframe) （虎牙PUBG天命杯嵌套页）
 * [pung-douyu-gold-3](https://github.com/HHHJiro/MAX_FE_misc/tree/pung-douyu-gold-3) （斗鱼PUBG黄金大奖赛第三季）
