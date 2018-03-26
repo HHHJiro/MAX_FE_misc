@@ -8,7 +8,7 @@ $cPointWin: #f6aa1a;
 $logoH: 40px;
 
 @svg 1px-border {
-  height: 1px;
+  height: 2px;
   @rect {
     fill: var(--color, black);
     width: 100%;
@@ -17,9 +17,9 @@ $logoH: 40px;
 }
 
 @svg square {
-  @rect {
-    fill: var(--color, black);
-    width: 100%;
-    height: 50%;
-  }
+	@rect {
+		fill: var(--color, black);
+		width: var(--size);
+		height: var(--size);
+	}
 }

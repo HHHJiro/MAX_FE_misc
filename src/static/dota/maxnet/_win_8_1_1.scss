@@ -1,0 +1,125 @@
+@function calcTop1 ($level) {
+  @return $baseTop + $level * ($matchH + $matchMarTop)
+};
+@function calcTop2 ($level) {
+  @return $baseTop2 + $level * ($matchH2 + $matchMarTop2)
+};
+
+$matchMarTop: 446px;
+$matchMarTop2: 446px;
+$baseTop: 416px;
+$baseTop2: 326px;
+$baseTop3: 60px;
+$baseTop4: 240px;
+$matchH: 225px;
+$matchH2: 225px;
+$matchH3: 400px;
+$matchH4: 716px;
+.no__scroll {
+  overflow: hidden;
+  .knockout-win {
+    transform: translateX(60px);
+  }
+}
+.knockout-win.win-8-1-1 {
+  height: 1370px;
+  background: url(../../../asstes/win_8_1_1.png) no-repeat;
+  background-size: 600px;
+  background-position: 100px 80px; 
+  .hide__Champiom {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .win__champion {
+    width: 64px;
+    height: 64px;
+    transform: translateX(-10px) translateY(-10px);
+  }
+  .match {
+    z-index: 11;
+  }
+  .col-1 {
+    .match {
+      left: 50px;
+      height: $matchH;
+      &-0 {
+        top: $baseTop;
+      }
+      &-1 {
+        top: calcTop1(1)
+      }
+    }
+  }
+  .col-2 {
+    .match {
+      height: $matchH2;
+      left: 196px;
+      &-0 {
+        top: $baseTop2;
+      }
+      &-1 {
+        top: calcTop2(1)
+      }
+    }
+  }
+  .col-3 {
+    .match {
+      height: $matchH3;
+      left: 358px;
+      &-0 {
+        top: $baseTop3;
+      }
+      &-1 {
+        top: $baseTop3 + 674px;
+      }
+    }
+  }
+  .col-4 {
+    .match {
+      height: $matchH4;
+      left: 514px;
+      &-0 {
+        top: $baseTop4;
+      }
+      &-1 {
+        top: $baseTop4 + 674px;
+      }
+    }
+  }
+  .match-final {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 44px;
+    width: 44px;
+    top: 576px;
+    right: 22px;
+    .home-box:after {
+      left: 54px;
+      top: 26px;
+    }
+    .away-box:after {
+      left: -22px;
+      top: 26px;
+    }
+    .champion {
+      position: absolute;
+      top: -110px;
+      left: 50%;
+      transform: translateX(-50%);
+      .time {
+        transform: translateX(-20px);
+      }
+      img {
+        width: 64px;
+        height: 64px;
+      }
+    }
+  }
+}

@@ -109,7 +109,7 @@ img[src=""] {
   height: 1px;
   background: $gray;
   transform: scaleY(.5);
-  // background: $gray svg(square param(--color $gray));
+  // background: svg(square param(--color $gray) param(--size 100%)) center / cover;
 }
 
 .hide {
