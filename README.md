@@ -12,6 +12,8 @@
 ----
 
 ### 官方榜单 战队排名
+![战队排名](https://github.com/HHHJiro/MAX_FE_misc/blob/maxjia/src/asstes/preview/rank_team.jpeg)
 ----
 
 ### 官方榜单 选手排名
+![选手排名](https://github.com/HHHJiro/MAX_FE_misc/blob/maxjia/src/asstes/preview/rank_player.jpeg)
