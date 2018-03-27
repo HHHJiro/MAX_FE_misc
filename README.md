@@ -12,9 +12,6 @@
 ----
 
 ### 官方榜单 战队排名
-![战队排名](http://cdn.max-c.com/@/heybox/imgs/ae0b46095339ae53d96a140d983085f3)
-
 ----
 
 ### 官方榜单 选手排名
-![选手排名](http://cdn.max-c.com/@/heybox/imgs/aee3a1632dad593b5995d7b0f9e1b9c2)
