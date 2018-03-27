@@ -1,0 +1,141 @@
+@function calcTop1 ($level) {
+  @return $baseTop + $level * ($matchH + $matchMarTop)
+};
+@function calcTop2 ($level) {
+  @return $baseTop2 + $level * ($matchH2 + $matchMarTop2)
+};
+
+$matchMarTop: 120px;
+$matchMarTop2: 124px;
+$baseTop: 40px;
+$baseTop2: 120px;
+$baseTop3: 208px;
+$baseTop4: 374px;
+$matchH: 214px;
+$matchH2: 214px;
+$matchH3: 380px; 
+$matchH4: 768px;
+$moreTop1: 58px;
+$moreTop2: 52px;
+.no__scroll {
+  overflow: hidden;
+  .knockout-win {
+    transform: translateX(60px);
+  }
+}
+#knockout-box {
+  overflow-x: scroll;
+}
+.knockout-win.win-16-1-2 {
+  width: 860px;
+  height: 1444px;
+  background: url(../../../asstes/win_16_1_2.png);
+  background-repeat: no-repeat;
+  background-size: 700px auto;
+  background-position: 105px 60px;
+  .hide__Champiom {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .win__champion {
+    width: 64px;
+    height: 64px;
+    transform: translateX(-10px) translateY(-10px);
+  }
+  .match {
+    z-index: 11;
+  }
+  .col-1 {
+    .match {
+      left: 50px;
+      height: $matchH;
+      &-0 {
+        top: $baseTop;
+      }
+      &-1 {
+        top: calcTop1(1)
+      }
+      &-2 {
+        top: calcTop1(2) + $moreTop1;
+      }
+      &-3 {
+        top: calcTop1(3) + $moreTop1 - 6px;
+      }
+    }
+  }
+  .col-2 {
+    .match {
+      height: $matchH2;
+      left: 200px;
+      &-0 {
+        top: $baseTop2;
+      }
+      &-1 {
+        top: calcTop2(1)
+      }
+      &-2 {
+        top: calcTop2(2) + $moreTop2;
+      }
+      &-3 {
+        top: calcTop2(3) + $moreTop2 - 8px;
+      }
+    }
+  }
+  .col-3 {
+    .match {
+      height: $matchH3;
+      left: 346px;
+      &-0 {
+        top: $baseTop3;
+      }
+      &-1 {
+        top: $baseTop3 + 720px;
+      }
+    }
+  }
+  .col-4 {
+    .match {
+      height: $matchH4;
+      left: 490px;
+      &-0 {
+        top: $baseTop4;
+      }
+    }
+  }
+  .match-final {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 44px;
+    width: 206px;
+    top: 736px;
+    left: 650px;
+    .home-box:after {
+      left: 54px;
+      top: 26px;
+    }
+    .away-box:after {
+      left: -22px;
+      top: 26px;
+    }
+    .champion {
+      position: absolute;
+      top: -130px;
+      left: 50%;
+      transform: translateX(-50%);
+      .time {
+        transform: translateX(-20px);
+      }
+      img {
+        width: 64px;
+        height: 64px;
+      }
+    }
+  }
+}

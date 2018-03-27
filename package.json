@@ -32,7 +32,7 @@
     "n-zepto": "^1.2.0",
     "net": "^1.0.2",
     "net-ping": "^1.2.1",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.8.3",
     "postcss-loader": "^2.0.8",
     "postcss-px-to-viewport": "^0.0.3",
     "postcss-scss": "^1.0.2",
