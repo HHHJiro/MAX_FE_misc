@@ -37,7 +37,7 @@
 
 ----
 
-### 2018SLi
+### 2018 PGL
 [view](http://dotamax.net/live_stats/dota_match_tml.html?match_id=PGL%2520Major%25202018&lang=zh-cn&os_type=iOS&os_version=11.2.6&_time=1522206670&version=4.2.1&device_id=E8F027E0-41A4-4FC1-850E-60800609366A&game_type=dota2&max__id=8211098)
 
 <div align=center>
