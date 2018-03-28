@@ -17,8 +17,8 @@
 
 <div align=left>
   <img width="300" src="https://github.com/HHHJiro/MAX_FE_misc/blob/master/src/asstes/preview/pubg_huya_calander.jpeg?raw=true"/>
-  <img width="300"src="https://github.com/HHHJiro/MAX_FE_misc/blob/master/src/asstes/preview/pubg_huya_calander.jpeg?raw=true"/>
-  <img width="300"  src="https://github.com/HHHJiro/MAX_FE_misc/blob/master/src/asstes/preview/pubg_huya_calander.jpeg?raw=true"/>
+  <img width="300" src="https://github.com/HHHJiro/MAX_FE_misc/blob/master/src/asstes/preview/pubg_huya_calander.jpeg?raw=true"/>
+  <img width="300" src="https://github.com/HHHJiro/MAX_FE_misc/blob/master/src/asstes/preview/pubg_huya_calander.jpeg?raw=true"/>
 </div>
 
 
