@@ -14,12 +14,3 @@
 
 1. 到对应分支
 2. npm run dev（start）
-
-<div align=left>
-  <img width="300" src="https://github.com/HHHJiro/MAX_FE_misc/blob/master/src/asstes/preview/pubg_huya_calander.jpeg?raw=true"/>
-  <img width="300" src="https://github.com/HHHJiro/MAX_FE_misc/blob/master/src/asstes/preview/pubg_huya_calander.jpeg?raw=true"/>
-  <img width="300" src="https://github.com/HHHJiro/MAX_FE_misc/blob/master/src/asstes/preview/pubg_huya_calander.jpeg?raw=true"/>
-</div>
-
-
-
