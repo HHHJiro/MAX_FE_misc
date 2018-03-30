@@ -14,5 +14,8 @@
 
 > art-template、zepto、flyio
 
-1. 到对应分支
-2. npm run dev（start）
+### How to start
+
+1. git clone
+2. git checkout branch
+3. npm run dev（start）
