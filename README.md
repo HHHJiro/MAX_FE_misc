@@ -1,4 +1,6 @@
-# pubg_iframe
+# pubg_match_vue
+
+用vue重写了pubg 赛事iframe页
 
 > pubg iframe with vue
 
