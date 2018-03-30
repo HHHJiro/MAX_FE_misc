@@ -1,0 +1,15 @@
+.icon-arrow {
+  transition: all .4s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.win__arrow {
+  &--close {
+    transform: rotate(90deg);
+  }
+  &--open {
+    transform: rotate(0);
+  }
+}
+
+.card__champion {
+  font-size: 30px;
+}

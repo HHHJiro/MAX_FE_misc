@@ -1,4 +1,6 @@
 @import './reset';
+@import './help';
+
 body {
   font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -6,5 +8,5 @@ body {
   width: $mainWidth;
   overflow: hidden;
   margin: 0 auto;
-  background: #222;
+  background: #f1f2f3;
 }
