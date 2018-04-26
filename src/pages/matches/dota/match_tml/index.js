@@ -13,15 +13,17 @@ var hrefHandler = function () {
   }
 }
 hrefHandler()
-var ajaxUrl = PRODUCTION ? '/live_stats/json/' : 'http://192.168.1.153:18080/page/'
+var ajaxUrl = PRODUCTION ? '/live_stats/json/' : 'http://localhost:3000/'
 
 if (typeof document === 'object') {
   window.onload = function () {
     var time = new Date().getTime()
     // 通过matchId 判断是哪场比赛
     var matchId = utils.getQueryString('match_id')
-    var pImgs = fly.get(ajaxUrl + 'team_imgs.json?time=' + time)
-    var pmatch = fly.get(ajaxUrl + 'match.' + matchId + '.json?time=' + time)
+    // var pImgs = fly.get(ajaxUrl + 'team_imgs.json?time=' + time)
+    // var pmatch = fly.get(ajaxUrl + 'match.' + matchId + '.json?time=' + time)
+    var pmatch = fly.get(ajaxUrl + 'test')
+    var pImgs = fly.get(ajaxUrl + 'teamImgs')
     
     Promise.all([pImgs, pmatch]).then(([imgRes, matchRes]) => {
       var app = new App(imgRes.data, matchRes.data)
