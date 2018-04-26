@@ -1,0 +1,225 @@
+{
+  "test":{
+    "nowPlay": "k",
+    "knockoutWinType": "4-0-f",
+    "diyGroup": {
+      "groupA": [
+        {
+          "knockoutWinType": "4-0",
+          "knockout": {
+            "winGroup": [
+              [
+                {
+                  "home": "VGJ.T",
+                  "away": "FlyToMoon",
+                  "pointH": 2,
+                  "pointA": 2
+                },
+                {
+                  "home": "OpTic",
+                  "away": "Kinguin",
+                  "pointH": 2,
+                  "pointA": 1
+                }
+              ],
+              [
+                {
+                  "home": "VGJ.T",
+                  "away": "OpTic",
+                  "pointH": 0,
+                  "pointA": 2,
+                  "timeH": "04月12日<br>17:00",
+                  "timeA": "04月12日<br>20:00"
+                }
+              ]
+            ],
+            "winFinal": {
+              "champion":"OpTic",
+              "championTime": "04月12日<br>23:00"
+            }
+          }
+        },
+        {
+          "knockoutLoseType": "4-2",
+          "knockout": {
+            "loseTitle": false,
+            "loseGroup": [
+              [
+                {
+                  "home": "FlyToMoon",
+                  "away": "Kinguin",
+                  "pointH": 2,
+                  "pointA": 1
+                }
+              ],
+              [
+                {
+                  "home": "VGJ.T",
+                  "away": "FlyToMoon",
+                  "pointH": 2,
+                  "pointA": 0,
+                  "timeH": "",
+                  "timeA": "04月14日<br>15:00"
+                }
+              ]
+            ],
+            "loseWin": "VGJ.T",
+            "loseTime": "04月14日<br>21:00"
+          }
+        }
+      ],
+      "groupB": [
+        {
+          "knockoutWinType": "4-0",
+          "knockout": {
+            "winGroup": [
+              [
+                {
+                  "home": "Vega",
+                  "away": "SG",
+                  "pointH": 2,
+                  "pointA": 1 
+                },
+                {
+                  "home": "Fnatic",
+                  "away": "Na'Vi",
+                  "pointH": 2,
+                  "pointA": 1
+                }
+              ],
+              [
+                {
+                  "home": "Vega",
+                  "away": "Fnatic",
+                  "pointH": 2,
+                  "pointA": 1,
+                  "timeH": "04月13日<br>17:00",
+                  "timeA": "04月13日<br>20:00"
+                }
+              ]
+            ],
+            "winFinal": {
+              "champion":"Vega",
+              "championTime": "04月13日<br>23:00"
+            }
+          }
+        },
+        {
+          "knockoutLoseType": "4-2",
+          "knockout": {
+            "loseTitle": false,
+            "loseGroup": [
+              [
+                {
+                  "home": "SG",
+                  "away": "Na'Vi",
+                  "pointH": 0,
+                  "pointA": 2
+                }
+              ],
+              [
+                {
+                  "home": "Fnatic",
+                  "away": "Na'Vi",
+                  "pointH": 2,
+                  "pointA": 1,
+                  "timeH": "",
+                  "timeA": "04月14日<br>18:00"
+                }
+              ]
+            ],
+            "loseWin": "Fnatic",
+            "loseTime": "04月15日<br>00:00"
+          }
+        }
+      ]
+    },
+    "knockout": {
+      "winGroup": [
+        [
+          {
+            "home": "Vega",
+            "away": "VGJ.T",
+            "pointH": 0,
+            "pointA": 2
+          },
+          {
+            "home": "OpTic",
+            "away": "Fnatic",
+            "pointH": 2,
+            "pointA": 1
+          }
+        ],
+        [
+          {
+            "home": "VGJ.T",
+            "away": "OpTic",
+            "pointH": 1,
+            "pointA": 3,
+            "timeH": "04月15日<br>17:00",
+            "timeA": "04月15日<br>20:00"
+          }
+        ]
+      ],
+      "winFinal": {
+        "timeH": "11月25日<br>10:00",
+        "timeA": "11月25日<br>14:00",
+        "home": "Newbee",
+        "away": "VG",
+        "pointH": 3,
+        "pointA": 0,
+        "champion":"Newbee",
+        "championTime": "11月26日16:00"
+      }
+    }
+  },
+  "teamImgs":{
+    "OG": "//cdn.max-c.com/@/team/logo-lib/dota2/og",
+    "iG": "//cdn.max-c.com/@/team/logo-lib/dota2/ig",
+    "Secret": "//cdn.max-c.com/@/team/logo-lib/dota2/secret",
+    "VP": "//cdn.max-c.com/@/team/logo-lib/dota2/vp",
+    "Na'Vi": "//cdn.max-c.com/@/team/logo-lib/dota2/navi",
+    "Liquid": "//cdn.max-c.com/@/team/logo-lib/dota2/liquid",
+    "LFY": "//cdn.max-c.com/@/team/logo-lib/dota2/lfy",
+    "P.ODD": "//cdn.max-c.com/@/team/logo-lib/dota2/po",
+    "LGD": "//cdn.max-c.com/@/team/logo-lib/dota2/lgd",
+    "coL": "//cdn.max-c.com/@/team/logo-lib/dota2/col",
+    "SG": "//cdn.max-c.com/@/team/logo-lib/dota2/sg",
+    "Kinguin": "//cdn.max-c.com/@/team/logo-lib/dota2/kinguin",
+    "VG": "//cdn.max-c.com/@/team/logo-lib/dota2/vg",
+    "Mineski": "//cdn.max-c.com/@/team/logo-lib/dota2/mineski",
+    "Vega": "//cdn.max-c.com/@/team/logo-lib/dota2/vega",
+    "Newbee": "//cdn.max-c.com/@/team/logo-lib/dota2/nb",
+    "PW": "//cdn.max-c.com/@/team/logo-lib/dota2/pws",
+    "EG": "//cdn.max-c.com/@/team/logo-lib/dota2/eg",
+    "Infamous": "//cdn.max-c.com/@/team/logo-lib/dota2/infamous",
+    "DL": "//cdn.max-c.com/@/team/logo-lib/dota2/dl",
+    "TNC": "//cdn.max-c.com/@/team/logo-lib/dota2/tnc",
+    "VGJ.S": "//cdn.max-c.com/@/team/logo-lib/dota2/vgj",
+    "OG": "//cdn.max-c.com/@/team/logo-lib/dota2/og",
+    "EHOME": "//cdn.max-c.com/@/team/logo-lib/dota2/eh",
+    "Sacred": "//cdn.max-c.com/@/team/logo-lib/dota2/sacred",
+    "OpTic": "//cdn.max-c.com/@/team/logo-lib/dota2/op",
+    "ds8": "//cdn.max-c.com/@/team/logo-lib/dota2/ds8",
+    "Empire": "//cdn.max-c.com/@/team/logo-lib/dota2/empire",
+    "paiN": "//cdn.max-c.com/@/team/logo-lib/dota2/pain",
+    "CD": "//cdn.max-c.com/@/team/logo-lib/dota2/cd",
+    "Planet Dog": "//cdn.max-c.com/@/team/logo-lib/dota2/pd",
+    "PENTA": "//cdn.max-c.com/@/team/logo-lib/dota2/penta",
+    "VGJ.T": "//cdn.max-c.com/@/team/logo-lib/dota2/vgjt",
+    "ESL": "//cdn.max-c.com/@/team/logo-lib/dota2/esl",
+    "Fnatic": "//cdn.max-c.com/@/team/logo-lib/dota2/fn",
+    "Effect": "//cdn.max-c.com/@/team/logo-lib/dota2/effect",
+    "DC": "//cdn.max-c.com/@/team/logo-lib/dota2/dc",
+    "RRQ": "//cdn.max-c.com/@/team/logo-lib/dota2/rrq",
+    "TFT": "//cdn.max-c.com/@/team/logo-lib/dota2/tft",
+    "Immortals": "//cdn.max-c.com/@/team/logo-lib/dota2/immortals",
+    "KG": "//cdn.max-c.com/@/team/logo-lib/dota2/kg",
+    "FlyToMoon": "//cdn.max-c.com/@/team/logo-lib/dota2/ftm2",
+    "PGL": "//cdn.max-c.com/@/team/logo-lib/dota2/pgl",
+    "DAC": "//cdn.max-c.com/@/team/logo-lib/dota2/dac",
+    "待定": "//cdn.max-c.com/@/team/logo-lib/dota2/dac1",
+    "DOTA2": "//cdn.max-c.com/@/team/logo-lib/dota2/tbd"
+  }
+
+}
